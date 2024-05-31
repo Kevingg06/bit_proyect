@@ -7,9 +7,10 @@ use messi;
 create table users(
     userId varchar(70) not null,
     username varchar(40) not null,
+    userPassword varchar(40) not null,
     role varchar(30) not null,
     createdAt date not null,
-    contactsNumber int(30) not null,
+    contactsNumber int(30) DEFAULT null,
     age int(3) not null,
     phoneNumber varchar(30) not null,
     mail varchar(320) not null,
@@ -81,8 +82,10 @@ create table users_education(
     foreign key (educationName) references education (name)
 );
 
-insert into users(userId, username,role,createdAt, contactsNumber,age,phoneNumber,mail,subscription)
-values("1", "martuski", "administrador", 2024-4-23, 2, 17, 1170809090,"martin.galeanoet32@gmail.com",true),
-("2", "mankigamer", "usuario", 2024-4-22,3,  21, 1170889922,"mankijuega@gmail.com",false),
-("3", "señordelanoche", "usuario", 2024-4-22,1,  90, 5828071954,"chavezvive@gmail.com",false),
-("4", "mitelbi", "admin", 2024-4-10,200,  25, 123234545,"holasoymrbeast@gmail.com",true);
+insert into users(userId, username, userPassword,role,createdAt, contactsNumber,age,phoneNumber,mail,subscription)
+values("1", "martuski", "administrador", "pepe", 2024-4-23, 2, 17, 1170809090,"martin.galeanoet32@gmail.com",true),
+("2", "mankigamer", "usuario","uh uh ah ah", 2024-4-22,3,  21, 1170889922,"mankijuega@gmail.com",false),
+("3", "señordelanoche", "usuario","vivachavez", 2024-4-22,1,  90, 5828071954,"chavezvive@gmail.com",false),
+("4", "mitelbi", "admin","siadiviasestacontraseña", 2024-4-10,200,  25, 123234545,"holasoymrbeast@gmail.com",true);
+
+SHOW GRANTS FOR 'root'@'localhost';
