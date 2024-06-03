@@ -294,6 +294,224 @@ app.delete('/chat/:id', (req, res)=>{
     });
 });
 
+//company
+
+app.get('/companies', (req, res) => {
+    const query = 'SELECT * FROM company';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error obteniendo las compañías');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+app.get('/companies/:name', (req, res) => {
+    const name = req.params.name;
+    const query = 'SELECT * FROM company WHERE name = ?';
+    db.query(query, [name], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error obteniendo la compañía');
+            return;
+        }
+        if (result.length === 0) {
+            res.status(404).send('Compañía no encontrada');
+            return;
+        }
+        res.json(result[0]);
+    });
+});
+
+app.post('/companies', (req, res) => {
+    const { name, description } = req.body;
+    const query = 'INSERT INTO company (name, description) VALUES (?, ?)';
+    db.query(query, [name, description], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error creando la compañía');
+            return;
+        }
+        res.status(201).send('Compañía creada');
+    });
+});
+
+app.put('/companies/:name', (req, res) => {
+    const name = req.params.name;
+    const { description } = req.body;
+    const query = 'UPDATE company SET description = ? WHERE name = ?';
+    db.query(query, {description, name}, (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error actualizando la compañía');
+            return;
+        }
+        if (resultaffectedRows === 0) {
+            res.status(404).send('Compañía no encontradda');
+            return;
+        }
+        res.status(200).send('Compañía actualizada');
+    });
+});
+
+app.delete('/companies/:name', (req, res) => {
+    const name = req.params.name;
+    const query = 'DELETE FROM company WHERE name = ?';
+    db.query(query, [name], (err, result) => {
+        if (err) { 
+            console.error(err);
+            res.status(500).send('Error eliminando la compañía');
+            return;
+        }
+        if (result.affectedRows === 0) {
+            res.status(404).send('Compañía no encontrada');
+            return;
+        }
+        res.status(200).send('Compañía eliminada');
+    });
+});
+
+//jobHistory
+app.get('/jobHistory', (req, res) => {
+    const query = 'SELECT * FROM jobsHistory';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error (err);
+            res.status(500).send('Error obteniendo historiales laborales');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+app.get('/kpbHistory/user/:userId', (req, res) => {
+    const userId = req.params.userId;
+    const query = 'SELECT ¨FROM jobsHistory WHERE userId = ?';
+    db.query(query, [userId], (erro, result) => {
+        if (erro) {
+            console.error(err);
+            res.status(500).send('Error obteniendo historial laboral');
+            return;
+        }
+        res.json(result);
+    });
+});
+
+app.post('/hobHistory', (req, res => {
+    const { userId, companyName, jobDescription, jobRole } = req.body; const query = 'INSERT INTO jobsHistory (userId, companyName, jobDescription, jodbRole) VALUES (?, ?, ?, ?)';
+    db.query(query, [userId, companyName, jobDescription,jobRole], (err, result) => {
+        if(err) {
+            console.error(err);
+            res.status(500).send('Error creando historial laboral');
+            return;
+        }
+        res.status(201).send('historial laboral creado');
+    });
+}));
+
+app.put('/jobHistory(:userId/:companyname' , (req, res) => {
+    const userId = req.params.userId;
+    const companyName = req.params.companyname;
+    const { jobDescription, jobRole } = req.body;
+    const query = 'UPDATE jobsHistory SET jobDescription = ?, jobRole = ? WHERE userId = ? AND companyName = ?';
+    db.query(query, [jobDescription, jobRole, userId, companyName], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error actualizando historial laboral');
+            return;
+        }
+        if(result.affectedRows === 0) {
+            res,statys(404).send('Historial laboral no encontrado');
+            return;
+        }
+        res.status(200).send('Historial laboral actualizado');
+    });
+});
+
+app.delete('/jobHistory/:userId/:companyName', (req, res) => {
+    const userId = req.params.userId;
+    const companyName = req.params.companyName;
+    const query = 'DELETE FROM jobsHistory WHERE userId = ? AND company Name = ?';
+    db.query(query, [userId, companyName], (err, result) => {
+        if (err) {
+            console. error(err);
+            res.status(500).send('Error eliminando historial laboral');
+            return;
+        }
+        if (result.affectedRows == 0) {
+            res.status(404).send('Historial laboral no encontrado');
+            return;
+        }
+        res.status(200).send('Historial laboral eliminado');
+    });
+});
+
+//users_education
+
+app.get('/users_education/:userId', (req, res) => {
+    const userId = req.params.userId;
+    constquery = 'SELECT * FROM users_education WHERE userId =?';
+    db.query(query, [iserId], (err, results) => {
+        if (err) {
+            console.erro(err);
+            res.status(500).send('Error obteniendo educaciones de usuario');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+app.post('/users_education', (req, res) => {
+    const { userId, educationName, description } = req.body;
+    const id = uuidv4();
+    const query = 'INSERT INTO users_education (id, userId, educationName, description values (?, ?, ?, ?)';
+    db.query(query, [id, userId, educationName, descritpion], (err, result) => {
+        if (err) {
+            console.erro(err);
+            res.status(500).send('Error creando educación de usuario');
+            return;
+        }
+        res.status(201).send('Educación de usario creada');
+    });
+});
+
+app.put('/users_education/:id', (req, res) => {
+    const id = req.params.id;
+    const { educationName, description } = req.body;
+    const query = 'UPDATE users_education SET educationName = ?, description = = WHERE id = ?';
+    db.query(query, [educationName, description, id], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).Send('Error actualizando educación de usuario')
+            return;
+        }
+        if (result.affectedRows === 0) {
+            res.status(404).send('Educación de usuario no encontrada');
+            return;
+        }
+        res.status(200).send('Educación de usuario actualizada');
+    });
+});
+
+app.delete('/users_education/:id', (req, res) => {
+    const id = req.params.id;
+    const query = 'DELETE FROM users_education WHERE id = ?';
+    db.query(query, [id], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error eliminando educación de usuario');
+            return;
+        }
+        if (result.affectedRows == 0) {
+            res.status(404).send('Educación de usuario no encontrada');
+            return;
+        }
+        res.status(200).send('Educación de usuario eliminada');
+    });
+});
+
 app.listen(PORT, ()=>{
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
