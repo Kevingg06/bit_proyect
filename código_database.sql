@@ -82,10 +82,8 @@ create table users_education(
     foreign key (educationName) references education (name)
 );
 
-insert into users(userId, username, userPassword,role,createdAt, contactsNumber,age,phoneNumber,mail,subscription)
-values("1", "martuski", "administrador", "pepe", 2024-4-23, 2, 17, 1170809090,"martin.galeanoet32@gmail.com",true),
-("2", "mankigamer", "usuario","uh uh ah ah", 2024-4-22,3,  21, 1170889922,"mankijuega@gmail.com",false),
-("3", "señordelanoche", "usuario","vivachavez", 2024-4-22,1,  90, 5828071954,"chavezvive@gmail.com",false),
-("4", "mitelbi", "admin","siadiviasestacontraseña", 2024-4-10,200,  25, 123234545,"holasoymrbeast@gmail.com",true);
-
-SHOW GRANTS FOR 'root'@'localhost';
+insert into users(userId, username, role, userPassword, createdAt, contactsNumber,age,phoneNumber,mail,subscription)
+values("1", "martuski", "administrador", "pepe", '2024-4-23', 2, 17, 1170809090,"martin.galeanoet32@gmail.com",true),
+("2", "mankigamer", "usuario","uh uh ah ah", '2024-4-22', 3,  21, 1170889922,"mankijuega@gmail.com",false),
+("3", "señordelanoche", "usuario","vivachavez", '2024-4-22', 1,  90, 5828071954,"chavezvive@gmail.com",false),
+("4", "mitelbi", "admin","siadiviasestacontraseña", '2024-4-10',200,  25, 123234545,"holasoymrbeast@gmail.com",true);
