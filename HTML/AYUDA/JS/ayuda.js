@@ -1,6 +1,10 @@
 const tabs = document.querySelectorAll('.tab_btn');
 const all_content = document.querySelectorAll('.content');
 
+const menu_pregunta = document.querySelectorAll('.flecha_menu');
+const respuestas = document.querySelectorAll('.respuesta');
+
+
 tabs.forEach((tab, index)=>{
     tab.addEventListener('click', (e)=>{
         tabs.forEach(tab=>{tab.classList.remove('active')});
@@ -8,5 +12,16 @@ tabs.forEach((tab, index)=>{
    
         all_content.forEach(content=>{content.classList.remove('active')})
         all_content[index].classList.add('active');
+    })
+})
+
+
+menu_pregunta.forEach((pregunta, index) => {
+    pregunta.addEventListener('click', (e) => {
+        menu_pregunta.forEach(pregunta => {pregunta.classList.remove('active') });
+        pregunta.classList.add('active');
+
+        respuestas.forEach(respuesta => {respuesta.classList.remove('active') })
+        respuestas[index].classList.add('active');
     })
 })
