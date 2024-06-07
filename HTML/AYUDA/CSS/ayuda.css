@@ -33,7 +33,6 @@
     height: 920px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
-    z-index: 3;
 }
 
 .container {
@@ -114,6 +113,8 @@ input {
     margin-top: 3%;
     margin-left: 7.5%;
     margin-bottom: 20px;
+    padding-left: 5%;
+    font-size: 20px;
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
@@ -122,60 +123,74 @@ input {
 }
 
 ::placeholder {
-    padding: 3%;
     font-size: 20px;
 }
 
 .mini_titulos {
     font-size: 40px;
     margin-top: 3%;
-    margin-bottom: 1%;
+    margin-bottom: 3%;
     margin-left: 7.5%;
 }
 
 .flecha_menu {
-    margin-left: 9%;
-    margin-top: 3%;
-    width: 5%;
-    height: 2%;
+    margin-left: 8%;
+    width: 2%;
+    height: 3.3%;
     background-image: url(../img/flecha_menu.png);
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-    display: inline;
+}
+.flecha_menu.active{
+    margin-left: 8%;
+    width: 3%;
+    height: 2.4%;
+    background-image: url(../img/flecha_menu2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .pregunta {
-    margin-top: 1%;
     margin-left: 12%;
+    margin-top: -3%;
+    margin-bottom: 5%;
     font-size: 25px;
     font-weight: bold;
 }
 
 .respuesta {
     display: none;
-    margin-top: 1%;
     margin-left: 12%;
+    margin-top: -4%;
+    margin-bottom: 5%;
     padding-right: 50px;
     font-size: 20px;
     animation: movingY .3s ease
 }
 @keyframes movingY {
     from {
-        transform: translateY(-50px);
+        transform: translateY(-30px);
         opacity: 0;
-    }
-
-    to {
+    }to {
         transform: translateY(0px);
         opacity: 1;
-    }
-}
+    }}
 
 .respuesta.active {
     display: block;
+    animation: movingY .3s ease
 }
+@keyframes movingY2{
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }to {
+        transform: translateY(0px);
+        opacity: 1;
+    }}
 
 
 
