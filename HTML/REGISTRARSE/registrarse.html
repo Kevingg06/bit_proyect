@@ -12,21 +12,27 @@
 <body> <!-- recién acá empieza el código. Todo lo de arriba son configuraciones predeterminadas-->
   <div id="fondo_2"></div>
   <div id="fondo_1"></div>
-  <div class="root">
+  <div class="root" id="root_empleado">
       <h1>Empieza a expandir tus posibilidades</h1> <!-- título principal -->
       <p>Primero necesitamos recopilar algunos datos</p>
       <form class="formulario">
           <input type=”text” placeholder=NOMBRE> <!-- Acá escribe su respuesta -->
           <input type=”text” placeholder=EMAIL> <!-- Acá escribe su respuesta -->
           <input type=”text” placeholder=EDAD> <!-- Acá escribe su respuesta -->
-          <input type=”text” placeholder="CONTRASEÑA (mínimo 8 caracteres)"> <!-- Acá escribe su respuesta -->
-          <input type=”text” placeholder="CONFIRMAR CONTRASEÑA"> <!-- Acá escribe su respuesta -->
+          <input id="contraseña" type=”text” placeholder="CONTRASEÑA (mínimo 8 caracteres)"> <!-- Acá escribe su respuesta -->
+          <input id="contraseña" type=”text” placeholder="CONFIRMAR CONTRASEÑA"> <!-- Acá escribe su respuesta -->
           <p id="aclaracion">Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de [nombre].</p>
           <button type="submit">ACEPTAR Y CONTINUAR</button> <!-- botón de envío -->
       <form>
       <a href=”#”>¿Ya tenés una cuenta? Iniciá sesión</a> <!-- un link que te lleva a la pagina de inicio de sesión -->
       <hr>
       <button id="google" type="submit"><img src="./img/logo_google.jpg"><span>INGRESAR CON GOOGLE</span></button>
+  </div>
+
+  <div class="root" id="root_eleccion">
+    <h2>¿PARA QUÉ UTILIZARÁ SU CUENTA?</h2>
+    <button id="btn_empresa" class="btn_eleccion">EMPRESA</button>
+    <button id="btn_empleado" class="btn_eleccion">EMPLEADO</button>
   </div>
 </body>
 </html>

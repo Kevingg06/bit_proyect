@@ -86,12 +86,12 @@ button {
     width: 100px;
     height: 40px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 #mostrar{
     margin-top: 5%;
     margin-left: 63%;
-    margin-bottom: 5%;
     background-color: white;
     color: black;
     width: 100px;
@@ -100,7 +100,7 @@ button {
 }
 
 #olvido{
-    margin-top: 30px;
+    margin-top: 3%;
 }
 
 p{

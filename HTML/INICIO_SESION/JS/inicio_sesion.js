@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const input = document.getElementById('myInput');
+    const input = document.getElementById('contraseña');
     const placeholderChar = '*'; // Caracter específico
 
     input.addEventListener('input', function() {
