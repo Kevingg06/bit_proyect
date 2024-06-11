@@ -38,25 +38,51 @@ body {
     border-radius: 10px;
     box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
     z-index: 3;
+    animation: movingX1 .3s ease;
 }
+
 
 #root_eleccion{
-    display: flex;
+    display: none;
     top: 25%;
     height: 250px;
+    animation: movingX1 .3s ease;
+}
+@keyframes movingX1 {
+    from {
+        transform: translateX(600px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
+
 #root_eleccion.active{
-    display: none;
+    display: flex;
+}
+@keyframes movingX2 {
+    from {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-600px);
+        opacity: 1;
+    }
 }
 
 #root_empleado.active{
     display: flex;
+    transition: movingX2 .3s ease;
 }
 
 ::placeholder{
     color: black;
-    padding-left: 15px;
 }
 
 a {
@@ -99,6 +125,7 @@ input {
     height: 8%;
     margin-left: 8%;
     margin-bottom: 3%;
+    padding-left: 15px;
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
