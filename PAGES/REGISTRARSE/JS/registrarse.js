@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Insertar el párrafo en el contenedor
         var contenedor = document.getElementById("mesageError");
+        contenedor.classList.add('active');
         contenedor.appendChild(parrafo);
     }
 });

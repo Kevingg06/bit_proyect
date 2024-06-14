@@ -29,7 +29,7 @@ body {
 .root {
     display: none;
     position: absolute;
-    top: 7%;
+    top: 3%;
     left: 37.5%;
     flex-direction: column;
     background-color: white;
@@ -50,7 +50,7 @@ body {
 }
 @keyframes movingX1 {
     from {
-        transform: translateX(600px);
+        transform: translateX(400px);
         opacity: 0;
     }
 
@@ -64,7 +64,7 @@ body {
 #root_eleccion.active{
     display: flex;
 }
-@keyframes movingX2 {
+/* @keyframes movingX2 {
     from {
         transform: translateX(0px);
         opacity: 0;
@@ -74,7 +74,7 @@ body {
         transform: translateX(-600px);
         opacity: 1;
     }
-}
+} */
 
 #root_empleado.active{
     display: flex;
@@ -93,8 +93,9 @@ a {
 
 h1 {
     color: black;
-    margin-top: 6%;
-    margin-left: 8%;
+    text-align: center;
+    margin: 5%;
+    margin-bottom: 2%;
     font-size: 30px;
     height: 12%;
 }
@@ -121,7 +122,7 @@ p{
 }
 
 input {
-    width: 84%;
+    width: 76.5%;
     height: 8%;
     margin-left: 8%;
     margin-bottom: 3%;
@@ -197,4 +198,20 @@ button {
     color: black;
     border: none;
     cursor: pointer;
+}
+
+.mesageError{
+    display: none;
+    position: absolute;
+    background-color: rgb(248, 126, 126);
+    width: 125%;
+    height: 10%;
+    left: 92%;
+    top: 45.7%;
+}
+.mesageError > p{
+    margin: 5px;
+}
+.mesageError.active{
+    display: flex;
 }
