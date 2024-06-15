@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const opcion = document.querySelector('#root_eleccion');
     const vueltas = document.querySelectorAll('.volver');
     const btnEmpleado = document.querySelector('#btn_empleado');
+    const btnEmpresa = document.querySelector('#btn_empresa');
 
     // Función para desactivar todos los elementos
     function desactivarTodos() {
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         roots.forEach(content => content.classList.remove('active'));
         opcion.classList.remove('active');
         btnEmpleado.classList.remove('active');
+        btnEmpresa.classList.remove('active');
     }
 
     // Inicialmente agregar la clase active a #root_eleccion
@@ -35,88 +37,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-    const input = document.getElementById('contraseña1_empleado');
-    const placeholderChar = '*'; // Caracter específico
-
-    input.addEventListener('input', function () {
-        let value = input.value;
-        let replacedValue = value.replace(/./g, placeholderChar);
-        input.value = replacedValue;
-    });
-
-    const input2 = document.getElementById('contraseña2_empleado');
-    const placeholderChar2 = '*'; // Caracter específico
-
-    input2.addEventListener('input', function () {
-        let value = input2.value;
-        let replacedValue = value.replace(/./g, placeholderChar2);
-        input2.value = replacedValue;
-    });
-
-    const input3 = document.getElementById('contraseña1_empresa');
-    const placeholderChar3 = '*'; // Caracter específico
-
-    input3.addEventListener('input', function () {
-        let value = input3.value;
-        let replacedValue = value.replace(/./g, placeholderChar3);
-        input3.value = replacedValue;
-    });
-
-    const input4 = document.getElementById('contraseña2_empresa');
-    const placeholderChar4 = '*'; // Caracter específico
-
-    input4.addEventListener('input', function () {
-        let value = input4.value;
-        let replacedValue = value.replace(/./g, placeholderChar4);
-        input4.value = replacedValue;
-    });
+    const contraseña1_empresa = document.getElementById('contraseña1_empresa').value;
+    const contraseña2_empresa = document.getElementById('contraseña2_empresa').value;
 
 
 
-    function validarContraseña(contraseña) {
-        // Expresión regular para validar que la contraseña contenga solo letras y números
-        var expresionRegular = /^[a-zA-Z0-9]{8,20}$/;
-
-        // Verificar si la contraseña cumple con los criterios
-        if (expresionRegular.test(contraseña)) {
-            var textaso = "La contraseña es válida.";
-            return true;
-        } else {
-            var textaso = "La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.";
-            return false;
-        }
-    }
-
-    function segundaContraseña_empleado(contraseña){
-        var contraseña2 = document.getElementById("contraseña2_empleado")
-
-        if (contraseña == contraseña2){
-            return true;
-        } else {
-            var textaso = "Las contraseñas deben ser iguales";
-            return false;
-        }
-    }
 
 
+    // Event listener para el botón de enviar datos del empleado
+    document.getElementById('datos_empleado').addEventListener("click", enviarDatos_empleado);
 
     function enviarDatos_empleado() {
-        // Obtener los valores de los elementos input
-        var nombre = document.getElementById("nombre_empleado").value;
-        var email = document.getElementById("email_empleado").value;
-        var edad = document.getElementById("edad_empleado").value;
-        var contraseña = document.getElementById("contraseña1_empleado").value;
+        const nombre_empleado = document.getElementById('nombre_empleado').value;
+        const email_empleado = document.getElementById('email_empleado').value;
+        const edad_empleado = document.getElementById('edad_empleado').value;
+        const contraseña1_empleado = document.getElementById('contraseña1_empleado').value;
+
+
+
+        // Obtener los valores reales de las contraseñas
+        var contraseña1 = contraseña1_empleado;
 
         // Construir un objeto con los datos que deseas enviar
         var datos = {
-            nombre: nombre,
-            email: email,
-            edad: edad,
-            contraseña: contraseña
+            // Otros campos de datos aquí...
+            contraseña1: contraseña1
         };
 
-        if (validarContraseña(contraseña) && segundaContraseña_empleado(contraseña)){
+        // Validar las contraseñas
+        if (validarContraseña(contraseña1) && segundaContraseña(contraseña1)) {
+            console.log('Todos los datos son correctos. Enviando datos...')
 
             // Realizar una solicitud POST a la API utilizando fetch
             fetch('https://ejemplo.com/api/endpoint', {
@@ -142,18 +92,77 @@ document.addEventListener('DOMContentLoaded', () => {
         }// if 1
     }// enviarDatos_empleado()
 
+    function validarContraseña(contraseña) {
+        // Expresión regular para validar que la contraseña contenga solo letras y números
+        var expresionRegular = /^[a-zA-Z0-9]{8,20}$/;
 
+        // Verificar si la contraseña cumple con los criterios
+        if (expresionRegular.test(contraseña)) {
+            console.log('La contraseña es válida.');
+            eliminarTextoHTML();
+            return true;
+        } else {
+            var textaso = 'La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.'
+            generarTextoHTML(textaso);
+            console.log('La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.');
+            return false;
+        }
+    }
+
+    function segundaContraseña(contraseña, contraseña2) {
+        const contraseña2_empleado = document.getElementById('contraseña2_empleado').value;
+        if (contraseña === contraseña2_empleado) {
+            console.log('Las dos contraseñas son iguales')
+            eliminarTextoHTML();
+            return true;
+        } else {
+            console.log("Las contraseñas deben ser iguales")
+            var textaso = "Las contraseñas deben ser iguales";
+            generarTextoHTML(textaso);
+            return false;
+        }
+    }
 
     function generarTextoHTML(textaso) {
-        // Crear un elemento <p>
+        // Crear un nuevo elemento <p>
         var parrafo = document.createElement("p");
-        
-        // Agregar texto al párrafo
+
+        // Agregar texto al nuevo párrafo
         parrafo.textContent = textaso;
-        
-        // Insertar el párrafo en el contenedor
-        var contenedor = document.getElementById("mesageError");
-        contenedor.classList.add('active');
-        contenedor.appendChild(parrafo);
+
+        // Obtener los elementos con la clase 'mesageError'
+        var contenedores = document.getElementsByClassName("mesageError");
+
+        // Verificar que haya al menos un elemento con esa clase
+        for (var i = 0; i < contenedores.length; i++) {
+            var contenedor = contenedores[i];
+
+            // Eliminar el elemento <p> anterior si existe
+            var parrafosAnteriores = contenedor.getElementsByTagName("p");
+            if (parrafosAnteriores.length > 0) {
+                contenedor.removeChild(parrafosAnteriores[0]);
+            }
+
+            // Agregar el nuevo párrafo al contenedor actual
+            contenedor.appendChild(parrafo.cloneNode(true));
+            contenedor.classList.add('active');
+        }
     }
+
+
+    function eliminarTextoHTML() {
+        console.log('patata')
+        var contenedores = document.getElementsByClassName("mesageError");
+    
+        // Iterar sobre todos los contenedores
+        for (var i = 0; i < contenedores.length; i++) {
+            var contenedor = contenedores[i];
+            var parrafos = contenedor.getElementsByTagName("p");
+    
+            // Eliminar todos los elementos <p> en el contenedor
+            while (parrafos.length > 0) {
+                contenedor.removeChild(parrafos[0]);
+            }
+        }
+    }    
 });
