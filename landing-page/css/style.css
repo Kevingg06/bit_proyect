@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --primario : #3e3a55;
+    --secundario: #bb9bb7;
+    --texto: #13121c;
+    --fondo: #eaeaf0;
+    --accent: #8c5f73;
+}
+
+:root{
+    --darkprimario: #aeaac5;
+    --darksecundario: #644460;
+    --darktexto: #e4e3ed;
+    --darkfondo: #0f0f15;
+    --darkaccent: #a07387;
+}
+
+* {
+    transition: all ease-in-out 350ms;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0 auto;
+    height: auto;
+}
+
+header {
+    padding: 0rem 2.5rem 0rem 2.5rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: sticky;
+    background: var(--fondo);
+    height: 5rem;
+    box-shadow: 0 0 5px 2px var(--accent);
+}
+
+#header.active {
+    background: var(--darkfondo);
+}
+
+#background {
+    background-image: url(/src/default.png);
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+}
+
+section #container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+section p{
+    text-align: justify;
+}
+
+section p a{
+    text-decoration: none;
+}
+
+section #container h1 {
+    color: var(--texto);
+    font-size: 5rem;
+}
+
+section #container h1.active {
+    color: var(--darktexto);
+}
+
+section #container #buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+section #container #buttons a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    background: none;
+    border: solid 0.2rem var(--primario);
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    color: var(--primario);
+}
+
+section #container #buttons a:hover{
+    background: var(--primario);
+    color: var(--fondo);
+}
+
+#switch {
+    background: none;
+    border: none;
+    color: var(--texto);
+    font-weight: 800;
+}
+
+footer {
+    background-color: var(--accent);
+    height: 5rem;
+}
+
+#switch.active{
+    color: var(--darktexto);
+}
+
+section #container #buttons a.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    background: none;
+    border: solid 0.2rem var(--darkprimario);
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    color: var(--darkprimario);
+}
+
+section #container #buttons a.active:hover{
+    background: var(--darkprimario);
+    color: var(--darkfondo);
+}
+
+#background.active {
+    background-image: url(/src/active.png);
+}
+
+#h1.active {
+    color: var(--darktexto);
+}
+
+p.active {
+    color: var(--darktexto);
+}
+
+p.active a {
+    color: var(--darkprimario);
+}
+
+span.active {
+    color: var(--darktexto);
+}
+
+footer.active {
+    background-color: var(--darkaccent);
+}
