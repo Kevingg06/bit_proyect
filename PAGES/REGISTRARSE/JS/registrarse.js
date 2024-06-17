@@ -37,35 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    const contraseña1_empresa = document.getElementById('contraseña1_empresa').value;
-    const contraseña2_empresa = document.getElementById('contraseña2_empresa').value;
 
 
 
+    document.getElementById('datos_empresa').addEventListener("click", enviarDatos_empresa);  // Event listener para el botón de enviar datos de la empresa
+
+    function enviarDatos_empresa() {
+        const nombre_empresa = document.getElementById('nombre_empresa').value;
+        const email_empresa = document.getElementById('email_empresa').value;
+        const direccion_empresa = document.getElementById('direccion_empresa').value;
+        const contraseña1_empresa = document.getElementById('contraseña1_empresa').value;
+        const contraseña2_empresa = document.getElementById('contraseña2_empresa').value;
 
 
-    // Event listener para el botón de enviar datos del empleado
-    document.getElementById('datos_empleado').addEventListener("click", enviarDatos_empleado);
-
-    function enviarDatos_empleado() {
-        const nombre_empleado = document.getElementById('nombre_empleado').value;
-        const email_empleado = document.getElementById('email_empleado').value;
-        const edad_empleado = document.getElementById('edad_empleado').value;
-        const contraseña1_empleado = document.getElementById('contraseña1_empleado').value;
-
-
-
-        // Obtener los valores reales de las contraseñas
-        var contraseña1 = contraseña1_empleado;
+        var nombre = nombre_empresa;
+        var email = email_empresa;
+        var direccion = direccion_empresa;
+        var contraseña1 = contraseña1_empresa;
+        var contraseña2 = contraseña2_empresa;
 
         // Construir un objeto con los datos que deseas enviar
         var datos = {
-            // Otros campos de datos aquí...
-            contraseña1: contraseña1
+            nombre: nombre,
+            email: email,
+            direccion: direccion,
+            contraseña1: contraseña1,
+            contraseña2: contraseña2
         };
 
-        // Validar las contraseñas
-        if (validarContraseña(contraseña1) && segundaContraseña(contraseña1)) {
+        var formulario = document.getElementById("form_empresa");  // Obtener el formulario
+        var inputs = formulario.getElementsByTagName("input");  // Obtener todos los campos de entrada dentro del formulario
+
+        // Validar los datos ingresados
+        if (datosVacios(inputs) && validarDatos(nombre) && validarContraseña(contraseña1) && segundaContraseña(contraseña1, contraseña2)) {
             console.log('Todos los datos son correctos. Enviando datos...')
 
             // Realizar una solicitud POST a la API utilizando fetch
@@ -89,80 +93,126 @@ document.addEventListener('DOMContentLoaded', () => {
                 .catch(error => {
                     console.error('Error al enviar datos a la API:', error);
                 });
-        }// if 1
+        }// if
+    }// enviarDatos_empresa()
+
+
+
+    document.getElementById('datos_empleado').addEventListener("click", enviarDatos_empleado);  // Event listener para el botón de enviar datos del empleado
+
+    function enviarDatos_empleado() {
+        const nombre_empleado = document.getElementById('nombre_empleado').value;
+        const email_empleado = document.getElementById('email_empleado').value;
+        const edad_empleado = document.getElementById('edad_empleado').value;
+        const contraseña1_empleado = document.getElementById('contraseña1_empleado').value;
+        const contraseña2_empleado = document.getElementById('contraseña2_empleado').value;
+
+
+        var nombre = nombre_empleado;
+        var email = email_empleado;
+        var edad = edad_empleado
+        var contraseña1 = contraseña1_empleado;
+        var contraseña2 = contraseña2_empleado;
+
+        // Construir un objeto con los datos que deseas enviar
+        var datos = {
+            nombre: nombre,
+            email: email,
+            edad: edad,
+            contraseña1: contraseña1,
+            contraseña2: contraseña2
+        };
+
+        var formulario = document.getElementById("form_empleado");  // Obtener el formulario
+        var inputs = formulario.getElementsByTagName("input");  // Obtener todos los campos de entrada dentro del formulario
+
+        // Validar las contraseñas
+        if (datosVacios(inputs) && validarDatos(inputs) && validarContraseña(contraseña1) && segundaContraseña(contraseña1, contraseña2)) {
+            console.log('Todos los datos son correctos. Enviando datos...')
+
+            // Realizar una solicitud POST a la API utilizando fetch
+            fetch('https://ejemplo.com/api/endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datos)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('La solicitud no fue exitosa');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Respuesta de la API:', data);
+                    // Hacer algo con la respuesta de la API, si es necesario
+                })
+                .catch(error => {
+                    console.error('Error al enviar datos a la API:', error);
+                });
+        }// if
     }// enviarDatos_empleado()
 
+
+
+
+    function datosVacios(inputs) {
+        // Iterar sobre los campos y verificar si están vacíos
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].value.trim() === "") {
+                console.error("Hay campos vacios");
+                alert("Por favor, llene todos los campos.");
+                return false;
+            }// if
+        }// for
+        return true;
+    }// datosVacios()
+
+
     function validarContraseña(contraseña) {
-        // Expresión regular para validar que la contraseña contenga solo letras y números
-        var expresionRegular = /^[a-zA-Z0-9]{8,20}$/;
+        var expresionRegular = /^[a-zA-Z0-9]{8,20}$/;   // Expresión regular para validar que la contraseña contenga solo letras y números
 
         // Verificar si la contraseña cumple con los criterios
         if (expresionRegular.test(contraseña)) {
             console.log('La contraseña es válida.');
-            eliminarTextoHTML();
             return true;
         } else {
             var textaso = 'La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.'
-            generarTextoHTML(textaso);
-            console.log('La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.');
+            alert('La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.')
             return false;
         }
-    }
+    }// validarContraseña()
+
 
     function segundaContraseña(contraseña, contraseña2) {
-        const contraseña2_empleado = document.getElementById('contraseña2_empleado').value;
-        if (contraseña === contraseña2_empleado) {
+        if (contraseña === contraseña2) {
             console.log('Las dos contraseñas son iguales')
-            eliminarTextoHTML();
             return true;
         } else {
-            console.log("Las contraseñas deben ser iguales")
-            var textaso = "Las contraseñas deben ser iguales";
-            generarTextoHTML(textaso);
+            console.error("Las contraseñas deben ser iguales")
+            alert("Las contraseñas deben ser iguales");
             return false;
         }
     }
 
-    function generarTextoHTML(textaso) {
-        // Crear un nuevo elemento <p>
-        var parrafo = document.createElement("p");
 
-        // Agregar texto al nuevo párrafo
-        parrafo.textContent = textaso;
-
-        // Obtener los elementos con la clase 'mesageError'
-        var contenedores = document.getElementsByClassName("mesageError");
-
-        // Verificar que haya al menos un elemento con esa clase
-        for (var i = 0; i < contenedores.length; i++) {
-            var contenedor = contenedores[i];
-
-            // Eliminar el elemento <p> anterior si existe
-            var parrafosAnteriores = contenedor.getElementsByTagName("p");
-            if (parrafosAnteriores.length > 0) {
-                contenedor.removeChild(parrafosAnteriores[0]);
-            }
-
-            // Agregar el nuevo párrafo al contenedor actual
-            contenedor.appendChild(parrafo.cloneNode(true));
-            contenedor.classList.add('active');
-        }
-    }
-
-
-    function eliminarTextoHTML() {
-        console.log('patata')
-        var contenedores = document.getElementsByClassName("mesageError");
+    function validarDatos(inputs) {
+        var regex = /[,*()]/g; // Definir una expresión regular que coincida con los caracteres no permitidos
     
-        // Iterar sobre todos los contenedores
-        for (var i = 0; i < contenedores.length; i++) {
-            var contenedor = contenedores[i];
-            var parrafos = contenedor.getElementsByTagName("p");
+        // Comprobar si el texto contiene algún carácter no permitido
+        for (var i = 0; i < inputs.length; i++) {
+            var inputValue = inputs[i].value.trim(); // Obtener y limpiar el valor del campo
     
-            // Eliminar todos los elementos <p> en el contenedor
-            while (parrafos.length > 0) {
-                contenedor.removeChild(parrafos[0]);
+            if (regex.test(inputValue)) { // Probar el valor del campo contra la expresión regular
+                console.error("El texto no puede contener los siguientes caracteres: '[', ']', '*', '(', ')'");
+                alert("El texto no puede contener los siguientes caracteres: '[', ']', '*', '(', ')'");
+                return false;
             }
         }
-    }    
+        
+        // Si ningún campo contiene caracteres no permitidos, todos son válidos
+        console.log("Todos los textos son válidos.");
+        return true;
+    }// validarDatos()
 });

@@ -12,19 +12,20 @@
   <div id="fondo_2"></div>
   <div id="fondo_1"></div>
 
-  <div class="mesageError"><p>La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.</p></div>
+  <div class="mesageErrorGeneral"></div>
+  <div class="mesageErrorContra"><p>La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.</p></div>
 
   <div class="root" id="root_empleado">
     <h1>Empieza a expandir tus posibilidades</h1>
     <p>Primero necesitamos recopilar algunos datos</p>
     <form class="formulario" id="form_empleado">
       <input id="nombre_empleado" type="text" placeholder="NOMBRE Y APELLIDO">
-      <input id="email_empleado" type="email" placeholder="EMAIL">
+      <input id="email_empleado" type="email" placeholder="EMAIL" required>
       <input id="edad_empleado" type="date" placeholder="EDAD">
       <input id="contraseña1_empleado" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)">
       <input id="contraseña2_empleado" type="password" placeholder="CONFIRMAR CONTRASEÑA">
       <p id="aclaracion">Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de [nombre].</p>
-      <button type="button" id="datos_empleado">ACEPTAR Y CONTINUAR</button>
+      <button id="datos_empleado">ACEPTAR Y CONTINUAR</button>
     </form>
     <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
     <button class="google"><img src="./img/logo_google.jpg"><span>INGRESAR CON GOOGLE</span></button>
@@ -41,7 +42,7 @@
       <input id="contraseña1_empresa" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)">
       <input id="contraseña2_empresa" type="password" placeholder="CONFIRMAR CONTRASEÑA">
       <p id="aclaracion">Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de [nombre].</p>
-      <button type="button" id="datos_empresa">ACEPTAR Y CONTINUAR</button>
+      <button  id="datos_empresa">ACEPTAR Y CONTINUAR</button>
     </form>
     <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
     <button class="google"><img src="./img/logo_google.jpg"><span>INGRESAR CON GOOGLE</span></button>

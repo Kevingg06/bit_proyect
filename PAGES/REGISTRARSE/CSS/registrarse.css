@@ -203,18 +203,37 @@ button {
     cursor: pointer;
 }
 
-.mesageError{
+.mesageErrorContra{
     display: none;
     position: absolute;
     background-color: rgb(248, 126, 126);
-    top: 35.8%;
+    top: 41.5%;
     left: 60.5%;
     z-index: 10;
 }
-.mesageError > p{
+.mesageErrorContra > p{
     display: block;
     margin: 5px;
+    max-width: 390px;
 }
-.mesageError.active{
+.mesageErrorContra.active{
+    display: flex;
+}
+
+
+.mesageErrorGeneral{
+    display: none;
+    position: absolute;
+    background-color: rgb(248, 126, 126);
+    top: 20%;
+    left: 10%;
+    z-index: 9;
+}
+.mesageErrorGeneral > p{
+    display: block;
+    margin: 5px;
+    max-width: 300px;
+}
+.mesageErrorGeneral.active{
     display: flex;
 }
