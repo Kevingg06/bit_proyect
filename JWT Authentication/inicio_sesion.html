@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/inicio_sesion.css">
+    <title>Inicio de sesión</title>
+</head>
+
+<body> <!-- recién acá empieza el código. Todo lo de arriba son configuraciones predeterminadas-->
+    <div id="fondo_2"></div>
+    <div id="fondo_1"></div>
+    <div class="root">
+        <h1>INICIAR SESIÓN</h1> <!-- título principal -->
+        <form id="loginForm" class="formulario" action="/api/login" method="post">
+            <input type="email" id="username" placeholder="INGRESA TU EMAIL"> <!-- Acá escribe su respuesta -->
+            <input type=”password” id="password" placeholder="INGRESA TU CONTRASEÑA">
+            <button type="button" id="mostrar">MOSTRAR</button> <!-- Acá escribe su respuesta -->
+            <a id="olvido" href=”#”>¿Olvidaste tu contraseña?</a>  <!-- un link que te lleva a la pagina de recuperacion de contraseña -->
+            <a href=”#”>¿No tenés cuenta? Registrate</a> <!-- un link a la página de registro -->
+            <button type=”submit” id="ingresar">ENTRAR</button> <!-- botón de envío -->
+        </form>
+        <HR></HR>
+        <p>Al hacer clic en «Continuar como» a continuación, aceptas las Condiciones de uso,
+           la Política de privacidad y la Política de cookies de [nombre].</p>
+        <button id="google" type="submit"><img src="./logo_google.jpg"><span>INGRESAR CON GOOGLE</span></button>
+    </div>
+
+    <script src="/login.js"></script>
+</body>
+</html>
