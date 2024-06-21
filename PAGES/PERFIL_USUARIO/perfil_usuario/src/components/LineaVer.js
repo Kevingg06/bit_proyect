@@ -1,8 +1,14 @@
 import React from 'react'
-import './lineaVer.css';
+
+const styleLineaVer = {
+  width: '0.1%',
+  height: '100%',
+  marginLeft: '-3%',
+  backgroundColor: 'black',
+};
 
 export const LineaVer = () => {
   return (
-    <div className='lineaVer'></div>
+    <div style={styleLineaVer}></div>
   )
 }

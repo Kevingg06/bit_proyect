@@ -1,8 +1,15 @@
 import React from 'react'
-import './lineaHor.css'; // Importa tus estilos
+
+const styleLineaHor = {
+  width: '90%',
+  height: '0.1%',
+  marginTop: '3.5%',
+  marginLeft: '5%',
+  backgroundColor: 'black',
+};
 
 export const LineaHor = () => {
   return (
-    <div className='lineaHor'></div>
+    <div style={styleLineaHor}></div>
   )
 }

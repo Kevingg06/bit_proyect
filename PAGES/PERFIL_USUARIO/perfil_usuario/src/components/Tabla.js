@@ -29,68 +29,71 @@ const StyledHeaderCell = styled(TableCell)`
   }
 `;
 
+const StyledTableRow = styled(TableRow)`
+  height: 30px; /* Ajusta este valor para cambiar la altura de las filas */
+`;
+
 const TablaHorarios = () => (
   <StyledTableContainer component={Paper} variant="outlined">
     <Table aria-label="demo table">
       <TableHead>
-        <TableRow>
-          <StyledHeaderCell>Dessert</StyledHeaderCell>
-          <StyledHeaderCell>Calories</StyledHeaderCell>
-        </TableRow>
+        <StyledTableRow>
+          <StyledHeaderCell>Rango Horarios</StyledHeaderCell>
+          <StyledHeaderCell>Disponibilidad</StyledHeaderCell>
+        </StyledTableRow>
       </TableHead>
       <TableBody>
-        <TableRow>
-          <StyledTableCell>Frozen yoghurt</StyledTableCell>
-          <StyledTableCell>109</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Cupcake</StyledTableCell>
-          <StyledTableCell>305</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Ice cream sandwich</StyledTableCell>
-          <StyledTableCell>237</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Donut</StyledTableCell>
-          <StyledTableCell>452</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
-        <TableRow>
-          <StyledTableCell>Eclair</StyledTableCell>
-          <StyledTableCell>262</StyledTableCell>
-        </TableRow>
+        <StyledTableRow>
+          <StyledTableCell>00:00 - 02:00</StyledTableCell>
+          <TableCell>OCUPADO</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>02:00 - 04:00</StyledTableCell>
+          <TableCell>OCUPADO</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>04:00 - 06:00</StyledTableCell>
+          <TableCell>OCUPADO</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>06:00 - 08:00</StyledTableCell>
+          <TableCell>OCUPADO</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>08:00 - 10:00</StyledTableCell>
+          <TableCell>DISPONIBLE</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>10:00 - 12:00</StyledTableCell>
+          <TableCell>DISPONIBLE</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>12:00 - 14:00</StyledTableCell>
+          <TableCell>DISPONIBLE</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>14:00 - 16:00</StyledTableCell>
+          <TableCell>DISPONIBLE</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>16:00 - 18:00</StyledTableCell>
+          <TableCell>DISPONIBLE</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>18:00 - 20:00</StyledTableCell>
+          <TableCell>DISPONIBLE</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>20:00 - 22:00</StyledTableCell>
+          <TableCell>OCUPADO</TableCell>
+        </StyledTableRow>
+        <StyledTableRow>
+          <StyledTableCell>22:00 - 00:00</StyledTableCell>
+          <TableCell>OCUPADO</TableCell>
+        </StyledTableRow>
       </TableBody>
     </Table>
   </StyledTableContainer>
 );
 
 export default TablaHorarios;
-

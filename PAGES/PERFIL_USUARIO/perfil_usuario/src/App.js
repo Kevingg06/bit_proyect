@@ -1,7 +1,8 @@
 import './App.css';
-import { ComponentePrueba } from './components/ComponentePrueba';
+import DiaDisponible from './components/DiaDisponible';
 import { LineaHor } from './components/LineaHor';
 import { LineaVer } from './components/LineaVer';
+import { Nombre } from './components/Nombre';
 import TablaHorarios from './components/Tabla';
 
 function App() {
@@ -10,10 +11,14 @@ function App() {
       <header className="App-header">
         <div className='pantalla'>
           <div className='primeraInfo'>
-            <div className='imagen'></div>
-            <p id='nombre'>Nombre Apellido</p>
-            <button id='mensaje'></button>
-            <button id='guardar'></button>
+            <div className='apariencia'>
+              <div className='imagen'></div>
+              <Nombre />
+            </div>
+            <div className='interacciones'>
+              <button id='mensaje'></button>
+              <button id='guardar'></button>
+            </div>
           </div>
           <LineaHor />
           <div id='infoAdicional'>
@@ -32,6 +37,15 @@ function App() {
           <div id='calendario'>
             <div className='horarios'>
               <TablaHorarios />
+            </div>
+            <div className='dias'>
+              <DiaDisponible text='Lunes' />
+              <DiaDisponible text='Martes' />
+              <DiaDisponible text='Miercoles' />
+              <DiaDisponible text='Jueves' />
+              <DiaDisponible text='Viernes' />
+              <DiaDisponible text='Sábado' />
+              <DiaDisponible text='Domingo' />
             </div>
           </div>
         </div>
