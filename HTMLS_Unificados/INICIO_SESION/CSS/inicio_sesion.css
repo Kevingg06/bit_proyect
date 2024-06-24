@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+}
+
+body {
+    background-color: #F8F8F8;
+}
+
+#fondo_1{
+    position: absolute;
+    top: 0px;
+    left: 49%;
+    background-color: #A4A4A4;
+    width: 51%;
+    height: 100%;
+    z-index: 2;
+}
+
+#fondo_2{
+    position: absolute;
+    top: 0px;
+    left: 44%;
+    background-color: #D9D9D9;
+    width: 5%;
+    height: 100%;
+    z-index: 1;
+}
+
+.root {
+    padding: 1rem;
+    position: absolute;
+    top: 10%;
+    left: 37.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: white;
+    width: 25%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+::placeholder{
+    color: #4B0713;
+}
+
+button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fafafa;
+    font-weight: 600;
+    font-size: medium;
+}
+
+h1 {
+    color: black;
+    font-size: 30px;
+    height: 8%;
+    text-align: center;
+}
+
+#formulario {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    width: 80%;
+    height: 10%;
+    padding-left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+button {
+    display: flex;
+    background-color: #1D6FAB;
+    color: white;
+    width: 84%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#mostrarContra{
+    background-color: white;
+    color: black;
+    width: 25%;
+}
+
+
+#google{
+    background-color: white;
+    color: black;
+}
+
+#google > img{
+    width: 20px;
+    height: 20px;
+}
+
+#olvido{
+    text-align: justify;
+}
+
+#register{
+    display: flex;
+    text-align: justify;
+}
