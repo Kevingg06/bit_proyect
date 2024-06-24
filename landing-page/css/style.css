@@ -42,19 +42,22 @@ header {
 }
 
 #background {
-    background-image: url(/src/default.png);
+    background-image: url(../src/default.png);
+    background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50rem;
+    animation: moveUp 50s linear infinite;
 }
 
 section #container {
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: absolute;
     gap: 5rem;
 }
 
@@ -137,7 +140,7 @@ section #container #buttons a.active:hover{
 }
 
 #background.active {
-    background-image: url(/src/active.png);
+    background-image: url(../src/active.png);
 }
 
 #h1.active {
@@ -158,4 +161,14 @@ span.active {
 
 footer.active {
     background-color: var(--darkaccent);
+}
+
+@keyframes moveUp {
+    0% {
+        background-position: top;
+    }
+
+    100% {
+        background-position: bottom;
+    }
 }

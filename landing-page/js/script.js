@@ -19,4 +19,9 @@ toggle.onclick = function dark(){
     signIn.classList.toggle('active');
     logIn.classList.toggle('active');
     toggle.classList.toggle('active');
+    if(toggle.classList.contains('active')){
+        toggle.innerText = 'Oscuro';
+    }else{
+        toggle.innerText = 'Claro';
+    }    
 }
