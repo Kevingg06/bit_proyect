@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        document.getElementById('test12').addEventListener("click", enviarDatos);  // Event listener para el botón de enviar datos del empleado
+
+        function enviarDatos() {
+            console.log("jklasghdvkjhsgdajh");
+            const datosEmpleado = {
+                "contraseña1": "123456789",
+                "contraseña2": "123456789",
+                "edad": "12",
+                "email": "asd@asd.a",
+                "nombre": "ad"
+            }
+            fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                mode: 'cors',
+                body: JSON.stringify(datosEmpleado)
+            })
+                .then(response => {
+                    console.log('Respuesta recibida:', response.status);
+
+                    if (!response.ok) {
+                        throw new Error('La solicitud no fue exitosa');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+
+                    console.log('Respuesta de la API:', data); // Hacer algo con la respuesta de la API, si es necesario
+                    console.log('La solicitud POST se realizó correctamente');
+
+                })
+                .catch(error => {
+                    console.error('Error al enviar datos a la API:', error);
+                });
+
+        }
+
+
+
+    });
+</script>
+
+<body>
+    <button id="test12">
+        holaaaaaaaaaaaaaa
+    </button>
+    <a id="hola">nice</a>
+</body>
+
+</html>
