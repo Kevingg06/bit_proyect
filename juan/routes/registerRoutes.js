@@ -3,6 +3,7 @@ const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
 const db = require('../config');
 const jwt = require('jsonwebtoken');
+const PORT = process.env.PORT || 5501;
 
 // POST request handler for /register
 router.post('/', (req, res) => {
@@ -21,7 +22,7 @@ router.post('/', (req, res) => {
     }
 
     // Crear token JWT
-    const token = jwt.sign({ email, role }, 'secretKey');
+    const token = jwt.sign({ email, role }, 'SECRET_KEY');
 
     // Insertar usuario en la base de datos
     const insertQuery = 'INSERT INTO users (userId, username, userPassword, role, createdAt, contactsNumber, age, phoneNumber, mail, subscription, address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';

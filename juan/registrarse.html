@@ -127,35 +127,31 @@
         const contraseña2_empleado = document.getElementById('contraseña2_empleado').value;
 
 
-        var nombre = nombre_empleado;
-        var email = email_empleado;
-        var edad = edad_empleado
-        var contraseña1 = contraseña1_empleado;
-        var contraseña2 = contraseña2_empleado;
-
         // Construir un objeto con los datos que deseas enviar
         const datosEmpleado = {
-          nombre: nombre,
-          email: email,
-          edad: edad,
-          contraseña1: contraseña1,
-          contraseña2: contraseña2
+          'nombre': nombre_empleado,
+          'email': email_empleado,
+          'edad': edad_empleado,
+          'contraseña1': contraseña1_empleado,
+          'contraseña2': contraseña2_empleado
         };
+        
 
         var formulario = document.getElementById("form_empleado");   // Obtener el formulario
         var inputs = formulario.getElementsByTagName("input");  // Obtener todos los campos de entrada dentro del formulario
         console.log(' formulario leído')
 
         // Validar las contraseñas
-        if (datosVacios(inputs) && validarDatos(inputs) && validarContraseña(contraseña1) && segundaContraseña(contraseña1, contraseña2)) {
+        if (datosVacios(inputs) && validarDatos(inputs) && validarContraseña(contraseña1_empleado) && segundaContraseña(contraseña1_empleado, contraseña2_empleado)) {
           console.log('Todos los datos son correctos. Enviando datos...')
 
           // Realizar una solicitud POST a la API utilizando fetch
           console.log("HOLA", datosEmpleado)
-          fetch('http://localhost:3000/register', {
+          fetch('http://localhost:5501/register', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer <token>'
                 },
                 mode: 'cors',
                 body: JSON.stringify(datosEmpleado)
@@ -165,7 +161,7 @@
           //   mode: 'cors',
           //   headers: {
           //     'Content-Type': 'application/json',
-          //     'Authorization': 'Bearer <token>'
+          //     
           //   },
           //   credentials: 'include',  //le indica al navegador que incluya las cookies y otros datos de autenticación con la solicitud
           //   body: JSON.stringify(datosEmpleado)
