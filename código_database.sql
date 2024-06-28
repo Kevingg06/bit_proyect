@@ -7,7 +7,7 @@ use messi;
 create table users(
     userId varchar(70) not null,
     username varchar(40),
-    userPassword varchar(40),
+    userPassword varchar(120),
     role varchar(30),
     createdAt date,
     contactsNumber int(30) DEFAULT null,
