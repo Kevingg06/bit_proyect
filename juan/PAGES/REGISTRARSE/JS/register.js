@@ -139,8 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validar las contraseñas
         if (datosVacios(inputs) && validarDatos(inputs) && validarContraseña(contraseña1) && segundaContraseña(contraseña1, contraseña2)) {
-            console.log('Todos los datos son correctos. Enviando datos...')
-            
+            console.log('Todos los datos son correctos. Enviando datos...');
             
 
             // Realizar una solicitud POST a la API utilizando fetch
@@ -148,8 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer <token>',
-                    'Referer': 'http://localhost:5500/registrarse.html' 
+                    'Authorization': 'Bearer <token>', 
                 },
                 mode: 'cors',
                 credentials: 'include',  //le indica al navegador que incluya las cookies y otros datos de autenticación con la solicitud
@@ -164,18 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     return response.json();
                 })
                 .then(data => {
-                  
                         console.log('Respuesta de la API:', data); // Hacer algo con la respuesta de la API, si es necesario
                         console.log('La solicitud POST se realizó correctamente');
-            
+
+                        // la pagina te redirijirá en caso de que la respuesta sea exitosa
+                        window.location.href = 'http://localhost:3000/'; // Ajusta la URL según sea necesario;
                 })
                 .catch(error => {
                     console.error('Error al enviar datos a la API:', error);
                 });
             } else {
                 console.log('Validación de datos fallida');
-            }
-        // if
+            }// else
     }// enviarDatos_empleado()
 
     function datosVacios(inputs) {

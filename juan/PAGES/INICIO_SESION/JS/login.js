@@ -59,15 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     return response.json();
                 })
                 .then(data => {
-                    console.log('Respuesta de la API:', data);
-                    // Hacer algo con la respuesta de la API, si es necesario
+                    console.log('Respuesta de la API:', data); // Hacer algo con la respuesta de la API, si es necesario
+                    
+                    // la pagina te redirijirá en caso de que la respuesta sea exitosa
+                    window.location.href = 'http://localhost:3000/'; // Ajusta la URL según sea necesario;
                 })
                 .catch(error => {
                     console.error('Error al enviar datos a la API:', error);
+                    alert("Los datos ingresados son incorrectos")
                 });
-
-                
-            window.location.href = 'http://localhost:3000/'; // Ajusta la URL según sea necesario;
         }// if
     }// enviarDatos_empleado()
 
@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('La contraseña es válida.');
             return true;
         } else {
-            var textaso = 'La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.'
-            alert('La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.')
+            console.error('La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.');
+            alert('La contraseña no es válida. Debe contener solo letras y números, y tener entre 8 y 20 caracteres.');
             return false;
         }
     }// validarContraseña()
