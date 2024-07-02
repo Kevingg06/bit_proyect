@@ -2,6 +2,7 @@
     margin: 0;
 }
 
+/* Estilo para el encabezado fijo en la parte superior */
 #header {
     position: fixed;
     top: 0;
@@ -12,8 +13,7 @@
     background-color: red;
 }
 
-
-
+/* Contenedor principal ajustado debajo del encabezado */
 #pantalla_1 {
     margin-top: 60px;
     width: 100%;
@@ -22,6 +22,7 @@
     display: flex;
 }
 
+/* Estilo para el contenedor raíz */
 #root {
     margin-top: 1%;
     margin-left: 15%;
@@ -35,6 +36,7 @@
     box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para el título principal */
 h1 {
     margin: 3%;
     color: black;
@@ -43,14 +45,14 @@ h1 {
     text-align: center;
 }
 
-
-
+/* Contenedor general para el contenido */
 .container {
     width: 100%;
     height: 90%;
     border-radius: 10px;
 }
 
+/* Estilo para la caja de pestañas */
 .tab_box {
     width: 100%;
     height: 8%;
@@ -59,6 +61,7 @@ h1 {
     align-items: center;
 }
 
+/* Estilo para los botones de pestañas */
 .tab_box .tab_btn {
     font-size: 20px;
     width: 50%;
@@ -70,13 +73,13 @@ h1 {
     cursor: pointer;
 }
 
+/* Estilo para el botón de pestaña activo */
 .tab_box .tab_btn.active {
     color: black;
     background-color: white;
 }
 
-
-
+/* Estilo para la caja de contenido */
 .content_box {
     padding: 20px;
     height: 88%;
@@ -86,28 +89,32 @@ h1 {
     border-top-right-radius: 0;
 }
 
+/* Estilo para el contenido dentro de la caja de contenido */
 .content_box .content {
     display: none;
     height: 100%;
-    animation: movingX .5s ease
+    animation: movingX .5s ease;
 }
-@keyframes movingX{
+
+/* Animación para el contenido */
+@keyframes movingX {
     from {
         transform: translateX(50px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0px);
         opacity: 1;
     }
 }
 
+/* Estilo para el contenido activo */
 .content_box .content.active {
     display: block;
 }
 
-
-
+/* Estilo para el campo de entrada */
 input {
     margin-top: 2%;
     width: 85%;
@@ -117,15 +124,16 @@ input {
     font-size: 20px;
     background-color: white;
     border: 1px solid black;
-    border-radius: 5px;
     border-radius: 40px;
     box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo para el texto del placeholder */
 ::placeholder {
     font-size: 20px;
 }
 
+/* Estilo para los subtítulos pequeños */
 .mini_titulos {
     font-size: 30px;
     margin-top: 3%;
@@ -133,6 +141,7 @@ input {
     margin-left: 7.5%;
 }
 
+/* Estilo para los botones de menú de preguntas */
 .flecha_menu {
     display: block;
     margin-left: 8%;
@@ -150,7 +159,9 @@ input {
     border: none;
     cursor: pointer;
 }
-.flecha_menu.active{
+
+/* Estilo para el botón de menú activo */
+.flecha_menu.active {
     height: 2.4%;
     background-image: url(../img/flecha_menu2.png);
     background-size: contain;
@@ -158,6 +169,7 @@ input {
     cursor: pointer;
 }
 
+/* Estilo para las respuestas */
 .respuesta {
     display: none;
     margin-left: 12%;
@@ -165,31 +177,37 @@ input {
     margin-bottom: 2%;
     padding-right: 50px;
     font-size: 18px;
-    animation: movingY .3s ease
+    animation: movingY .3s ease;
 }
+
+/* Animación para las respuestas */
 @keyframes movingY {
     from {
         transform: translateY(-30px);
         opacity: 0;
-    }to {
+    }
+
+    to {
         transform: translateY(0px);
         opacity: 1;
-    }}
+    }
+}
 
+/* Estilo para las respuestas activas */
 .respuesta.active {
     display: block;
 }
 
-
-
-h2{
+/* Estilo para los títulos de contacto */
+h2 {
     font-size: 40px;
     text-align: center;
     display: block;
     margin-bottom: -3%;
 }
 
-p{
+/* Estilo para los párrafos */
+p {
     margin-top: -2%;
     margin-bottom: -2%;
     margin-left: 12%;
@@ -197,7 +215,8 @@ p{
     padding-right: 5%;
 }
 
-.linea{
+/* Estilo para la línea divisoria */
+.linea {
     width: 100%;
     height: 2px;
     margin-top: 5%;
@@ -205,26 +224,30 @@ p{
     display: block;
 }
 
-#imgContactos{
+/* Contenedor para las imágenes de contacto */
+#imgContactos {
     display: flex;
     justify-content: space-around;
     width: 90%;
     margin-left: 5%;
 }
 
-.contacto{
+/* Estilo para las imágenes de contacto */
+.contacto {
     margin-top: 3%;
     width: 150px;
     margin-bottom: 1%;
 }
 
-#txtContactos{
+/* Contenedor para los textos de contacto */
+#txtContactos {
     display: flex;
     justify-content: space-around;
     width: 90%;
     margin-left: 5%;
 }
 
-h4{
-  font-size: 30px;
+/* Estilo para los textos de contacto */
+h4 {
+    font-size: 30px;
 }

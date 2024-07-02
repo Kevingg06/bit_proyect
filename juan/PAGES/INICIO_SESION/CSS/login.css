@@ -1,31 +1,39 @@
-*{
+/* Reseteo de márgenes para todos los elementos */
+* {
     margin: 0;
 }
 
+/* Estilo para el cuerpo del documento */
 body {
     background-color: #F8F8F8;
+    /* Color de fondo */
 }
 
-#fondo_1{
+/* Fondo gris oscuro que cubre el 51% del ancho de la pantalla */
+#fondo_1 {
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 49%;
     background-color: #A4A4A4;
     width: 51%;
     height: 100%;
     z-index: 2;
+    /* Capa de superposición */
 }
 
-#fondo_2{
+/* Fondo gris claro que cubre el 5% del ancho de la pantalla */
+#fondo_2 {
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 44%;
     background-color: #D9D9D9;
     width: 5%;
     height: 100%;
     z-index: 1;
+    /* Capa de superposición */
 }
 
+/* Estilo del contenedor principal */
 .root {
     padding: 1rem;
     position: absolute;
@@ -39,14 +47,19 @@ body {
     height: 500px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra del contenedor */
     z-index: 3;
+    /* Capa de superposición */
 }
 
-::placeholder{
+/* Estilo para los placeholders de los inputs */
+::placeholder {
     color: #4B0713;
+    /* Color del texto del placeholder */
 }
 
-.ruta{
+/* Estilo para los enlaces de navegación */
+.ruta {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +71,7 @@ body {
     height: 10%;
 }
 
+/* Estilo para los encabezados */
 h1 {
     color: black;
     font-size: 30px;
@@ -65,6 +79,7 @@ h1 {
     text-align: center;
 }
 
+/* Estilo para el formulario */
 #formulario {
     margin: 0 auto;
     display: flex;
@@ -75,6 +90,7 @@ h1 {
     height: 100%;
 }
 
+/* Estilo para los campos de entrada */
 input {
     width: 80%;
     height: 10%;
@@ -84,6 +100,7 @@ input {
     border-radius: 5px;
 }
 
+/* Estilo para los botones */
 button {
     display: flex;
     background-color: #1D6FAB;
@@ -96,28 +113,32 @@ button {
     cursor: pointer;
 }
 
-#mostrarContra{
+/* Estilo específico para el botón de mostrar contraseña */
+#mostrarContra {
     background-color: white;
     color: black;
     width: 25%;
 }
 
-
-#google{
+/* Estilo específico para el botón de Google */
+#google {
     background-color: white;
     color: black;
 }
 
-#google > img{
+/* Estilo para la imagen dentro del botón de Google */
+#google>img {
     width: 20px;
     height: 20px;
 }
 
-#olvido{
+/* Estilo para el enlace de "Olvidaste tu contraseña" */
+#olvido {
     text-align: justify;
 }
 
-#register{
+/* Estilo para el enlace de "Registrate" */
+#register {
     display: flex;
     text-align: justify;
 }
