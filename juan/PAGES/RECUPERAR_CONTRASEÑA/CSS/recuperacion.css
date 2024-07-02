@@ -1,148 +1,166 @@
+/* Reset de márgenes para todos los elementos */
 * {
     margin: 0;
 }
 
+/* Estilos generales para el cuerpo de la página */
 body {
-    background-color: #F8F8F8;
+    background-color: #F8F8F8; /* Color de fondo */
 }
 
+/* Fondo izquierdo oscuro */
 #fondo_1 {
-    position: absolute;
-    top: 0px;
-    left: 49%;
-    background-color: #A4A4A4;
-    width: 51%;
-    height: 100%;
-    z-index: 2;
+    position: absolute; /* Posición absoluta */
+    top: 0px; /* Desde la parte superior */
+    left: 49%; /* A la mitad derecha del cuerpo */
+    background-color: #A4A4A4; /* Color de fondo */
+    width: 51%; /* Ancho del 51% */
+    height: 100%; /* Alto del 100% */
+    z-index: 2; /* Índice Z para capas */
 }
 
+/* Fondo derecho más claro */
 #fondo_2 {
-    position: absolute;
-    top: 0px;
-    left: 44%;
-    background-color: #D9D9D9;
-    width: 5%;
-    height: 100%;
-    z-index: 1;
+    position: absolute; /* Posición absoluta */
+    top: 0px; /* Desde la parte superior */
+    left: 44%; /* A la izquierda del 44% */
+    background-color: #D9D9D9; /* Color de fondo */
+    width: 5%; /* Ancho del 5% */
+    height: 100%; /* Alto del 100% */
+    z-index: 1; /* Índice Z para capas */
 }
 
+/* Contenedor principal oculto */
 .root {
-    display: none;
-    position: absolute;
-    top: 15%;
-    left: 35%;
-    background-color: white;
-    width: 30%;
-    height: 450px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
-    z-index: 3;
-    animation: movingX .3s ease;
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Posición absoluta */
+    top: 15%; /* Desde la parte superior */
+    left: 35%; /* A la izquierda del 35% */
+    background-color: white; /* Color de fondo */
+    width: 30%; /* Ancho del 30% */
+    height: 450px; /* Altura fija */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 3; /* Índice Z para capas */
+    animation: movingX .3s ease; /* Animación de entrada */
 }
-@keyframes movingX{
+
+/* Animación de entrada */
+@keyframes movingX {
     from {
-        transform: translateX(200px);
-        opacity: 0;
+        transform: translateX(200px); /* Empieza desplazado */
+        opacity: 0; /* Opacidad inicial */
     }
     to {
-        transform: translateX(0px);
-        opacity: 1;
+        transform: translateX(0px); /* Sin desplazamiento */
+        opacity: 1; /* Opacidad completa */
     }
 }
 
-.root.active{
-    display: block;
+/* Mostrar el contenedor activo */
+.root.active {
+    display: block; /* Mostrar activamente */
 }
 
+/* Estilos para el marcador de posición */
 ::placeholder {
-    font-size: 18px;
-    
+    font-size: 18px; /* Tamaño del texto del marcador de posición */
 }
 
+/* Estilos para el título principal */
 h1 {
-    display: inline-block;
-    color: black;
-    margin-top: 5%;
-    margin-left: 8%;
-    font-size: 40px;
-    width: 60%;
-    height: 20%;
-    text-align: left;
+    display: inline-block; /* Mostrar en línea */
+    color: black; /* Color del texto */
+    margin-top: 5%; /* Margen desde arriba */
+    margin-left: 8%; /* Margen desde la izquierda */
+    font-size: 40px; /* Tamaño de fuente */
+    width: 60%; /* Ancho del 60% */
+    height: 20%; /* Altura del 20% */
+    text-align: left; /* Alineación del texto */
 }
 
-.circulo{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 5%;
-    left: 82%;
-    width: 12%;
-    height: 12%;
-    border: 1px solid black;
-    border-radius: 100%;
+/* Estilos para el círculo indicador */
+.circulo {
+    position: absolute; /* Posición absoluta */
+    display: flex; /* Mostrar como flexbox */
+    align-items: center; /* Alinear elementos verticalmente */
+    justify-content: center; /* Justificar contenido */
+    top: 5%; /* Desde la parte superior */
+    left: 82%; /* A la derecha del 82% */
+    width: 12%; /* Ancho del 12% */
+    height: 12%; /* Altura del 12% */
+    border: 1px solid black; /* Borde sólido */
+    border-radius: 100%; /* Borde redondeado */
 }
 
-.circulo > p{
-    font-size: 20px;
+/* Estilos para el texto dentro del círculo */
+.circulo > p {
+    font-size: 20px; /* Tamaño de fuente */
 }
 
+/* Estilos para el formulario */
 .formulario {
-    margin-top: 3%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 60%;
+    margin-top: 3%; /* Margen desde arriba */
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: column; /* Dirección de columnas */
+    width: 100%; /* Ancho completo */
+    height: 60%; /* Altura del 60% */
 }
 
-.input{
-    width: 80%;
-    height: 15%;
-    margin-left: 8%;
-    margin-top: 5%;
-    padding-left: 15px;
-    font-size: 18px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
+/* Estilos para los campos de entrada */
+.input {
+    width: 80%; /* Ancho del 80% */
+    height: 15%; /* Altura del 15% */
+    margin-left: 8%; /* Margen desde la izquierda */
+    margin-top: 5%; /* Margen desde arriba */
+    padding-left: 15px; /* Relleno a la izquierda */
+    font-size: 18px; /* Tamaño de fuente */
+    background-color: white; /* Color de fondo */
+    border: 1px solid black; /* Borde sólido */
+    border-radius: 5px; /* Borde redondeado */
 }
 
+/* Estilos para el botón de siguiente */
 .siguiente {
-    display: flex;
-    justify-content: center;
-    width: 82%;
-    height: 17%;
-    margin-top: 5%;
-    margin-left: 8%;
-    padding: 13px;
-    background-color: #1D6FAB;
-    border: 3px solid #10416D;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
+    display: flex; /* Mostrar como flexbox */
+    justify-content: center; /* Justificar contenido */
+    width: 82%; /* Ancho del 82% */
+    height: 17%; /* Altura del 17% */
+    margin-top: 5%; /* Margen desde arriba */
+    margin-left: 8%; /* Margen desde la izquierda */
+    padding: 13px; /* Relleno */
+    background-color: #1D6FAB; /* Color de fondo */
+    border: 3px solid #10416D; /* Borde sólido */
+    border-radius: 20px; /* Borde redondeado */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cursor apuntador */
 }
 
-.volver{
-    margin-left: 5%;
-    font-size: 15px;
-    background-color: white;
-    border: none;
-    color: black;
-    cursor: pointer;
+/* Estilos para el botón de volver */
+.volver {
+    margin-left: 5%; /* Margen desde la izquierda */
+    font-size: 15px; /* Tamaño de fuente */
+    background-color: white; /* Color de fondo */
+    border: none; /* Sin borde */
+    color: black; /* Color del texto */
+    cursor: pointer; /* Cursor apuntador */
 }
 
-.volver a{
-    color: black;
-    text-decoration: none;
+/* Estilos para el enlace dentro del botón de volver */
+.volver a {
+    color: black; /* Color del texto */
+    text-decoration: none; /* Sin decoración de texto */
 }
 
+/* Estilos para párrafos */
 p {
-    margin-left: 8%;
-    margin-top: 5%;
-    margin-bottom: 3%;
-    font-size: 20px;
+    margin-left: 8%; /* Margen desde la izquierda */
+    margin-top: 5%; /* Margen desde arriba */
+    margin-bottom: 3%; /* Margen desde abajo */
+    font-size: 20px; /* Tamaño de fuente */
 }
 
-a{
-    margin-left: 8%;
+/* Estilos para enlaces */
+a {
+    margin-left: 8%; /* Margen desde la izquierda */
 }
