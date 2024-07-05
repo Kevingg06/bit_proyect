@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 
-export const Titulos = () => {
-    const [texto, setTexto] = useState("Todavía no se han añadido títulos");
+export const Descripcion = () => {
+    const [texto, setTexto] = useState("Todavía no se ha añadido una descripción");
 
     const cambiarTexto = (nuevoTexto) => {
         setTexto(nuevoTexto);
@@ -24,7 +24,7 @@ export const Titulos = () => {
                 <div>
                     <TextField
                         id="outlined-multiline-flexible"
-                        label="Agregue sus títulos"
+                        label="Descríbase brevemente"
                         multiline
                         maxRows={1}
                         onChange={e => cambiarTexto(e.target.value)}

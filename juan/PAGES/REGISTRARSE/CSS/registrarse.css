@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #F8F8F8; /* Color de fondo para todo el cuerpo del documento */
+    background-color: #f7f0e5; /* Color de fondo para todo el cuerpo del documento */
 }
 
 /* Estilos para el fondo 1 */
@@ -11,7 +11,7 @@ body {
     position: absolute; /* Posición absoluta */
     top: 0px; /* Alineado en la parte superior */
     left: 49%; /* Alineado al 49% del ancho del documento */
-    background-color: #A4A4A4; /* Color de fondo */
+    background-color: #e9d7ba; /* Color de fondo */
     width: 51%; /* Ancho del fondo */
     height: 100%; /* Altura del fondo que cubre toda la página */
     z-index: 2; /* Capa z-index para superponer sobre otros elementos */
@@ -22,7 +22,7 @@ body {
     position: absolute; /* Posición absoluta */
     top: 0px; /* Alineado en la parte superior */
     left: 44%; /* Alineado al 44% del ancho del documento */
-    background-color: #D9D9D9; /* Color de fondo */
+    background-color: #f1e3cb; /* Color de fondo */
     width: 5%; /* Ancho del fondo */
     height: 100%; /* Altura del fondo que cubre toda la página */
     z-index: 1; /* Capa z-index inferior al fondo 1 */
@@ -81,7 +81,7 @@ body {
 
 /* Estilos para el placeholder de los inputs */
 ::placeholder{
-    color: black; /* Color del texto del placeholder */
+    color: #4B0713; /* Color del texto del placeholder */
 }
 
 /* Estilos para los enlaces */
@@ -93,7 +93,7 @@ a {
 
 /* Estilos para los títulos h1 */
 h1 {
-    color: black; /* Color del texto */
+    color: #4B0713; /* Color del texto */
     text-align: center; /* Alineación centrada */
     margin: 5%; /* Margen general */
     margin-bottom: 2%; /* Margen inferior */
@@ -106,6 +106,7 @@ h2{
     margin: 7%; /* Margen general */
     margin-top: 7%; /* Margen superior */
     text-align: center; /* Alineación centrada */
+    color: #4B0713;
 }
 
 /* Estilos para los párrafos */
@@ -133,7 +134,7 @@ input {
     margin-bottom: 3%; /* Margen inferior */
     padding-left: 15px; /* Relleno izquierdo */
     background-color: white; /* Color de fondo */
-    border: 1px solid black; /* Borde */
+    border: 1px solid #4B0713; /* Borde */
     border-radius: 5px; /* Borde redondeado */
 }
 

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     roots[prevIndex].classList.add('active');
                 }
             } else {
-                window.location.href = "../INICIO_SESION/inicio_sesion.html"; // Si está en el primer paso, redirigir a otra página
+                window.location.href = "../INICIO_SESION/login.html"; // Si está en el primer paso, redirigir a otra página
             }
         });
     });

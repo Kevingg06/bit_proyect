@@ -5,6 +5,7 @@ import { LineaVer } from './components/LineaVer';
 import { Nombre } from './components/Nombre';
 import { Titulos } from './components/Titulos';
 import TablaHorarios from './components/Tabla';
+import { Descripcion } from './components/Descripcion';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
             <LineaVer />
             <div id='descripcion'>
               <h3>Mi descripción</h3>
-              <p>Todavía no has añadido una descripción</p>
+              <Descripcion />
             </div>
           </div>
           <LineaHor />

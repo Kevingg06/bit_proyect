@@ -17,8 +17,8 @@
 #pantalla_1 {
     margin-top: 60px;
     width: 100%;
-    height: 910px;
-    background-color: #D9D9D9;
+    height: 1050px;
+    background-color: #f1e7d6;
     display: flex;
 }
 
@@ -29,9 +29,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #D9D9D9;
+    background-color: #ccb288;
     width: 70%;
-    height: 860px;
+    height: 970px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
 }
@@ -76,14 +76,14 @@ h1 {
 /* Estilo para el botón de pestaña activo */
 .tab_box .tab_btn.active {
     color: black;
-    background-color: white;
+    background-color: #f1e3cb;
 }
 
 /* Estilo para la caja de contenido */
 .content_box {
     padding: 20px;
     height: 88%;
-    background-color: white;
+    background-color: #f1e3cb;
     border-radius: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -146,10 +146,10 @@ input {
     display: block;
     margin-left: 8%;
     height: 3.5%;
-    background-image: url(../img/flecha_menu.png);
+    background-color: #f1e3cb;
+    background-image: url(../src/flecha_menu.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: white;
     text-align: left;
     padding-left: 4%;
     padding-top: 0;
@@ -162,8 +162,8 @@ input {
 
 /* Estilo para el botón de menú activo */
 .flecha_menu.active {
-    height: 2.4%;
-    background-image: url(../img/flecha_menu2.png);
+    height: 3.5%;
+    background-image: url(../src/flecha_menu2.png);
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -173,7 +173,7 @@ input {
 .respuesta {
     display: none;
     margin-left: 12%;
-    margin-top: -2%;
+    margin-top: -3%;
     margin-bottom: 2%;
     padding-right: 50px;
     font-size: 18px;

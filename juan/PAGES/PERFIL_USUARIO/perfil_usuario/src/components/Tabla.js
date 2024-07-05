@@ -10,20 +10,29 @@ import Paper from '@mui/material/Paper';
 import styled from '@emotion/styled';
 
 const StyledTableContainer = styled(TableContainer)`
-  border: 2px solid black;
+  border: 2px solid #4B0713;
   border-radius: 20px;
   overflow: hidden; /* Esto asegura que el contenido de la tabla respete los bordes redondeados */
 `;
 
 const StyledTableCell = styled(TableCell)`
-  border-right: 2px solid black;
+  border-right: 2px solid #4B0713;
   width: 50%;
+  color: #4B0713;
+  background-color: #f7f0e5
+`;
+
+const StyledTableCell2 = styled(TableCell)`
+  width: 50%;
+  color: #4B0713;
+  background-color: #f7f0e5
 `;
 
 const StyledHeaderCell = styled(TableCell)`
-  background-color: #D9D9D9;
+  background-color: #dabc89;
   font-weight: bold;
-  border-right: 2px solid black;
+  color: #4B0713;
+  border-right: 2px solid #4B0713;
   &:last-child {
     border-right: none;
   }
@@ -45,51 +54,51 @@ const TablaHorarios = () => (
       <TableBody>
         <StyledTableRow>
           <StyledTableCell>00:00 - 02:00</StyledTableCell>
-          <TableCell>OCUPADO</TableCell>
+          <StyledTableCell2>OCUPADO</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>02:00 - 04:00</StyledTableCell>
-          <TableCell>OCUPADO</TableCell>
+          <StyledTableCell2>OCUPADO</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>04:00 - 06:00</StyledTableCell>
-          <TableCell>OCUPADO</TableCell>
+          <StyledTableCell2>OCUPADO</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>06:00 - 08:00</StyledTableCell>
-          <TableCell>OCUPADO</TableCell>
+          <StyledTableCell2>OCUPADO</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>08:00 - 10:00</StyledTableCell>
-          <TableCell>DISPONIBLE</TableCell>
+          <StyledTableCell2>DISPONIBLE</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>10:00 - 12:00</StyledTableCell>
-          <TableCell>DISPONIBLE</TableCell>
+          <StyledTableCell2>DISPONIBLE</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>12:00 - 14:00</StyledTableCell>
-          <TableCell>DISPONIBLE</TableCell>
+          <StyledTableCell2>DISPONIBLE</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>14:00 - 16:00</StyledTableCell>
-          <TableCell>DISPONIBLE</TableCell>
+          <StyledTableCell2>DISPONIBLE</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>16:00 - 18:00</StyledTableCell>
-          <TableCell>DISPONIBLE</TableCell>
+          <StyledTableCell2>DISPONIBLE</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>18:00 - 20:00</StyledTableCell>
-          <TableCell>DISPONIBLE</TableCell>
+          <StyledTableCell2>DISPONIBLE</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>20:00 - 22:00</StyledTableCell>
-          <TableCell>OCUPADO</TableCell>
+          <StyledTableCell2>OCUPADO</StyledTableCell2>
         </StyledTableRow>
         <StyledTableRow>
           <StyledTableCell>22:00 - 00:00</StyledTableCell>
-          <TableCell>OCUPADO</TableCell>
+          <StyledTableCell2>OCUPADO</StyledTableCell2>
         </StyledTableRow>
       </TableBody>
     </Table>
