@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Definición de variables de colores para el tema claro */
+:root {
+    --primario: #3e3a55;
+    --secundario: #bb9bb7;
+    --texto: #13121c;
+    --fondo: #eaeaf0;
+    --accent: #8c5f73;
+}
+
+/* Definición de variables de colores para el tema oscuro */
+:root {
+    --darkprimario: #aeaac5;
+    --darksecundario: #644460;
+    --darktexto: #e4e3ed;
+    --darkfondo: #0f0f15;
+    --darkaccent: #a07387;
+}
+
+/* Transición suave para todos los elementos */
+* {
+    transition: all ease-in-out 350ms;
+}
+
+/* Estilo general para el cuerpo de la página */
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0 auto;
+    height: auto;
+}
+
+/* Estilo del encabezado */
+header {
+    padding: 0rem 2.5rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: sticky;
+    background: var(--fondo);
+    height: 5rem;
+    box-shadow: 0 0 5px 2px var(--accent);
+}
+
+/* Estilo del encabezado en modo oscuro */
+#header.active {
+    background: var(--darkfondo);
+}
+
+/* Estilo del fondo con una imagen y animación */
+#background {
+    background-image: url(../src/default.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    animation: moveUp 50s linear infinite;
+}
+
+/* Contenedor principal dentro de la sección */
+section #container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    gap: 5rem;
+}
+
+/* Estilo para los párrafos dentro de la sección */
+section p {
+    text-align: justify;
+}
+
+/* Estilo para los enlaces dentro de los párrafos */
+section p a {
+    text-decoration: none;
+}
+
+/* Estilo para el título principal */
+section #container h1 {
+    color: var(--texto);
+    font-size: 5rem;
+}
+
+/* Estilo para el título principal en modo oscuro */
+section #container h1.active {
+    color: var(--darktexto);
+}
+
+/* Estilo para el contenedor de botones */
+section #container #buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* Estilo para los botones */
+section #container #buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    background: none;
+    border: solid 0.2rem var(--primario);
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    color: var(--primario);
+}
+
+/* Estilo para los botones al pasar el cursor por encima */
+section #container #buttons a:hover {
+    background: var(--primario);
+    color: var(--fondo);
+}
+
+/* Estilo para el botón de cambio de tema */
+#switch {
+    background: none;
+    border: none;
+    color: var(--texto);
+    font-weight: 800;
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: var(--accent);
+    height: 5rem;
+}
+
+/* Estilo para el botón de cambio de tema en modo oscuro */
+#switch.active {
+    color: var(--darktexto);
+}
+
+/* Estilo para los botones en modo oscuro */
+section #container #buttons a.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    background: none;
+    border: solid 0.2rem var(--darkprimario);
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    color: var(--darkprimario);
+}
+
+/* Estilo para los botones al pasar el cursor por encima en modo oscuro */
+section #container #buttons a.active:hover {
+    background: var(--darkprimario);
+    color: var(--darkfondo);
+}
+
+/* Estilo para el fondo en modo oscuro */
+#background.active {
+    background-image: url(../src/active.png);
+}
+
+/* Estilo para el título principal en modo oscuro */
+#h1.active {
+    color: var(--darktexto);
+}
+
+/* Estilo para los párrafos en modo oscuro */
+p.active {
+    color: var(--darktexto);
+}
+
+/* Estilo para los enlaces dentro de los párrafos en modo oscuro */
+p.active a {
+    color: var(--darkprimario);
+}
+
+/* Estilo para el span en modo oscuro */
+span.active {
+    color: var(--darktexto);
+}
+
+/* Estilo para el pie de página en modo oscuro */
+footer.active {
+    background-color: var(--darkaccent);
+}
+
+/* Animación para el fondo */
+@keyframes moveUp {
+    0% {
+        background-position: top;
+    }
+
+    100% {
+        background-position: bottom;
+    }
+}

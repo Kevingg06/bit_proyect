@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadatos y configuraciones del documento -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibilidad con Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración para diseño responsivo -->
+    <link rel="stylesheet" href="./CSS/login.css"> <!-- Vinculación de la hoja de estilos CSS -->
+    <script src="./JS/login.js"></script> <!-- Vinculación del archivo JavaScript -->
+    <title>Inicio de sesión</title> <!-- Título de la página -->
+</head>
+
+<body> <!-- Contenido del cuerpo del documento -->
+    <!-- Fondo de la página -->
+    <div id="fondo_2"></div>
+    <div id="fondo_1"></div>
+
+    <!-- Contenedor principal -->
+    <div class="root">
+        <h1>INICIAR SESIÓN</h1> <!-- Título principal -->
+
+        <!-- Formulario de inicio de sesión -->
+        <form id="formulario">
+            <input type="email" id="email" placeholder="INGRESA TU EMAIL"> <!-- Campo para ingresar el email -->
+            <input type="password" id="contraseña" placeholder="INGRESA TU CONTRASEÑA"> <!-- Campo para ingresar la contraseña -->
+            <button type="button" id="mostrarContra">MOSTRAR</button> <!-- Botón para mostrar la contraseña -->
+            <a id="olvido" href="../RECUPERAR_CONTRASEÑA/recuperacion.html">¿Olvidaste tu contraseña?</a> <!-- Enlace para la página de recuperación de contraseña -->
+            <a id="register" href="../REGISTRARSE/registrarse.html">¿No tenés cuenta? Registrate</a> <!-- Enlace para la página de registro -->
+            <button type="button" id="ingresar">Entrar</button> <!-- Botón para iniciar sesión -->
+            <button id="google">
+                <img src="./img/logo_google.jpg">INGRESAR CON GOOGLE <!-- Botón para iniciar sesión con Google -->
+            </button>
+        </form>
+    </div>
+</body>
+</html>
