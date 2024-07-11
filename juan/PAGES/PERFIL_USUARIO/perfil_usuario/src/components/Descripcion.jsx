@@ -23,10 +23,11 @@ export const Descripcion = () => {
             >
                 <div>
                     <TextField
-                        id="outlined-multiline-flexible"
+                        id="standard-multiline-flexible"
                         label="Descríbase brevemente"
                         multiline
                         maxRows={1}
+                        variant="standard"
                         onChange={e => cambiarTexto(e.target.value)}
                     />
                 </div>

@@ -23,10 +23,11 @@ export const Titulos = () => {
             >
                 <div>
                     <TextField
-                        id="outlined-multiline-flexible"
-                        label="Agregue sus títulos"
+                        id="standard-multiline-flexible"
+                        label="Agrege sus títulos"
                         multiline
                         maxRows={1}
+                        variant="standard"
                         onChange={e => cambiarTexto(e.target.value)}
                     />
                 </div>
