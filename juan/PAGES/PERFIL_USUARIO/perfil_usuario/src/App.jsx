@@ -40,15 +40,6 @@ function App() {
             <div className='horarios'>
               <TablaHorarios />
             </div>
-            <div className='dias'>
-              <DiaDisponible text='Lunes' />
-              <DiaDisponible text='Martes' />
-              <DiaDisponible text='Miercoles' />
-              <DiaDisponible text='Jueves' />
-              <DiaDisponible text='Viernes' />
-              <DiaDisponible text='Sábado' />
-              <DiaDisponible text='Domingo' />
-            </div>
           </div>
         </div>
       </header>
