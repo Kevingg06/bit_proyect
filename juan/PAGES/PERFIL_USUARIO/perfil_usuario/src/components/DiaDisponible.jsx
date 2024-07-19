@@ -37,5 +37,3 @@ const DiaDisponible = ({ text }) => {
 };
 
 export default DiaDisponible;
-
-
