@@ -1,0 +1,212 @@
+*{
+  margin: 0; /* Elimina el margen predeterminado en todos los elementos */
+}
+
+body {
+  background-color: #f7f0e5; /* Color de fondo para todo el cuerpo del documento */
+}
+
+/* Estilos para el fondo 1 */
+#fondo_1 {
+  position: absolute; /* Posición absoluta */
+  top: 0px; /* Alineado en la parte superior */
+  left: 49%; /* Alineado al 49% del ancho del documento */
+  background-color: #e9d7ba; /* Color de fondo */
+  width: 51%; /* Ancho del fondo */
+  height: 100%; /* Altura del fondo que cubre toda la página */
+  z-index: 2; /* Capa z-index para superponer sobre otros elementos */
+}
+
+/* Estilos para el fondo 2 */
+#fondo_2 {
+  position: absolute; /* Posición absoluta */
+  top: 0px; /* Alineado en la parte superior */
+  left: 44%; /* Alineado al 44% del ancho del documento */
+  background-color: #f1e3cb; /* Color de fondo */
+  width: 5%; /* Ancho del fondo */
+  height: 100%; /* Altura del fondo que cubre toda la página */
+  z-index: 1; /* Capa z-index inferior al fondo 1 */
+}
+
+/* Estilos para las secciones pantalla (contenedores principales) */
+.pantalla {
+  display: none; /* Inicialmente oculto */
+  position: absolute; /* Posición absoluta */
+  top: 3%; /* Alineado al 3% desde la parte superior */
+  left: 37.5%; /* Alineado al 37.5% del ancho del documento */
+  flex-direction: column; /* Dirección de flexión para elementos secundarios */
+  background-color: white; /* Color de fondo */
+  width: 25%; /* Ancho del contenedor */
+  height: 630px; /* Altura del contenedor */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 3; /* Capa z-index para superponer sobre fondos */
+  animation: movingX1 .3s ease; /* Animación de entrada */
+}
+
+/* Estilos específicos para el contenedor de elección */
+#root_eleccion{
+  display: none; /* Inicialmente oculto */
+  top: 25%; /* Alineado al 25% desde la parte superior */
+  height: 250px; /* Altura fija */
+  animation: movingX1 .3s ease; /* Animación de entrada */
+}
+
+/* Animación de entrada general */
+@keyframes movingX1 {
+  from {
+      transform: translateX(400px); /* Movimiento inicial hacia la derecha */
+      opacity: 0; /* Opacidad inicial */
+  }
+  to {
+      transform: translateX(0px); /* Movimiento final a la posición original */
+      opacity: 1; /* Opacidad final */
+  }
+}
+
+/* Estilos activos para el contenedor de elección */
+#root_eleccion.active{
+  display: flex; /* Mostrar como flexbox cuando está activo */
+}
+
+/* Estilos activos para el contenedor de empleado */
+#root_empleado.active{
+  display: flex; /* Mostrar como flexbox cuando está activo */
+}
+
+/* Estilos activos para el contenedor de empresa */
+#root_empresa.active{
+  display: flex; /* Mostrar como flexbox cuando está activo */
+}
+
+/* Estilos para el placeholder de los inputs */
+::placeholder{
+  color: #4B0713; /* Color del texto del placeholder */
+}
+
+/* Estilos para los enlaces */
+a {
+  font-size: 17px; /* Tamaño de fuente */
+  margin-left: 8%; /* Margen izquierdo */
+  margin-bottom: 3%; /* Margen inferior */
+}
+
+/* Estilos para los títulos h1 */
+h1 {
+  color: #4B0713; /* Color del texto */
+  text-align: center; /* Alineación centrada */
+  margin: 5%; /* Margen general */
+  margin-bottom: 2%; /* Margen inferior */
+  font-size: 30px; /* Tamaño de fuente */
+  height: 12%; /* Altura del título */
+}
+
+/* Estilos para los subtítulos h2 */
+h2{
+  margin: 7%; /* Margen general */
+  margin-top: 7%; /* Margen superior */
+  text-align: center; /* Alineación centrada */
+  color: #4B0713;
+}
+
+/* Estilos para los párrafos */
+p{
+  margin: 8%; /* Margen general */
+  margin-bottom: 5%; /* Margen inferior */
+  margin-top: 3%; /* Margen superior */
+  font-size: 20px; /* Tamaño de fuente */
+}
+
+/* Estilos para los formularios */
+.formulario {
+  margin: 0 auto; /* Margen automático */
+  display: flex; /* Mostrar como flexbox */
+  flex-direction: column; /* Dirección de flexión */
+  width: 100%; /* Ancho completo */
+  height: 70%; /* Altura del formulario */
+}
+
+/* Estilos para los inputs dentro del formulario */
+input {
+  width: 76.5%; /* Ancho del input */
+  height: 8%; /* Altura del input */
+  margin-left: 8%; /* Margen izquierdo */
+  margin-bottom: 3%; /* Margen inferior */
+  padding-left: 15px; /* Relleno izquierdo */
+  background-color: white; /* Color de fondo */
+  border: 1px solid #4B0713; /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+/* Estilos para el texto de aclaración */
+#aclaracion{
+  font-size: 15px; /* Tamaño de fuente */
+  margin-bottom: 4%; /* Margen inferior */
+}
+
+/* Estilos para los botones */
+button {
+  margin-left: 8%; /* Margen izquierdo */
+  margin-bottom: 2%; /* Margen inferior */
+  background-color: #1D6FAB; /* Color de fondo */
+  color: white; /* Color del texto */
+  width: 84%; /* Ancho del botón */
+  height: 45px; /* Altura del botón */
+  border-radius: 20px; /* Borde redondeado */
+  cursor: pointer; /* Cursor al pasar */
+}
+
+/* Estilos para los botones de elección */
+.btn_eleccion{
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Justificar contenido centrado */
+  width: 85%; /* Ancho del botón */
+  height: 40px; /* Altura del botón */
+  margin-left: 8%; /* Margen izquierdo */
+  margin-top: 3%; /* Margen superior */
+  padding: 10px; /* Relleno */
+  background-color: white; /* Color de fondo */
+  color: black; /* Color del texto */
+  cursor: pointer; /* Cursor al pasar */
+}
+
+/* Estilos específicos para el botón de empleado */
+#btn_empleado{
+  background-color: #1D6FAB; /* Color de fondo */
+  color: white; /* Color del texto */
+}
+
+/* Estilos para el contenedor de Google */
+.google{
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Justificar contenido centrado */
+  width: 80%; /* Ancho del contenedor */
+  height: 40px; /* Altura del contenedor */
+  margin-left: 8%; /* Margen izquierdo */
+  padding: 7px; /* Relleno */
+  background-color: white; /* Color de fondo */
+  color: black; /* Color del texto */
+  cursor: pointer; /* Cursor al pasar */
+}
+
+/* Estilos para la imagen dentro del contenedor de Google */
+.google > img{
+  width: 20px; /* Ancho de la imagen */
+  height: 20px; /* Altura de la imagen */
+}
+
+/* Estilos para el texto dentro del contenedor de Google */
+.google > span{
+  margin-top: 4px; /* Margen superior */
+  margin-left: 10px; /* Margen izquierdo */
+}
+
+/* Estilos para el botón de volver */
+.volver{
+  margin-left: 2%; /* Margen izquierdo */
+  width: 20%; /* Ancho del botón */
+  background-color: white; /* Color de fondo */
+  color: black; /* Color del texto */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cursor al pasar */
+}
