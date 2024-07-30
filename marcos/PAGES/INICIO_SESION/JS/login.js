@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .then(data => {
                     console.log('Respuesta de la API:', data); // Hacer algo con la respuesta de la API, si es necesario
-                    window.location.href = 'http://localhost:3000/';
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    window.location.href = 'http://localhost:3000/profile';
                 })
                 .catch(error => {
                     console.error('Error al enviar datos a la API:', error);

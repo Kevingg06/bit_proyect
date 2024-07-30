@@ -27,66 +27,76 @@ const verifyToken = (req, res, next) => {
 };
 
 
-router.post('/', (req, res) => {
-    const { email, contraseña } = req.body;
-
-    // Validar que se han proporcionado email y contraseña
-    if (!email || !contraseña) {
-        return res.status(400).json({ error: 'Email y contraseña son requeridos.' });
-    }
-
-    // Consultar la base de datos para verificar las credenciales
-    const query = 'SELECT * FROM users WHERE mail = ?';
-    db.query(query, [email], async (err, results) => {
+router.post('/', async (req, res) => {
+    try {
+      const { email, contraseña } = req.body;
+      // Verificar si el usuario existe en la base de datos
+      const sql = 'SELECT * FROM users WHERE mail = ?';
+      db.query(sql, [email], async (err, result) => {
         if (err) {
-            console.error('Error al autenticar usuario:', err);
-            return res.status(500).json({ error: 'Error al autenticar usuario.' });
+          console.error("Error en la consulta:", err);
+          return res.status(500).json({ message: "Error en el servidor" });
         }
-
-        // Verificar si se encontró un usuario con el email proporcionado
-        if (results.length === 0) {
-            return res.status(401).json({ error: 'Credenciales incorrectas. Verifica tu email y contraseña.' });
+  
+        if (result.length === 0) {
+          return res.status(401).json({ message: "Credenciales inválidas" });
         }
-
-        const user = results[0];
-
-        try {
-            // Comparar la contraseña proporcionada con la contraseña encriptada almacenada
-            const passwordMatch = await bcrypt.compare(contraseña, user.userPassword);
-
-            if (!passwordMatch) {
-                return res.status(401).json({ error: 'Credenciales incorrectas. Verifica tu email y contraseña.' });
-            }
-
-            // Generar un token JWT
-            const token = jwt.sign({ userId: user.userId, email: user.mail, role: user.role }, secretKey);
-            console.log('Configurando la cookie con el token:', token); // Log para verificar el token
-
-            // Enviar el token como una cookie o en la respuesta JSON
-            res.cookie('authToken', token, { httpOnly: true, sameSite: 'Lax', secure: false,  domain: 'localhost', path: '/'  });
-            res.status(200).json({ message: 'Login exitoso.', token });
-        } catch (error) {
-            console.error('Error al comparar contraseñas:', error);
-            res.status(500).json({ error: 'Error al autenticar usuario.' });
+  
+        const user = result[0];
+        // Comparar la contraseña ingresada con la contraseña almacenada (hasheada)
+        const match = await bcrypt.compare(contraseña, user.userPassword);
+        if (!match) {
+          return res.status(401).json({ message: "Credenciales inválidas" });
         }
-    });
-});
+        // Crear un token JWT
+        const token = jwt.sign({ userId: user.userId, username: user.username, email: user.mail }, 'messidios', {
+          expiresIn: '1h' // El token expira en 1 hora
+        });
+  
+        // Enviar el token como cookie (o como prefieras)
+        res.cookie('authToken', token, { httpOnly: true }); // 'httpOnly: true' para mayor seguridad
+  
+        // Devolver información del usuario al frontend
+        res.json({
+          message: 'Inicio de sesión exitoso',
+          user: {
+            userId: user.userId,
+            username: user.username,
+            email: user.mail // Asegúrate de que 'mail' coincida con el nombre de la columna en tu base de datos
+          }
+        });
+      });
+    } catch (error) {
+      console.error("Error durante el inicio de sesión:", error);
+      res.status(500).json({ message: "Error en el servidor" });
+    }
+  });
 
 
 router.get('/usuario', verifyToken, (req, res) => {
     console.log('Solicitud recibida en /usuario');
   console.log('Usuario autenticado:', req.user);
-    const query = 'SELECT username FROM users WHERE userId = ?';
-    db.query(query, [req.user.userId], (err, results) => {
-        if (err) {
-            console.error('Error al obtener el nombre del usuario:', err);
-            return res.status(500).json({ error: 'Error al obtener la información del usuario.' });
-        }
-        if (results.length === 0) {
-            return res.status(404).json({ error: 'Usuario no encontrado.' });
-        }
-        res.json({ nombre: results[0].username });
-    });
-});
+  const userId = req.user.userId; 
+  const query = 'SELECT * FROM users WHERE userId = ?';
+  db.query(query, [userId], (err, results) => {
+      if (err) {
+          console.error('Error al obtener la información del usuario:', err);
+          return res.status(500).json({ error: 'Error al obtener la información del usuario.' });
+      }
 
+      if (results.length === 0) {
+          return res.status(404).json({ error: 'Usuario no encontrado.' });
+      }
+
+      const user = results[0];
+      res.json({ 
+          user: { 
+              userId: user.userId,
+              username: user.username,
+              email: user.mail,
+              // ... otras propiedades del usuario que quieras enviar
+          } 
+      });
+  });
+});
 module.exports = router;

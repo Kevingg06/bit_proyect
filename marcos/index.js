@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 5500; 
+const PORT = process.env.PORT || 5500;
 const { v4: uuidv4 } = require('uuid');
 const db = require('./config');
 const cookieParser = require('cookie-parser');
@@ -10,25 +10,30 @@ const registerRoutes = require('./routes/registerRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const cors = require('cors');
 
-app.use(express.json()); // Parsea el cuerpo de la solicitud como JSON
-app.use(express.urlencoded({ extended: true })); // Permite decodificar los cuerpos de las solicitudes codificadas en URL
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
-app.use(express.static('public')); // Sirve archivos estáticos desde el directorio 'public'
+// Configuración de CORS
+const whitelist = ['http://localhost:3000', 'http://127.0.0.1:5500']; // ¡Asegúrate de que estos puertos sean correctos!
 
-// Configuración CORS global para permitir acceso desde cualquier origen
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      console.log("Origen no permitido por CORS:", origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+};
 
-app.use((req, res, next) => {
-    const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:3000'];
-    res.setHeader('Access-Control-Allow-Origin', allowedOrigins.includes(req.header('Origin')) ? req.header('Origin') : 'http://localhost:3000');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    next();
-});
+// Usar el middleware de CORS
+app.use(cors(corsOptions)); 
 
-// Middleware de cookie-parser para manejar cookies
+// Middleware de cookie-parser
 app.use(cookieParser());
-
 // Conexión a la base de datos
 db.connect((err) => {
     if (err) {

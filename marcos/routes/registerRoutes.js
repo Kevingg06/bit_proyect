@@ -41,7 +41,7 @@ router.post('/', async  (req, res) => {
         // Verificar si se insertó correctamente
         if (result && result.affectedRows > 0) {
             // Enviar token como una cookie y responder con un mensaje de éxito
-            res.cookie('authToken', token, { httpOnly: true });
+            res.cookie('authToken', token, { httpOnly: false });
             res.status(201).json({ message: 'Usuario registrado exitosamente.', token, userId: result.insertId });
         } else {
             // Si no se insertó correctamente (resultado vacío o ninguna fila afectada)
