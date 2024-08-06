@@ -19,12 +19,12 @@ const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
   width: 10%;
-  color: ${props => props.isButton ? '#00000' : '#4B0713'}; /* Color de texto blanco para botones, negro para horarios */
-  background-color: ${props => props.isHeader ? '#dabc89' : '#f7f0e5'}; /* Fondo igual al encabezado para horarios */
-  cursor: ${props => props.isButton ? 'pointer' : 'default'}; /* Cursor de puntero solo para botones */
+  background-color: ${props => props.isButton ? (props.isOccupied ? '#f15353' : '#7bc565') : '#dabc89'};
+  color: ${props => props.isButton ? '#000' : '#4B0713'};
+  cursor: ${props => props.isButton ? 'pointer' : 'default'};
   text-align: center;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: background-color 0.5s, transform 0.5s;
 `;
 
 const StyledHeaderCell = styled(TableCell)`
@@ -60,9 +60,9 @@ const TablaHorarios = () => {
   };
 
   const timeSlots = [
-    "00:00 02:00", "02:00 04:00", "04:00 06:00", "06:00 08:00",
-    "08:00 10:00", "10:00 12:00", "12:00 14:00", "14:00 16:00",
-    "16:00 18:00", "18:00 20:00", "20:00 22:00", "22:00 00:00"
+    "00:00 - 02:00", "02:00 - 04:00", "04:00 - 06:00", "06:00 - 08:00",
+    "08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00", "14:00 - 16:00",
+    "16:00 - 18:00", "18:00 - 20:00", "20:00 - 22:00", "22:00 - 00:00"
   ];
 
   return (
@@ -83,13 +83,14 @@ const TablaHorarios = () => {
         <TableBody>
           {timeSlots.map((time, rowIndex) => (
             <TableRow key={rowIndex}>
-              <StyledTableCell isButton={false} isHeader={true}>{time}</StyledTableCell>
+              <StyledTableCell isButton={false}>{time}</StyledTableCell>
               {[...Array(7)].map((_, colIndex) => {
                 const index = rowIndex * 7 + colIndex;
                 return (
                   <StyledTableCell
                     key={colIndex}
                     isButton={true}
+                    isOccupied={statuses[index] === "OCUPADO"}
                     onClick={() => handleButtonClick(index)}
                     style={{ transform: `rotateX(${rotations[index]}deg)` }}
                   >
