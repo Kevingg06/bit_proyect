@@ -1,37 +1,34 @@
-import React, { useState } from 'react';
-import { TextField } from '@mui/material';
-import Box from '@mui/material/Box';
+import React, { useState, useEffect } from 'react';
+
+const textoStyle = {
+    color: 'black',
+    marginLeft: '3%',
+    fontSize: '30px',
+    height: '50%',
+    color: '#4B0713'
+};
 
 export const Titulos = () => {
-    const [texto, setTexto] = useState("Todavía no se han añadido títulos");
+    const [texto, setTexto] = useState('Todavía no se han añadido títulos');
 
-    const cambiarTexto = (nuevoTexto) => {
-        setTexto(nuevoTexto);
-    }
+    useEffect(() => {
+        async function obtenerTextoDeAPI() {
+            try {
+                const respuesta = await fetch('https://api.ejemplo.com/usuario');
+                const datos = await respuesta.json();
+                setTexto(datos.titulos); // Suponiendo que la respuesta de la API tiene una propiedad "nombre"
+            } catch (error) {
+                console.error('Error al obtener los títulos del usuario:', error);
+            }
+        }
+
+        obtenerTextoDeAPI();
+    }, []);
 
     return (
         <div>
-            <p style={{ whiteSpace: 'pre-line' }}>{texto}</p>
-
-            <Box
-                component="form"
-                sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            >
-                <div>
-                    <TextField
-                        id="standard-multiline-flexible"
-                        label="Agrege sus títulos"
-                        multiline
-                        maxRows={1}
-                        variant="standard"
-                        onChange={e => cambiarTexto(e.target.value)}
-                    />
-                </div>
-            </Box>
+            <h4>Tìtulos</h4>
+            <p style={textoStyle}>{texto}</p>
         </div>
     );
-}
+};

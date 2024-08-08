@@ -47,14 +47,14 @@ function App() {
   function enviarDatos_empresa() {
     const nombre_empresa = document.getElementById('nombre_empresa').value;
     const email_empresa = document.getElementById('email_empresa').value;
-    const direccion_empresa = document.getElementById('direccion_empresa').value;
+    const cuit_empresa = document.getElementById('cuit_empresa').value;
     const contraseña1_empresa = document.getElementById('contraseña1_empresa').value;
     const contraseña2_empresa = document.getElementById('contraseña2_empresa').value;
 
     const datosEmpresa = {
       nombre: nombre_empresa,
       email: email_empresa,
-      direccion: direccion_empresa,
+      cuit: cuit_empresa,
       contraseña1: contraseña1_empresa,
       contraseña2: contraseña2_empresa,
     };
@@ -224,7 +224,7 @@ function App() {
         <form className="formulario" id="form_empresa" action="/register" method="post">
           <input id="nombre_empresa" type="text" placeholder="NOMBRE" />
           <input id="email_empresa" type="email" placeholder="EMAIL" />
-          <input id="direccion_empresa" type="text" placeholder="DIRECCIÓN" />
+          <input id="cuit_empresa" type="text" placeholder="CUIT" />
           <input id="contraseña1_empresa" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
           <input id="contraseña2_empresa" type="password" placeholder="CONFIRMAR CONTRASEÑA" />
           <p id="aclaracion">
