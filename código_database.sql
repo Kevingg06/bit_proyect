@@ -10,6 +10,8 @@ create table users(
     userPassword varchar(120),
     role varchar(30),
     createdAt date,
+    description text,
+    titles varchar(255),
     contactsNumber int(30) DEFAULT null,
     age int(3),
     phoneNumber varchar(30),
@@ -57,19 +59,23 @@ create table posts(
 );
 
 create table company(
-    name varchar(50) not null,
-    description text not null,
-    primary key(name)
+    id varchar(70) not null,
+    name varchar(255) not null,
+    mail varchar(320),
+    description text,
+    cuit varchar(25),
+    enterprisePassword varchar(20),
+    PRIMARY KEY(id)
 );
 
 create table jobsHistory(
     userId varchar(70) not null,
-    companyName varchar(50) not null,
+    companyId varchar(50) not null,
     jobDescription text not null,
     jobRole varchar(30) not null,
-    primary key (userId, companyName),
+    primary key (userId, companyId),
     FOREIGN KEY (userId) references users (userId),
-    foreign key (companyName) references company (name)
+    foreign key (companyId) references company (id)
 );
 
 
