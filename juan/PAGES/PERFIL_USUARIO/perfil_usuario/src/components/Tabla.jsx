@@ -12,14 +12,14 @@ const StyledTableContainer = styled(TableContainer)`
   border: 2px solid #4B0713;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #f7f0e5;
+  background-color: #f5e9c8;
 `;
 
 const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
   width: 10%;
-  background-color: ${props => props.isButton ? (props.isOccupied ? '#f15353' : '#7bc565') : '#dabc89'};
+  background-color: ${props => props.isButton ? (props.isOccupied ? '#f15353' : '#7bc565') : '#f5e9c8'};
   color: ${props => props.isButton ? '#000' : '#4B0713'};
   cursor: ${props => props.isButton ? 'pointer' : 'default'};
   text-align: center;
@@ -29,7 +29,7 @@ const StyledTableCell = styled(TableCell)`
 
 const StyledHeaderCell = styled(TableCell)`
   width: 10%;
-  background-color: #dabc89;
+  background-color: #f5e9c8;
   font-weight: bold;
   color: #4B0713;
   border-right: 2px solid #4B0713;

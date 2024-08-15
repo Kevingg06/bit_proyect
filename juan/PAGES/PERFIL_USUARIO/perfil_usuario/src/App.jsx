@@ -25,12 +25,10 @@ function App() {
           <LineaHor />
           <div id='infoAdicional'>
             <div id='titulos'>
-              <h3>Títulos</h3>
               <Titulos />
             </div>
             <LineaVer />
             <div id='descripcion'>
-              <h3>Mi descripción</h3>
               <Descripcion />
             </div>
           </div>

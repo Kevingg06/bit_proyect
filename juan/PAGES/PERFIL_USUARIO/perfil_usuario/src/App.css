@@ -12,7 +12,7 @@
   background-color: #f7f0e5;
   margin: auto;
   display: flex;
-  height: 1750px;
+  height: 1800px;
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
@@ -23,7 +23,7 @@
   margin-top: 3%;
   width: 80%;
   height: 1680px;
-  background-color: #f1e3cb;
+  background-color: #eeeded;
   border-radius: 25px;
   box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
   flex-direction: column;
@@ -68,7 +68,7 @@
 #mensaje{
   width: 45%;
   height: 100%;
-  background-color: #f1e3cb;
+  background-color: #ffffff00;
   background-image: url(/src/mail.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -81,7 +81,7 @@
   margin-left: 15%;
   width: 30%;
   height: 100%;
-  background-color: #f1e3cb;
+  background-color: #ffffff00;
   background-image: url(/src/guardar.png);
   background-size: contain;
   background-position: center;
@@ -94,14 +94,14 @@
   display: flex;
   flex-direction: row;
   width: 80%;
-  height: 20%;
+  height: 40%;
   margin-left: 10%;
   margin-top: 3.5%;
 }
 
 #titulos{
   display: flex;
-  width: 50%;
+  width: 49%;
   height: 100%;
   flex-direction: column;
   text-align: left;
@@ -143,7 +143,7 @@ h3{
 
 #calendario{
   display: flex;
-  background-color: #e2caa4;
+  background-color: #c0c0c0;
   width: 100%;
   height: 61%;
   border-radius: 0 0 25px 25px;
