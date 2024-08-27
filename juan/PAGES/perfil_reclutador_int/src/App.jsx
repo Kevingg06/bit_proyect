@@ -40,6 +40,12 @@ function App() {
             <p>Puede ser de tu interes</p>
           </div>
           <Noticia />
+          <Noticia />
+          <Noticia />
+          <Noticia />
+          <Noticia />
+          <Noticia />
+          <Noticia />
         </div>
       </header>
     </div>
