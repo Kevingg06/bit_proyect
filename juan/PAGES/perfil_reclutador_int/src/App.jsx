@@ -4,6 +4,7 @@ import { LineaVer } from './components/LineaVer';
 import { Nombre } from './components/Nombre';
 import { Descripcion } from './components/Descripcion';
 import { Noticia } from './components/Noticia'
+import { Posteo } from './components/Posteo'
 
 function App() {
   return (
@@ -27,9 +28,7 @@ function App() {
           <LineaHor />
           <h3>Posteos</h3>
           <div id='calendario'>
-            <div className='horarios'>
-              {/* <TablaHorarios /> */}
-            </div>
+            <Posteo />
           </div>
         </div>
 

@@ -38,7 +38,8 @@ export const Descripcion = () => {
     const cajaTitulo = {
         display: 'flex',  // Cambiado de 'block' a 'flex'
         justifyContent: 'space-between',
-        alignItems: 'center'  // Alinea los elementos en el eje vertical
+        alignItems: 'center',  // Alinea los elementos en el eje vertical
+        alignText: 'left'
     };
 
     const globo = {
@@ -50,7 +51,7 @@ export const Descripcion = () => {
     return (
         <div style={globo}>
             <div style={cajaTitulo}>
-                <h4 style={titulo}>Sobre mí</h4>
+                <h3 style={titulo}>Sobre mí</h3>
 
                 <Button onClick={handleOpen}>
                     <Fab color="secondary" aria-label="edit" size="small">
@@ -60,7 +61,7 @@ export const Descripcion = () => {
             </div>
 
 
-            <p style={{ whiteSpace: 'pre-line' }}>{texto}</p>
+            <p style={{ whiteSpace: 'pre-line', textAlign: 'left' }}>{texto}</p>
 
             <Modal
                 open={open}
