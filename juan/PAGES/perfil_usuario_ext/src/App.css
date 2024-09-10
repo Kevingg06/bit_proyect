@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #f7f0e5;
+  background-color: #fcfbf9;
   margin: auto;
   display: flex;
   height: 1800px;
@@ -23,7 +23,7 @@
   margin-top: 3%;
   width: 80%;
   height: 1700px;
-  background-color: #f1e3cb;
+  background-color: #eeeded;
   border-radius: 25px;
   box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
   flex-direction: column;
@@ -34,10 +34,10 @@
 .primeraInfo {
   display: flex;
   width: 83.1%;
-  height: 102px;
+  height: 10%;
   margin-top: 3%;
   margin-left: 8.45%;
-  align-items: center;
+  align-items: top;
 }
 
 

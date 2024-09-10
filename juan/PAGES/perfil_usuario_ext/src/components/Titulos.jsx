@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const textoStyle = {
     color: 'black',
-    marginLeft: '3%',
+    marginTop: '2%',
     fontSize: '30px',
     height: '50%',
     color: '#4B0713'

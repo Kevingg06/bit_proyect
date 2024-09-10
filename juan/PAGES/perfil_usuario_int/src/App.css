@@ -4,7 +4,6 @@
 
 .App {
   text-align: center;
-  background-color: #f7f0e5;
   height: 1400px;
 }
 
@@ -31,13 +30,13 @@
 }
 
 
-.primeraInfo{
+.primeraInfo {
   display: flex;
   width: 83.1%;
-  height: 102px;
+  height: 10%;
   margin-top: 3%;
   margin-left: 8.45%;
-  align-items: center;
+  align-items: top;
 }
 
 

@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 const nombreStyle = {
     color: 'black',
     marginLeft: '3%',
-    fontSize: '45px',
-    height: '50%'
+    fontSize: '45px'
 };
 
 export const Nombre = () => {
