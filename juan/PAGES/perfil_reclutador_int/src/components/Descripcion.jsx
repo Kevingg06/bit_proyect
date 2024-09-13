@@ -87,7 +87,7 @@ export const Descripcion = () => {
                                     id="standard-multiline-flexible"
                                     label="Descríbase brevemente"
                                     multiline
-                                    maxRows={1}
+                                    maxRows={10}
                                     variant="standard"
                                     onChange={e => cambiarTexto(e.target.value)}
                                 />

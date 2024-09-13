@@ -4,28 +4,32 @@ export const Posteo = () => {
 
     const tarjeta = {
         width: '88.857%',
-        margin: 'auto',
-        marginTop: '7%',
+        margin: '3% auto',
         display: 'flex',
         flexDirection: 'column',
-        height: '500px',
+        height: '700px',
         backgroundColor: '#eeeded'
     }
 
     const estiloTitulo = {
-        marginBottom: '3%', // Corregido marginBotton a marginBottom
+        marginBottom: '1%', // Corregido marginBotton a marginBottom
         fontSize: '30px',
     };
 
     const estiloTexto = {
         fontSize: '20px',
-        margin: '2% 5%'
+        margin: 'auto',
+        marginBottom: '2%'
     };
 
     const imagen = {
-        width: '200px',
-        height: '200px',
-        backgroundImage: '../../public/marquitos.jpg'
+        width: '80%',
+        height: '70%',
+        marginLeft: '5%',
+        marginBottom: '1%',
+        backgroundImage: 'url(/marquitos.jpg)',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat'
     };
 
     const titulo = 'Se busca detective privado';
