@@ -8,7 +8,8 @@ export const Posteo = () => {
         display: 'flex',
         flexDirection: 'column',
         height: '700px',
-        backgroundColor: '#eeeded'
+        backgroundColor: '#eeeded',
+        alignItems: 'center'
     }
 
     const estiloTitulo = {
@@ -18,18 +19,18 @@ export const Posteo = () => {
 
     const estiloTexto = {
         fontSize: '20px',
-        margin: 'auto',
-        marginBottom: '2%'
+        marginTop: '2%',
+        marginBottom: '3%'
     };
 
     const imagen = {
         width: '80%',
         height: '70%',
-        marginLeft: '5%',
         marginBottom: '1%',
         backgroundImage: 'url(/marquitos.jpg)',
         backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
     };
 
     const titulo = 'Se busca detective privado';
