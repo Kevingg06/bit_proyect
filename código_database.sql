@@ -58,13 +58,23 @@ create table posts(
 );
 
 create table company(
-    id varchar(70) not null,
+    companyId varchar(70) not null,
     name varchar(255) not null,
     mail varchar(320),
     description text,
     cuit varchar(25),
     companyPassword varchar(20),
-    PRIMARY KEY(id)
+    PRIMARY KEY(companyId)
+);
+
+create table noticia(
+    id varchar(70) not null,
+    companyId varchar(70) not null,
+    title varchar(255),
+    body text,
+    fecha date not null,
+    primary key(id),
+    foreign key (companyId) references company (companyId)
 );
 
 create table jobsHistory(
@@ -74,7 +84,7 @@ create table jobsHistory(
     jobRole varchar(30) not null,
     primary key (userId, companyId),
     FOREIGN KEY (userId) references users (userId),
-    foreign key (companyId) references company (id)
+    foreign key (companyId) references company (companyId)
 );
 
 
@@ -88,8 +98,8 @@ create table users_education(
     foreign key (educationName) references education (name)
 );
 
-insert into users(userId, username, role, userPassword, createdAt, contactsNumber,age,phoneNumber,mail,subscription, address)
-values("1", "martuski", "administrador", "pepe", '2024-4-23', 2, 17, 1170809090,"martin.galeanoet32@gmail.com",true ,"aa"),
-("2", "mankigamer", "usuario","uh uh ah ah", '2024-4-22', 3,  21, 1170889922,"mankijuega@gmail.com",false,"aaa"),
-("3", "señordelanoche", "usuario","vivachavez", '2024-4-22', 1,  90, 5828071954,"chavezvive@gmail.com",false,"aaaaa"),
-("4", "mitelbi", "admin","siadiviasestacontraseña", '2024-4-10',200,  25, 123234545,"holasoymrbeast@gmail.com",true,"a");
+insert into users(userId, username, role, userPassword, createdAt, age, phoneNumber, mail, subscription, address)
+values("1", "martuski", "administrador", "pepe", '2024-4-23', 17, 1170809090,"martin.galeanoet32@gmail.com",true ,"aa"),
+("2", "mankigamer", "usuario","uh uh ah ah", '2024-4-22',  21, 1170889922,"mankijuega@gmail.com",false,"aaa"),
+("3", "señordelanoche", "usuario","vivachavez", '2024-4-22',  90, 5828071954,"chavezvive@gmail.com",false,"aaaaa"),
+("4", "mitelbi", "admin","siadiviasestacontraseña", '2024-4-10',  25, 123234545,"holasoymrbeast@gmail.com",true,"a");
