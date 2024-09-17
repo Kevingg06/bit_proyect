@@ -8,7 +8,7 @@ const Noticiero = () => {
         display: 'flex',
         backgroundColor: '#eeeded',
         width: '100%',
-        maxHeight: '47.43%', // Cambiado a maxHeight para limitar la altura
+        maxHeight: '39%', // Cambiado a maxHeight para limitar la altura
         borderRadius: '25px',
         boxShadow: '4px 4px 10px 6px rgba(0, 0, 0, 0.2)',
         flexDirection: 'column',

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 export const Noticia = () => {
-  const [titulo, setTitulo] = useState('');
-  const [texto, setTexto] = useState('');
+  const [titulo, setTitulo] = useState('Oficinas cerradas temporalmente');
+  const [texto, setTexto] = useState('Queríamos notificar que nuestras oficinas estarán cerradas por unos días debido a una fumigación programada');
 
   useEffect(() => {
     // Aquí se llama a la API para obtener los datos
@@ -24,6 +24,8 @@ export const Noticia = () => {
     margin: 'auto',
     marginTop: '5%',
     marginBottom: '2%',
+    paddingLeft: '2%',
+    paddingRight: '2%',
     display: 'flex',
     flexDirection: 'column',
     height: '200px',

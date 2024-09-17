@@ -9,33 +9,37 @@ export const Posteo = () => {
         flexDirection: 'column',
         height: '700px',
         backgroundColor: '#eeeded',
-        alignItems: 'center'
+        alignItems: 'center',
+        borderRadius: '20px',
+        boxShadow: '4px 4px 10px 6px rgba(0, 0, 0, 0.2)'
     }
 
     const estiloTitulo = {
         marginBottom: '1%', // Corregido marginBotton a marginBottom
+        marginTop: '2%',
         fontSize: '30px',
     };
 
     const estiloTexto = {
         fontSize: '20px',
-        marginTop: '2%',
-        marginBottom: '3%'
+        marginBottom: '3%',
+        padding: '1%'
     };
 
     const imagen = {
         width: '80%',
         height: '70%',
         marginBottom: '1%',
-        backgroundImage: 'url(/marquitos.jpg)',
+        backgroundImage: 'url(/acelerador.jpg)',
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        borderRadius: '20px'
     };
 
-    const titulo = 'Se busca detective privado';
+    const titulo = 'Se busca ingeniero nuclear';
 
-    const texto = 'Estamos buscando a un detective privado para que localice a este hombre (en la imagen) y se lo notifique a la policia. Es un reconocido programador POO que se ha robado un importante codigo de nuestra empreza. El pago por hayarlo asciende a USD $500.000';
+    const texto = 'Es requerido un experto en la materia para trabajar en el mantenimiento del aceleradro de particulas ubicado en el CERN';
 
     return (
         <div style={tarjeta}>
