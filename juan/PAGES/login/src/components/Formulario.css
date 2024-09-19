@@ -5,13 +5,13 @@
     justify-content: space-evenly;
     align-items: left;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     height: 100%;
 }
 
 /* Estilo para los campos de entrada */
 input {
-    width: 100%;
+    width: 95%;
     height: 10%;
     padding-left: 15px;
     background-color: white;
@@ -46,6 +46,12 @@ button {
     color: #4B0713;
     width: 25%;
     margin-right: 0;
+}
+
+@media(max-Width: '360px'){
+    #mostrarContra{
+        width: 30%;
+    }
 }
 
 /* Estilo específico para el botón de Google */

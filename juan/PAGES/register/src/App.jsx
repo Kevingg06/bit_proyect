@@ -192,7 +192,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div id='above'>
       <div id="fondo_2"></div>
       <div id="fondo_1"></div>
 
@@ -234,7 +234,7 @@ function App() {
         </form>
         <a href="../INICIO_SESION/login.html">¿Ya tenés una cuenta? Iniciá sesión</a>
         <button className="google">
-          <img src="./img/logo_google.jpg" alt="Google logo" />
+          <img src="/logo_google.jpg" alt="Google logo" />
           <span>INGRESAR CON GOOGLE</span>
         </button>
         <button className="volver">VOLVER</button>

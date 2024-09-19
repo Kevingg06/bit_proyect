@@ -13,7 +13,7 @@ export const Formulario = () => {
         const ingresarButton = ingresarRef.current;
 
         const mostrarContraseña = () => {
-            if (passwordInput.type === "password") {
+            if (passwordInput.type == "password") {
                 passwordInput.type = "text";
                 mostrarContra.textContent = "Ocultar";
             } else {
@@ -123,7 +123,7 @@ export const Formulario = () => {
         <form id="formulario">
             <input type="email" id="email" ref={emailRef} placeholder="INGRESA TU EMAIL" /> {/* Campo para ingresar el email */}
             <input type="password" id="contraseña" ref={passwordInputRef} placeholder="INGRESA TU CONTRASEÑA" /> {/* Campo para ingresar la contraseña */}
-            <button type="button" id="mostrarContra" ref={mostrarContraRef}>MOSTRAR</button> {/* Botón para mostrar la contraseña */}
+            <button type="button" id="mostrarContra" ref={mostrarContraRef}>Mostrar</button> {/* Botón para mostrar la contraseña */}
             <a id="olvido" href="../RECUPERAR_CONTRASEÑA/recuperacion.html">¿Olvidaste tu contraseña?</a> {/* Enlace para la página de recuperación de contraseña */}
             <a id="register" href="../REGISTRARSE/registrarse.html">¿No tenés cuenta? Registrate</a> {/* Enlace para la página de registro */}
             <button type="button" id="ingresar" ref={ingresarRef}>Entrar</button> {/* Botón para iniciar sesión */}
