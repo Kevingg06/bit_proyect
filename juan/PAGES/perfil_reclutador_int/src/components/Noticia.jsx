@@ -22,23 +22,25 @@ export const Noticia = () => {
   const tarjeta = {
     width: '88.857%',
     margin: 'auto',
+    height: '200px',
     marginTop: '5%',
     marginBottom: '2%',
-    paddingLeft: '2%',
-    paddingRight: '2%',
     display: 'flex',
     flexDirection: 'column',
-    height: '200px',
+    paddingLeft: '2%',
+    paddingRight: '2%',    
     backgroundColor: '#c9c9c9',
   };
 
   const estiloTexto = {
-    fontSize: '20px',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    fontSize: '17px',
   };
 
   const estiloTitulo = {
-    marginBottom: '3%',
-    fontSize: '30px',
+    marginTop: '2%',
+    fontSize: '25px',
   };
 
   return (
