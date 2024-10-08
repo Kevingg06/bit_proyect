@@ -19,11 +19,10 @@ const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
   width: 10%;
-  background-color: ${props => props.is_occupied === "true" ? '#f15353' : '#7bc565'}; 
-  color: ${props =>  '#000' }; 
-  cursor: ${props => 'pointer'}; 
+  background-color: ${props => props.is_occupied === "true" ? '#f15353' : '#7bc565'};
+  color: ${props => '#000'};
+  cursor: ${props => 'pointer'};
   text-align: center;
-  transform-style: preserve-3d;
   transition: background-color 0.5s, transform 0.5s;
 `;
 
@@ -41,19 +40,13 @@ const StyledHeaderCell = styled(TableCell)`
 
 const TablaHorarios = () => {
   const [rotations, setRotations] = useState(Array(12 * 7).fill(0));
-  const [statuses, setStatuses] = useState(
-    Array(12 * 7)
-      .fill("DISPONIBLE")
-      .map((status, i) => (i % 2 === 0 ? "OCUPADO" : "DISPONIBLE"))
-  );
+  const [statuses, setStatuses] = useState(Array(12 * 7).fill("DISPONIBLE"));
 
   const handleButtonClick = (index) => {
-    setRotations((prevRotations) =>
-      prevRotations.map((rotation, i) =>
-        i === index ? rotation + 360 : rotation
-      )
+    setRotations(prevRotations =>
+      prevRotations.map((rotation, i) => i === index ? rotation + 360 : rotation)
     );
-    setStatuses((prevStatuses) =>
+    setStatuses(prevStatuses =>
       prevStatuses.map((status, i) =>
         i === index ? (status === "OCUPADO" ? "DISPONIBLE" : "OCUPADO") : status
       )
@@ -66,44 +59,80 @@ const TablaHorarios = () => {
     "16:00 - 18:00", "18:00 - 20:00", "20:00 - 22:00", "22:00 - 00:00"
   ];
 
+  
+
+  const guardarHorarios = async () => {
+    // Organizar horarios por día (7 listas de 12 elementos cada una)
+    const horariosSemana = [];
+    for (let i = 0; i < 7; i++) {
+      let diaHorarios = [];
+      for (let j = 0; j < 12; j++) {
+        diaHorarios.push(statuses[i * 12 + j]);
+      }
+      horariosSemana.push(diaHorarios);
+    }
+
+    // Enviar los datos al servidor (backend)
+    try {
+      const response = await fetch('/api/guardar-horarios', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ horarios: horariosSemana }),
+      });
+
+      if (response.ok) {
+        console.log('Horarios guardados correctamente');
+      } else {
+        console.error('Error al guardar los horarios');
+      }
+    } catch (error) {
+      console.error('Error en la conexión:', error);
+    }
+  };
+
+
+
   return (
-    <StyledTableContainer component={Paper} variant="outlined">
-      <Table aria-label="demo table">
-        <TableHead>
-          <TableRow>
-            <StyledHeaderCell>Rango Horarios</StyledHeaderCell>
-            <StyledHeaderCell>Lunes</StyledHeaderCell>
-            <StyledHeaderCell>Martes</StyledHeaderCell>
-            <StyledHeaderCell>Miércoles</StyledHeaderCell>
-            <StyledHeaderCell>Jueves</StyledHeaderCell>
-            <StyledHeaderCell>Viernes</StyledHeaderCell>
-            <StyledHeaderCell>Sábado</StyledHeaderCell>
-            <StyledHeaderCell>Domingo</StyledHeaderCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {timeSlots.map((time, rowIndex) => (
-            <TableRow key={rowIndex}>{/* 🎯 Eliminar espacio en blanco */}
-              <StyledHeaderCell>{time}</StyledHeaderCell> 
-              {/* 🎯 Eliminar espacios en blanco */}
-              {[...Array(7)].map((_, colIndex) => {
-                const index = rowIndex * 7 + colIndex;
-                return (
-                  <StyledTableCell
-                    key={colIndex}
-                    is_occupied={statuses[index] === "OCUPADO" ? "true" : "false"} 
-                    onClick={() => handleButtonClick(index)}
-                    style={{ transform: `rotateX(${rotations[index]}deg)` }}
-                  >
-                    {statuses[index]}
-                  </StyledTableCell>
-                );
-              })}
+    <>
+      <StyledTableContainer component={Paper} variant="outlined">
+        <Table aria-label="tabla de horarios">
+          <TableHead>
+            <TableRow>
+              <StyledHeaderCell>Rango Horarios</StyledHeaderCell>
+              <StyledHeaderCell>Lunes</StyledHeaderCell>
+              <StyledHeaderCell>Martes</StyledHeaderCell>
+              <StyledHeaderCell>Miércoles</StyledHeaderCell>
+              <StyledHeaderCell>Jueves</StyledHeaderCell>
+              <StyledHeaderCell>Viernes</StyledHeaderCell>
+              <StyledHeaderCell>Sábado</StyledHeaderCell>
+              <StyledHeaderCell>Domingo</StyledHeaderCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </StyledTableContainer>
+          </TableHead>
+          <TableBody>
+            {timeSlots.map((time, rowIndex) => (
+              <TableRow key={rowIndex}>
+                <StyledHeaderCell>{time}</StyledHeaderCell>
+                {[...Array(7)].map((_, colIndex) => {
+                  const index = rowIndex * 7 + colIndex;
+                  return (
+                    <StyledTableCell
+                      key={colIndex}
+                      is_occupied={statuses[index] === "OCUPADO" ? "true" : "false"}
+                      onClick={() => handleButtonClick(index)}
+                    >
+                      {statuses[index]}
+                    </StyledTableCell>
+                  );
+                })}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </StyledTableContainer>
+      <button onClick={guardarHorarios}>Guardar Horarios</button> {/* Botón para enviar datos */}
+    </>
   );
 };
 
