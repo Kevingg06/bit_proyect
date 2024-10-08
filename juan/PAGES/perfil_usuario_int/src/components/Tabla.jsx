@@ -19,7 +19,7 @@ const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
   width: 10%;
-  background-color: ${props => props.isOccupied === "true" ? '#f15353' : '#7bc565'}; 
+  background-color: ${props => props.is_occupied === "true" ? '#f15353' : '#7bc565'}; 
   color: ${props =>  '#000' }; 
   cursor: ${props => 'pointer'}; 
   text-align: center;
@@ -33,6 +33,7 @@ const StyledHeaderCell = styled(TableCell)`
   font-weight: bold;
   color: #4B0713;
   border-right: 2px solid #4B0713;
+  border-bottom: 1px solid #4B0713;
   &:last-child {
     border-right: none;
   }
@@ -83,14 +84,14 @@ const TablaHorarios = () => {
         <TableBody>
           {timeSlots.map((time, rowIndex) => (
             <TableRow key={rowIndex}>{/* 🎯 Eliminar espacio en blanco */}
-              <StyledTableCell>{time}</StyledTableCell> 
+              <StyledHeaderCell>{time}</StyledHeaderCell> 
               {/* 🎯 Eliminar espacios en blanco */}
               {[...Array(7)].map((_, colIndex) => {
                 const index = rowIndex * 7 + colIndex;
                 return (
                   <StyledTableCell
                     key={colIndex}
-                    isOccupied={statuses[index] === "OCUPADO" ? "true" : "false"} 
+                    is_occupied={statuses[index] === "OCUPADO" ? "true" : "false"} 
                     onClick={() => handleButtonClick(index)}
                     style={{ transform: `rotateX(${rotations[index]}deg)` }}
                   >

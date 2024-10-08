@@ -1,17 +1,48 @@
 import React, { useState } from 'react';
-import { TextField, Modal, Typography, Fab, Box } from '@mui/material'; // 🎯 Eliminar Button
+import { TextField, Modal, Typography, Fab, Box } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
 export const Titulos = () => {
     const [texto, setTexto] = useState("Todavía no se han añadido títulos");
     const [open, setOpen] = useState(false);
 
+
+
+    // Función para enviar texto a la base de datos
+    const enviarTextoABD = async (texto) => {
+        try {
+            const response = await fetch('https://api.ejemplo.com/titulos', {  // URL de tu API
+                method: 'POST', // O 'PUT' si estás actualizando un registro existente
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ texto }),  // Enviar el texto en formato JSON
+            });
+
+            if (!response.ok) {
+                throw new Error('Error al enviar los datos a la base de datos');
+            }
+
+            const data = await response.json();  // Procesa la respuesta si es necesario
+            console.log('Texto guardado en la base de datos:', data);
+        } catch (error) {
+            console.error('Error al guardar el texto:', error);
+        }
+    };
+
+
+
     const cambiarTexto = (nuevoTexto) => {
         setTexto(nuevoTexto);
     };
 
     const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+
+    // Llamar a la función de envío cuando se cierra el modal
+    const handleClose = () => {
+        enviarTextoABD(texto);  // Enviar el texto a la base de datos
+        setOpen(false);  // Cerrar el modal
+    };
 
     const style = {
         position: 'absolute',
@@ -26,26 +57,29 @@ export const Titulos = () => {
 
     const titulo = {
         display: 'inline',
-        justifiContent: 'spaceBetween'
+        justifyContent: 'space-between'
     };
 
     const cajaTitulo = {
-        display: 'flex', 
+        display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center' 
+        alignItems: 'center'
     };
 
     return (
         <div>
             <div style={cajaTitulo}>
                 <h4 style={titulo}>Títulos</h4>
-                {/* 🎯 Corrección: onClick en el Fab */}
-                <Fab color="secondary" aria-label="edit" size="small" onClick={handleOpen}> 
+                <Fab color="secondary" aria-label="edit" size="small" onClick={handleOpen}>
                     <EditIcon />
-                </Fab> 
+                </Fab>
             </div>
 
-            <p style={{ whiteSpace: 'pre-line' }}>{texto}</p>
+            <div style={{ width: '100%' }}>
+                <p style={{ whiteSpace: 'pre-line', width: '100%', display: 'block', wordWrap: 'break-word' }}>
+                    {texto}
+                </p>
+            </div>
 
             <Modal
                 open={open}
@@ -73,6 +107,7 @@ export const Titulos = () => {
                                     multiline
                                     maxRows={5}
                                     variant="standard"
+                                    value={texto} // Valor controlado por el estado `texto`
                                     onChange={e => cambiarTexto(e.target.value)}
                                 />
                             </div>

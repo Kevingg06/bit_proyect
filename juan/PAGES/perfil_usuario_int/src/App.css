@@ -100,9 +100,10 @@
 
 #titulos{
   display: flex;
-  width: 49%;
+  width: 48%;
   height: 100%;
   flex-direction: column;
+  margin-right: 1%;
   text-align: left;
 }
 
@@ -117,7 +118,7 @@
 
 #descripcion{
   display: flex;
-  width: 50%;
+  width: 48%;
   height: 100%;
   margin-left: 2%;
   flex-direction: column;
