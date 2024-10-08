@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Modal, Typography, Fab, Box } from '@mui/material';
+import { TextField, Modal, Typography, Fab, Box } from '@mui/material'; // 🎯 Eliminar Button
 import EditIcon from '@mui/icons-material/Edit';
 
 export const Titulos = () => {
@@ -30,26 +30,23 @@ export const Titulos = () => {
     };
 
     const cajaTitulo = {
-        display: 'flex',  // Cambiado de 'block' a 'flex'
+        display: 'flex', 
         justifyContent: 'space-between',
-        alignItems: 'center'  // Alinea los elementos en el eje vertical
+        alignItems: 'center' 
     };
 
     return (
         <div>
             <div style={cajaTitulo}>
                 <h4 style={titulo}>Títulos</h4>
-
-                <Button onClick={handleOpen}>
-                    <Fab color="secondary" aria-label="edit" size="small">
-                        <EditIcon />
-                    </Fab>
-                </Button>
+                {/* 🎯 Corrección: onClick en el Fab */}
+                <Fab color="secondary" aria-label="edit" size="small" onClick={handleOpen}> 
+                    <EditIcon />
+                </Fab> 
             </div>
 
             <p style={{ whiteSpace: 'pre-line' }}>{texto}</p>
 
-            
             <Modal
                 open={open}
                 onClose={handleClose}

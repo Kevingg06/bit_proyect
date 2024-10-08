@@ -19,9 +19,9 @@ const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
   width: 10%;
-  background-color: ${props => props.isButton ? (props.isOccupied ? '#f15353' : '#7bc565') : '#f5e9c8'};
-  color: ${props => props.isButton ? '#000' : '#4B0713'};
-  cursor: ${props => props.isButton ? 'pointer' : 'default'};
+  background-color: ${props => props.isOccupied === "true" ? '#f15353' : '#7bc565'}; 
+  color: ${props =>  '#000' }; 
+  cursor: ${props => 'pointer'}; 
   text-align: center;
   transform-style: preserve-3d;
   transition: background-color 0.5s, transform 0.5s;
@@ -82,15 +82,15 @@ const TablaHorarios = () => {
         </TableHead>
         <TableBody>
           {timeSlots.map((time, rowIndex) => (
-            <TableRow key={rowIndex}>
-              <StyledTableCell isButton={false}>{time}</StyledTableCell>
+            <TableRow key={rowIndex}>{/* 🎯 Eliminar espacio en blanco */}
+              <StyledTableCell>{time}</StyledTableCell> 
+              {/* 🎯 Eliminar espacios en blanco */}
               {[...Array(7)].map((_, colIndex) => {
                 const index = rowIndex * 7 + colIndex;
                 return (
                   <StyledTableCell
                     key={colIndex}
-                    isButton={true}
-                    isOccupied={statuses[index] === "OCUPADO"}
+                    isOccupied={statuses[index] === "OCUPADO" ? "true" : "false"} 
                     onClick={() => handleButtonClick(index)}
                     style={{ transform: `rotateX(${rotations[index]}deg)` }}
                   >

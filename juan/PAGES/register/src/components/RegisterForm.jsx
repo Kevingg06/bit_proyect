@@ -1,92 +1,53 @@
-import React, { useState } from 'react';
-import './RegisterPage.css'; // Import your CSS file
+const express = require('express');
+const router = express.Router();
+const { v4: uuidv4 } = require('uuid');
+const db = require('../config');
+const jwt = require('jsonwebtoken');
+const PORT = process.env.PORT || 5500;
+const bcrypt = require('bcryptjs'); 
 
-const RegisterPage = () => {
-  const [accountType, setAccountType] = useState(null);
+// POST request handler for /register
+router.post('/', async  (req, res) => {
+    const { nombre, email, direccion, contraseña1, edad } = req.body;
+    console.log('Solicitud POST recibida en /register con datos:', req.body);
 
-  const handleAccountType = (type) => {
-    setAccountType(type);
-  };
+    let role;
+    if (direccion) {
+        // Registro de empresa
+        role = 'empresa';
+    } else if (edad) {
+        // Registro de empleado
+        role = 'empleado';
+    } else {
+        return res.status(400).json({ error: 'Datos de registro incompletos.' });
+    }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted!');
-  };
+    // Encriptar la contraseña usando bcrypt
+    const hashedContraseña1 = await bcrypt.hash(contraseña1, 10);
 
-  return (
-    <div>
-      {accountType === null && (
-        <div className="pantalla" id="root_eleccion">
-          <h2>¿PARA QUÉ UTILIZARÁ SU CUENTA?</h2>
-          <button id="btn_empleado" className="btn_eleccion" onClick={() => handleAccountType('empleado')}>
-            EMPLEADO
-          </button>
-          <button id="btn_empresa" className="btn_eleccion" onClick={() => handleAccountType('empresa')}>
-            EMPRESA
-          </button>
-        </div>
-      )}
+    // Crear token JWT
+    const token = jwt.sign({ email, role }, 'SECRET_KEY');
 
-      {accountType === 'empleado' && (
-        <div className="pantalla" id="root_empleado">
-          <h1>Empieza a expandir tus posibilidades</h1>
-          <p>Primero necesitamos recopilar algunos datos</p>
-          <form className="formulario" id="form_empleado" onSubmit={handleSubmit}>
-            <input id="nombre_empleado" type="text" placeholder="NOMBRE Y APELLIDO" autoComplete="name" />
-            <input id="email_empleado" type="email" placeholder="EMAIL" required />
-            <input id="edad_empleado" type="number" placeholder="EDAD" />
-            <input id="contraseña1_empleado" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
-            <input id="contraseña2_empleado" type="password" placeholder="CONFIRMAR CONTRASEÑA" />
-            <p id="aclaracion">
-              Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la
-              Política de cookies de Hire-Me.
-            </p>
-            <button type="submit" id="datos_empleado">
-              ACEPTAR Y CONTINUAR
-            </button>
-          </form>
-          <a href="../INICIO_SESION/login.html">¿Ya tenés una cuenta? Iniciá sesión</a>
-          <button className="google">
-            <img src="./img/logo_google.jpg" alt="Google Logo" />
-            <span>INGRESAR CON GOOGLE</span>
-          </button>
-          <button className="volver" onClick={() => setAccountType(null)}>
-            VOLVER
-          </button>
-        </div>
-      )}
+    // Insertar usuario en la base de datos
+    const insertQuery = 'INSERT INTO users (userId, username, userPassword, role, createdAt, contactsNumber, age, phoneNumber, mail, subscription, address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const queryParams = [uuidv4(), nombre, hashedContraseña1, role, new Date(), null, edad || null, null, email, false, direccion || null];
 
-      {accountType === 'empresa' && (
-        <div className="pantalla" id="root_empresa">
-          <h1>Empieza a expandir tus posibilidades</h1>
-          <p>Primero necesitamos recopilar algunos datos</p>
-          <form className="formulario" id="form_empresa" onSubmit={handleSubmit}>
-            <input id="nombre_empresa" type="text" placeholder="NOMBRE" />
-            <input id="email_empresa" type="email" placeholder="EMAIL" />
-            <input id="direccion_empresa" type="text" placeholder="DIRECCIÓN" />
-            <input id="contraseña1_empresa" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
-            <input id="contraseña2_empresa" type="password" placeholder="CONFIRMAR CONTRASEÑA" />
-            <p id="aclaracion">
-              Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la
-              Política de cookies de Hire-Me.
-            </p>
-            <button type="submit" id="datos_empresa">
-              ACEPTAR Y CONTINUAR
-            </button>
-          </form>
-          <a href="../INICIO_SESION/login.html">¿Ya tenés una cuenta? Iniciá sesión</a>
-          <button className="google">
-            <img src="./img/logo_google.jpg" alt="Google Logo" />
-            <span>INGRESAR CON GOOGLE</span>
-          </button>
-          <button className="volver" onClick={() => setAccountType(null)}>
-            VOLVER
-          </button>
-        </div>
-      )}
-    </div>
-  );
-};
+    db.query(insertQuery, queryParams, (err, result) => {
+        if (err) {
+            console.error('Error al registrar usuario:', err);
+            return res.status(500).json({ error: 'Error al registrar usuario en la base de datos.' });
+        }
 
-export default RegisterPage;
+        // Verificar si se insertó correctamente
+        if (result && result.affectedRows > 0) {
+            // 🎯 Modificación: Incluir el nombre del usuario en la cookie
+            res.cookie('authToken', JSON.stringify({ token, userId: result.insertId, nombre: nombre }), { httpOnly: true }); 
+            res.status(201).json({ message: 'Usuario registrado exitosamente.', token, userId: result.insertId });
+        } else {
+            // Si no se insertó correctamente
+            res.status(500).json({ error: 'Error al registrar usuario en la base de datos.' });
+        }
+    });
+});
+
+module.exports = router;

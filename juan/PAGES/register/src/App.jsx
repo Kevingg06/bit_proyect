@@ -65,7 +65,7 @@ function App() {
     if (datosVacios(inputs) && validarDatos(inputs) && validarContraseña(contraseña1_empresa) && segundaContraseña(contraseña1_empresa, contraseña2_empresa)) {
       console.log('Todos los datos son correctos. Enviando datos...');
 
-      fetch('http://localhost:5500/register', {
+      fetch('http://localhost:3001/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

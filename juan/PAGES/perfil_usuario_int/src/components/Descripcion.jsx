@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { TextField, Button, Modal, Typography, Fab, Box } from '@mui/material';
+import { TextField, Modal, Typography, Fab, Box } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-
 
 export const Descripcion = () => {
     const [texto, setTexto] = useState("Todavía no se ha añadido una descripción");
-    const [open, setOpen] = useState(false); // Falta añadir el estado 'open' para controlar el Modal
+    const [open, setOpen] = useState(false);
 
     const cambiarTexto = (nuevoTexto) => {
         setTexto(nuevoTexto);
@@ -36,23 +35,20 @@ export const Descripcion = () => {
     };
 
     const cajaTitulo = {
-        display: 'flex',  // Cambiado de 'block' a 'flex'
+        display: 'flex',  
         justifyContent: 'space-between',
-        alignItems: 'center'  // Alinea los elementos en el eje vertical
+        alignItems: 'center'  
     };
 
     return (
         <div>
             <div style={cajaTitulo}>
                 <h4 style={titulo}>Sobre mí</h4>
-
-                <Button onClick={handleOpen}>
-                    <Fab color="secondary" aria-label="edit" size="small">
-                        <EditIcon />
-                    </Fab>
-                </Button>
+                {/* 🎯 Corrección: onClick movido al Fab */}
+                <Fab color="secondary" aria-label="edit" size="small" onClick={handleOpen}>
+                    <EditIcon />
+                </Fab>
             </div>
-
 
             <p style={{ whiteSpace: 'pre-line' }}>{texto}</p>
 

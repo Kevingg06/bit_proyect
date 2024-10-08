@@ -1,30 +1,26 @@
 import React, { useState, useEffect } from 'react';
 
 const nombreStyle = {
-    color: 'black',
-    marginLeft: '3%',
-    fontSize: '45px',
-    height: '50%'
+  color: 'black',
+  marginLeft: '3%',
+  fontSize: '45px',
+  height: '50%'
 };
 
-export const Nombre = () => {
-    const [nombre, setNombre] = useState('Nombre Apellido');
+export const Nombre = ({ getCookie }) => { // Recibir getCookie como prop
+  const [nombre, setNombre] = useState('Cargando...');
 
-    useEffect(() => {
-        async function obtenerNombreDeAPI() {
-            try {
-                const respuesta = await fetch('https://api.ejemplo.com/usuario');
-                const datos = await respuesta.json();
-                setNombre(datos.nombre); // Suponiendo que la respuesta de la API tiene una propiedad "nombre"
-            } catch (error) {
-                console.error('Error al obtener el nombre del usuario:', error);
-            }
-        }
+  useEffect(() => {
+    // Obtener el nombre de la cookie
+    const cookieData = getCookie('authToken');
+    if (cookieData && cookieData.nombre) {
+      setNombre(cookieData.nombre);
+    } else {
+      setNombre('Error al cargar el nombre');
+    }
+  }, [getCookie]); // Agregar getCookie como dependencia
 
-        obtenerNombreDeAPI();
-    }, []);
-
-    return (
-        <p style={nombreStyle}>{nombre}</p>
-    );
+  return (
+    <p style={nombreStyle}>{nombre}</p>
+  );
 };
