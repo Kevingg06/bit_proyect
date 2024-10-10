@@ -44,6 +44,8 @@ export const Descripcion = () => {
         setOpen(false);  // Cerrar el modal
     };
 
+    
+
     const style = {
         position: 'absolute',
         top: '50%',
