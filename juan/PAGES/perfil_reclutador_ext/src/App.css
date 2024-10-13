@@ -104,6 +104,21 @@
   margin-top: 3.5%;
 }
 
+#titulos{
+  display: flex;
+  width: 49%;
+  height: 100%;
+  flex-direction: column;
+  text-align: left;
+}
+
+#titulos > h3{
+  font-size: 30px;
+}
+
+#titulos > p{
+  font-size: 22px;
+}
 
 
 
@@ -118,25 +133,11 @@
 
 
 #introPosteos {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centra el primer elemento */
-  position: relative; /* Necesario para posicionar el segundo elemento */
   width: 80%;
   margin-left: 10%;
   margin-top: 1.5%;
   margin-bottom: 1%;
 }
-
-#introPosteos h3 {
-  margin: 0 auto;
-}
-
-#introPosteos > :last-child {
-  position: absolute;
-  right: 0;
-}
-
 
 
 h3{

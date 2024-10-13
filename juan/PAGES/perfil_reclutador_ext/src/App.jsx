@@ -1,9 +1,11 @@
 import './App.css';
-import Noticiero from './components/Noticiero';
 import { LineaHor } from './components/LineaHor';
-import { Descripcion } from './components/Descripcion';
+import { LineaVer } from './components/LineaVer';
 import { Nombre } from './components/Nombre';
-import CrearAnuncio from './components/CrearAnuncio';
+import { Descripcion } from './components/Descripcion';
+import { Posteo } from './components/Posteo';
+import Noticiero from './components/Noticiero';
+import CrearPosteo from './components/CrearPosteo'
 
 function App() {
   return (
@@ -22,16 +24,14 @@ function App() {
           </div>
           <LineaHor />
           <div id='infoAdicional'>
-            <div id='fotoGrande'></div>
             <Descripcion />
           </div>
           <LineaHor />
           <div id='introPosteos'>
-            <h3>Anuncios</h3>
-            <CrearAnuncio />
+            <h3>Posteos</h3>
           </div>
           <div id='posteos'>
-
+            <Posteo />
           </div>
         </div>
 

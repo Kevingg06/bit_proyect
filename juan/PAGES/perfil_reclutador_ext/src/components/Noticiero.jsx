@@ -38,7 +38,7 @@ const Noticiero = () => {
         <Box sx={{ width: '30.172%', marginTop: '3%' }}>
             <Box sx={estiloNoticiero}>
                 <Box sx={miniTitulo}>
-                    <Typography fontSize={'25px'}>Puede ser de tu interés</Typography>
+                    <Typography>Puede ser de tu interés</Typography>
                 </Box>
                 <Box sx={{ flexGrow: 1 }}>
                     <Noticia />

@@ -71,8 +71,7 @@ export const Descripcion = () => {
     };
 
     const globo = {
-        width: '40%',
-        marginLeft: '2%',
+        width: '100%',
         height: '95%'
     }
     
@@ -80,13 +79,7 @@ export const Descripcion = () => {
     return (
         <div style={globo}>
             <div style={cajaTitulo}>
-                <h3 style={titulo}>Sobre la empresa</h3>
-
-                <Button onClick={handleOpen}>
-                    <Fab color="secondary" aria-label="edit" size="small">
-                        <EditIcon />
-                    </Fab>
-                </Button>
+                <h3 style={titulo}>Sobre mí</h3>
             </div>
 
 

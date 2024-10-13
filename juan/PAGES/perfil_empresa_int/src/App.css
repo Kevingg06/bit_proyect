@@ -94,29 +94,29 @@
   cursor: pointer;
 }
 
+
+
 #infoAdicional{
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 90%;
   height: 40%;
-  margin-left: 10%;
+  overflow: hidden;
+  margin-left: 5%;
   margin-top: 3.5%;
 }
 
-#titulos{
+
+#fotoGrande{
   display: flex;
-  width: 49%;
+  flex-direction: row;
   height: 100%;
-  flex-direction: column;
-  text-align: left;
-}
-
-#titulos > h3{
-  font-size: 30px;
-}
-
-#titulos > p{
-  font-size: 22px;
+  width: 60%;
+  background-image: url(../public/empleados_fotoGrande.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 25px 25px 25px 25px;
 }
 
 
@@ -131,9 +131,29 @@
 
 
 
-h3{
+#introPosteos {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el primer elemento */
+  position: relative; /* Necesario para posicionar el segundo elemento */
+  width: 80%;
+  margin-left: 10%;
   margin-top: 1.5%;
   margin-bottom: 1%;
+}
+
+#introPosteos h3 {
+  margin: 0 auto;
+}
+
+#introPosteos > :last-child {
+  position: absolute;
+  right: 0;
+}
+
+
+
+h3{
   font-size: 40px;
 }
 
