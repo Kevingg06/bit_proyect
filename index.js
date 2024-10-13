@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
 // 🎯 Configuración de CORS usando el middleware 'cors'
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'], // Permitir ambos orígenes
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'], // Permitir ambos orígenes
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   credentials: true
 }));

@@ -65,7 +65,7 @@ function App() {
     if (datosVacios(inputs) && validarDatos(inputs) && validarContraseña(contraseña1_empresa) && segundaContraseña(contraseña1_empresa, contraseña2_empresa)) {
       console.log('Todos los datos son correctos. Enviando datos...');
 
-      fetch('http://localhost:3001/', {
+      fetch('http://localhost:5500/register', { // URL corregida
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,6 +82,12 @@ function App() {
         })
         .then((data) => {
           console.log('Respuesta de la API:', data);
+          // Actualizar la cookie del lado del cliente
+          document.cookie = `authToken=${JSON.stringify({
+            token: data.token, 
+            userId: data.userId,
+            nombre: data.nombre 
+          })}`;
         })
         .catch((error) => {
           console.error('Error al enviar datos a la API:', error);
