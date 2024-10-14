@@ -6,6 +6,23 @@ import { Nombre } from './components/Nombre';
 import CrearAnuncio from './components/CrearAnuncio';
 
 function App() {
+  // 🎯 Definir getCookie dentro del componente App
+  const getCookie = (cookieName) => {
+    const name = cookieName + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    for (let i = 0; i < cookieArray.length; i++) {
+      let cookie = cookieArray[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1);
+      }
+      if (cookie.indexOf(name) === 0) {
+        return JSON.parse(cookie.substring(name.length, cookie.length));
+      }
+    }
+    return "";
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -13,7 +30,8 @@ function App() {
           <div className='primeraInfo'>
             <div className='apariencia'>
               <div className='imagen'></div>
-              {/* <Nombre /> */}
+                {/* Pasar getCookie como prop al componente Nombre */}
+                <Nombre getCookie={getCookie} /> 
             </div>
             <div className='interacciones'>
               <button id='mensaje'></button>

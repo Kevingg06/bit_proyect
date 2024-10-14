@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const nombreStyle = {
   color: 'black',
   marginLeft: '3%',
-  fontSize: '45px',
+  fontSize: '35px',
   height: '50%'
 };
 
