@@ -37,7 +37,7 @@ create table company(
     mail varchar(320),
     description text,
     cuit varchar(25),
-    companyPassword varchar(20),
+    companyPassword varchar(125),
     PRIMARY KEY(companyId)
 );
 
