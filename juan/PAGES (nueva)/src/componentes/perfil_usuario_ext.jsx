@@ -1,16 +1,15 @@
-import './App.css';
-import DiaDisponible from './components/DiaDisponible';
-import { LineaHor } from './components/LineaHor';
-import { LineaVer } from './components/LineaVer';
-import { Nombre } from './components/Nombre';
-import { TitulosExt } from './components/TitulosExt';
-import TablaHorariosExt from './components/TablaExt';
-import { DescripcionExt } from './components/DescripcionExt';
+import './Perfil_usuario_ext.css';
+import DiaDisponible from './DiaDisponible';
+import { LineaHor } from './LineaHor';
+import { LineaVer } from './LineaVer';
+import { Nombre } from './Nombre';
+import { TitulosExt } from './TitulosExt';
+import TablaHorariosExt from './TablaExt';
+import { DescripcionExt } from './DescripcionExt';
 
-function App() {
+function Perfil_usuario_ext() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="perfil_usuario_ext">
         <div className='pantalla'>
           <div className='primeraInfo'>
             <div className='apariencia'>
@@ -40,9 +39,8 @@ function App() {
             </div>
           </div>
         </div>
-      </header>
     </div>
   );
 }
 
-export default App;
+export default Perfil_usuario_ext;

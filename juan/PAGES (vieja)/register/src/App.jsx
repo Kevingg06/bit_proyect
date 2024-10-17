@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import './Register.css';
+import './App.css';
 
-function Register() {
+function App() {
   useEffect(() => {
     console.log('DOMContentLoaded event fired');
 
@@ -249,4 +249,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default App;

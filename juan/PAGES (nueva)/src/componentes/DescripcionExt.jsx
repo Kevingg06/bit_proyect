@@ -8,7 +8,7 @@ const textoStyle = {
     color: '#4B0713'
 };
 
-export const Descripcion = () => {
+export const DescripcionExt = () => {
     const [texto, setTexto] = useState('Todavía no se ha añadido una descripción');
 
     useEffect(() => {

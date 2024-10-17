@@ -48,7 +48,7 @@
 
 .imagen{
   display: inline-block;
-  background-image: url(./fotoPerfil.jpg);
+  background-image: url(../../public/fotoPerfil.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 102px;
@@ -68,7 +68,7 @@
   width: 45%;
   height: 100%;
   background-color: #ffffff00;
-  background-image: url(/src/mail.png);
+  background-image: url(../../public/mail.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
@@ -81,7 +81,7 @@
   width: 30%;
   height: 100%;
   background-color: #ffffff00;
-  background-image: url(/src/guardar.png);
+  background-image: url(../../public/guardar.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

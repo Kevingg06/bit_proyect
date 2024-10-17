@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import './App.css';
+import './Login.css';
 
-function App() {
+function Login() {
 
   const passwordInputRef = useRef(null);
   const mostrarContraRef = useRef(null);
@@ -123,33 +123,31 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* Fondo de la página */}
-        <div id="fondo_2"></div>
-        <div id="fondo_1"></div>
+    <div className="login">
+      {/* Fondo de la página */}
+      <div id="fondo_2"></div>
+      <div id="fondo_1"></div>
 
-        {/* Contenedor principal */}
-        <div className="pantalla">
-          <h1>INICIAR SESIÓN</h1>  {/* Título principal */}
+      {/* Contenedor principal */}
+      <div className="pantalla">
+        <h1>INICIAR SESIÓN</h1>  {/* Título principal */}
 
-          {/* Formulario de inicio de sesión */}
-          <form id="formulario">
-            <input type="email" id="email" ref={emailRef} placeholder="INGRESA TU EMAIL" /> {/* Campo para ingresar el email */}
-            <input type="password" id="contraseña" ref={passwordInputRef} placeholder="INGRESA TU CONTRASEÑA" /> {/* Campo para ingresar la contraseña */}
-            <button type="button" id="mostrarContra" ref={mostrarContraRef}>Mostrar</button> {/* Botón para mostrar la contraseña */}
-            <a id="olvido" href="../RECUPERAR_CONTRASEÑA/recuperacion.html">¿Olvidaste tu contraseña?</a> {/* Enlace para la página de recuperación de contraseña */}
-            <a id="register" href="../REGISTRARSE/registrarse.html">¿No tenés cuenta? Registrate</a> {/* Enlace para la página de registro */}
-            <button type="button" id="ingresar" ref={ingresarRef}>Entrar</button> {/* Botón para iniciar sesión */}
-            <button type="button" id="google">
-              <img src="/logo_google.jpg" alt='makako' />
-              INGRESAR CON GOOGLE
-            </button>
-          </form>
-        </div>
-      </header>
+        {/* Formulario de inicio de sesión */}
+        <form id="formulario">
+          <input type="email" id="email" ref={emailRef} placeholder="INGRESA TU EMAIL" /> {/* Campo para ingresar el email */}
+          <input type="password" id="contraseña" ref={passwordInputRef} placeholder="INGRESA TU CONTRASEÑA" /> {/* Campo para ingresar la contraseña */}
+          <button type="button" id="mostrarContra" ref={mostrarContraRef}>Mostrar</button> {/* Botón para mostrar la contraseña */}
+          <a id="olvido" href="#">¿Olvidaste tu contraseña?</a> {/* Enlace para la página de recuperación de contraseña */}
+          <a id="register" href="#">¿No tenés cuenta? Registrate</a> {/* Enlace para la página de registro */}
+          <button type="button" id="ingresar" ref={ingresarRef}>Entrar</button> {/* Botón para iniciar sesión */}
+          <button type="button" id="google">
+            <img src="/logo_google.jpg" alt='makako' />
+            INGRESAR CON GOOGLE
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Login;

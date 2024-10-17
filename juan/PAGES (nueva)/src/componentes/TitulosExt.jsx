@@ -8,7 +8,7 @@ const textoStyle = {
     color: '#4B0713'
 };
 
-export const Titulos = () => {
+export const TitulosExt = () => {
     const [texto, setTexto] = useState('Todavía no se han añadido títulos');
 
     useEffect(() => {

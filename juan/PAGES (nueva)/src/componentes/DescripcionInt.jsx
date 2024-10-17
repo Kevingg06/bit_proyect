@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Modal, Typography, Fab, Box } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
-export const Descripcion = () => {
+export const DescripcionInt = () => {
     const [texto, setTexto] = useState("Todavía no se ha añadido una descripción");
     const [open, setOpen] = useState(false);
 

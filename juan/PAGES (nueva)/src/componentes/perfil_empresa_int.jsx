@@ -1,11 +1,11 @@
-import './App.css';
+import './Perfil_empresa_int.css';
 import Noticiero from './components/Noticiero';
 import { LineaHor } from './components/LineaHor';
 import { DescripcionInt } from './components/DescripcionInt';
 import { Nombre } from './components/Nombre';
 import CrearAnuncio from './components/CrearAnuncio';
 
-function App() {
+function Perfil_empresa_int() {
   // 🎯 Definir getCookie dentro del componente App
   const getCookie = (cookieName) => {
     const name = cookieName + "=";
@@ -24,41 +24,39 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className='pantalla'>
-          <div className='primeraInfo'>
-            <div className='apariencia'>
-              <div className='imagen'></div>
-                {/* Pasar getCookie como prop al componente Nombre */}
-                <Nombre getCookie={getCookie} /> 
-            </div>
-            <div className='interacciones'>
-              <button id='mensaje'></button>
-              <button id='guardar'></button>
-            </div>
+    <div className="perfil_empresa_int">
+      <div className='pantalla'>
+        <div className='primeraInfo'>
+          <div className='apariencia'>
+            <div className='imagen'></div>
+            {/* Pasar getCookie como prop al componente Nombre */}
+            <Nombre getCookie={getCookie} />
           </div>
-          <LineaHor />
-          <div id='infoAdicional'>
-            <div id='fotoGrande'></div>
-            <DescripcionInt />
-          </div>
-          <LineaHor />
-          <div id='introPosteos'>
-            <h3>Anuncios</h3>
-            <CrearAnuncio />
-          </div>
-          <div id='posteos'>
-
+          <div className='interacciones'>
+            <button id='mensaje'></button>
+            <button id='guardar'></button>
           </div>
         </div>
+        <LineaHor />
+        <div id='infoAdicional'>
+          <div id='fotoGrande'></div>
+          <DescripcionInt />
+        </div>
+        <LineaHor />
+        <div id='introPosteos'>
+          <h3>Anuncios</h3>
+          <CrearAnuncio />
+        </div>
+        <div id='posteos'>
+
+        </div>
+      </div>
 
 
 
-        <Noticiero />
-      </header>
+      <Noticiero />
     </div>
   );
 }
 
-export default App;
+export default Perfil_empresa_int;

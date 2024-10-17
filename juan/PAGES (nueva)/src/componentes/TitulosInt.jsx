@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Modal, Typography, Fab, Box } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 
-export const Titulos = () => {
+export const TitulosInt = () => {
     const [texto, setTexto] = useState("Todavía no se han añadido títulos");
     const [open, setOpen] = useState(false);
 

@@ -1,13 +1,13 @@
-import './App.css';
-import DiaDisponible from './components/DiaDisponible';
-import { LineaHor } from './components/LineaHor';
-import { LineaVer } from './components/LineaVer';
-import { Nombre } from './components/Nombre'; 
-import { TitulosInt } from './components/TitulosInt';
-import TablaHorariosInt from './components/TablaInt';
-import { DescripcionInt } from './components/DescripcionInt';
+import './Perfil_usuario_int.css';
+import DiaDisponible from './DiaDisponible';
+import { LineaHor } from './LineaHor';
+import { LineaVer } from './LineaVer';
+import { Nombre } from './Nombre'; 
+import { TitulosInt } from './TitulosInt';
+import TablaHorariosInt from './/TablaInt';
+import { DescripcionInt } from './DescripcionInt';
 
-function App() { 
+function Perfil_usuario_int() { 
   // 🎯 Definir getCookie dentro del componente App
   const getCookie = (cookieName) => {
     const name = cookieName + "=";
@@ -26,8 +26,7 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="perfil_usuario_int">
         <div className='pantalla'>
           <div className='primeraInfo'>
             <div className='apariencia'>
@@ -58,9 +57,8 @@ function App() {
             </div>
           </div>
         </div>
-      </header>
     </div>
   );
 }
 
-export default App;
+export default Perfil_usuario_int;
