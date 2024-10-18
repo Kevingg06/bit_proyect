@@ -44,6 +44,26 @@ body {
   animation: movingX1 .3s ease; /* Animación de entrada */
 }
 
+@media(max-height: 720px){
+  .pantalla{
+    width: 35%;
+    height: 80%;
+    left: 33.5%;
+  }
+}
+
+
+@media(max-height: 1440px){
+  .pantalla{
+    width: 35%;
+    height: 80%;
+    left: 30%;
+  }
+}
+
+
+
+
 @media(max-width: 1200px){
   .pantalla{
     width: 35%;
@@ -103,6 +123,28 @@ body {
   height: 37%; /* Altura fija */
   animation: movingX1 .3s ease; /* Animación de entrada */
 }
+
+@media(max-height: 720px){
+  .pantalla{
+    width: 35%;
+    height: 80%;
+    left: 33.5%;
+  }
+}
+
+
+@media(max-height: 1440px){
+  #root_eleccion{
+    width: 35%;
+    height: 35%;
+    top: 25%;
+    left: 30%;
+  }
+}
+
+
+
+
 
 @media(max-width: 1200px){
   #root_eleccion{

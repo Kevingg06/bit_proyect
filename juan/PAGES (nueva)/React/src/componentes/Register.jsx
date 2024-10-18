@@ -210,9 +210,9 @@ function Register() {
           </p>
           <button type="button" id="datos_empleado">ACEPTAR Y CONTINUAR</button>
         </form>
-        <a href="../INICIO_SESION/login.html">¿Ya tenés una cuenta? Iniciá sesión</a>
+        <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
         <button className="google">
-          <img src="/logo_google.jpg" alt="Google logo" />
+          <img src="../../public/logo_google.jpg" alt="Google logo" />
           <span>INGRESAR CON GOOGLE</span>
         </button>
         <button className="volver">VOLVER</button>
@@ -232,9 +232,9 @@ function Register() {
           </p>
           <button type="button" id="datos_empresa">ACEPTAR Y CONTINUAR</button>
         </form>
-        <a href="../INICIO_SESION/login.html">¿Ya tenés una cuenta? Iniciá sesión</a>
+        <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
         <button className="google">
-          <img src="/logo_google.jpg" alt="Google logo" />
+          <img src="../../public/logo_google.jpg" alt="Google logo" />
           <span>INGRESAR CON GOOGLE</span>
         </button>
         <button className="volver">VOLVER</button>
