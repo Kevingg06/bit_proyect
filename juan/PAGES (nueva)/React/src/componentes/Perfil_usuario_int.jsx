@@ -1,4 +1,4 @@
-import './Perfil_usuario_int.css';
+import estilos from './Perfil_usuario_int.module.css';
 import DiaDisponible from './DiaDisponible';
 import { LineaHor } from './LineaHor';
 import { LineaVer } from './LineaVer';

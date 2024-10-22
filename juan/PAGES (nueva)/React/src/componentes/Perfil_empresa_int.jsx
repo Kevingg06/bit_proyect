@@ -1,4 +1,4 @@
-import './Perfil_empresa_int.css';
+import estilos from './Perfil_empresa_int.module.css';
 import Noticiero from './components/Noticiero';
 import { LineaHor } from './components/LineaHor';
 import { DescripcionInt } from './components/DescripcionInt';

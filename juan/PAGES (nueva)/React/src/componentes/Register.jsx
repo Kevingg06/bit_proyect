@@ -1,42 +1,42 @@
 import React, { useEffect } from 'react';
-import './Register.css';
+import estilos from './Register.module.css';
 
 function Register() {
   useEffect(() => {
     console.log('DOMContentLoaded event fired');
 
-    const elecciones = document.querySelectorAll('.btn_eleccion');
-    const roots = document.querySelectorAll('.pantalla');
-    const opcion = document.querySelector('#root_eleccion');
-    const vueltas = document.querySelectorAll('.volver');
-    const btnEmpleado = document.querySelector('#btn_empleado');
-    const btnEmpresa = document.querySelector('#btn_empresa');
+    const elecciones = document.querySelectorAll(`.${estilos.btn_eleccion}`);
+    const roots = document.querySelectorAll(`.${estilos.pantalla}`);
+    const opcion = document.querySelector(`#root_eleccion`);
+    const vueltas = document.querySelectorAll(`.${estilos.volver}`);
+    const btnEmpleado = document.querySelector(`#btn_empleado`);
+    const btnEmpresa = document.querySelector(`#btn_empresa`);
 
     function desactivarTodos() {
-      elecciones.forEach((eleccion) => eleccion.classList.remove('active'));
-      roots.forEach((content) => content.classList.remove('active'));
-      opcion.classList.remove('active');
-      btnEmpleado.classList.remove('active');
-      btnEmpresa.classList.remove('active');
+      elecciones.forEach((eleccion) => eleccion.classList.remove(estilos.active));
+      roots.forEach((content) => content.classList.remove(estilos.active));
+      opcion.classList.remove(estilos.active);
+      btnEmpleado.classList.remove(estilos.active);
+      btnEmpresa.classList.remove(estilos.active);
     }
 
-    opcion.classList.add('active');
+    opcion.classList.add(estilos.active);
 
     elecciones.forEach((eleccion, index) => {
       eleccion.addEventListener('click', () => {
         desactivarTodos();
-        eleccion.classList.add('active');
+        eleccion.classList.add(estilos.active);
         if (index < roots.length) {
-          roots[index].classList.add('active');
+          roots[index].classList.add(estilos.active);
         }
-        opcion.classList.remove('active');
+        opcion.classList.remove(estilos.active);
       });
     });
 
     vueltas.forEach((volver) => {
       volver.addEventListener('click', () => {
         desactivarTodos();
-        opcion.classList.add('active');
+        opcion.classList.add(estilos.active);
       });
     });
 
@@ -196,10 +196,10 @@ function Register() {
       <div id="fondo_2"></div>
       <div id="fondo_1"></div>
 
-      <div className="pantalla" id="root_empleado">
+      <div className={estilos.pantalla} id="root_empleado">
         <h1>Empieza a expandir tus posibilidades</h1>
         <p>Primero necesitamos recopilar algunos datos</p>
-        <form className="formulario" id="form_empleado" action="/register" method="post">
+        <form className={estilos.formulario} id="form_empleado" action="/register" method="post">
           <input id="nombre_empleado" type="text" placeholder="NOMBRE Y APELLIDO" autoComplete="name" />
           <input id="email_empleado" type="email" placeholder="EMAIL" required />
           <input id="edad_empleado" type="number" placeholder="EDAD" />
@@ -211,19 +211,19 @@ function Register() {
           <button type="button" id="datos_empleado">ACEPTAR Y CONTINUAR</button>
         </form>
         <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
-        <button className="google">
+        <button className={estilos.google}>
           <img src="../../public/logo_google.jpg" alt="Google logo" />
           <span>INGRESAR CON GOOGLE</span>
         </button>
-        <button className="volver">VOLVER</button>
+        <button className={estilos.volver}>VOLVER</button>
       </div>
 
-      <div className="pantalla" id="root_empresa">
+      <div className={estilos.pantalla} id="root_empresa">
         <h1>Empieza a expandir tus posibilidades</h1>
         <p>Primero necesitamos recopilar algunos datos</p>
-        <form className="formulario" id="form_empresa" action="/register" method="post">
-          <input id="nombre_empresa" type="text" placeholder="NOMBRE" />
-          <input id="email_empresa" type="email" placeholder="EMAIL" />
+        <form className={estilos.formulario} id="form_empresa" action="/register" method="post">
+          <input id="nombre_empresa" type="text" placeholder="NOMBRE DE LA EMPRESA" autoComplete="organization" />
+          <input id="email_empresa" type="email" placeholder="EMAIL" required />
           <input id="cuit_empresa" type="text" placeholder="CUIT" />
           <input id="contraseña1_empresa" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
           <input id="contraseña2_empresa" type="password" placeholder="CONFIRMAR CONTRASEÑA" />
@@ -233,17 +233,17 @@ function Register() {
           <button type="button" id="datos_empresa">ACEPTAR Y CONTINUAR</button>
         </form>
         <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
-        <button className="google">
+        <button className={estilos.google}>
           <img src="../../public/logo_google.jpg" alt="Google logo" />
           <span>INGRESAR CON GOOGLE</span>
         </button>
-        <button className="volver">VOLVER</button>
+        <button className={estilos.volver}>VOLVER</button>
       </div>
 
-      <div className="pantalla" id="root_eleccion">
+      <div className={estilos.pantalla} id="root_eleccion">
         <h2>¿PARA QUÉ UTILIZARÁ SU CUENTA?</h2>
-        <button id="btn_empleado" className="btn_eleccion">EMPLEADO</button>
-        <button id="btn_empresa" className="btn_eleccion">EMPRESA</button>
+        <button id="btn_empleado" className={estilos.btn_eleccion}>EMPLEADO</button>
+        <button id="btn_empresa" className={estilos.btn_eleccion}>EMPRESA</button>
       </div>
     </div>
   );

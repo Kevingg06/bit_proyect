@@ -1,4 +1,4 @@
-import './Perfil_reclutador_ext';
+import estilos from './Perfil_reclutador_ext.module.css';
 import { LineaHor } from './components/LineaHor';
 import { LineaVer } from './components/LineaVer';
 import { Nombre } from './components/Nombre';

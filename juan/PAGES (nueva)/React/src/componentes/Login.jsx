@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './Login.css';
+import estilos from './Login.module.css';
 
 function Login() {
 

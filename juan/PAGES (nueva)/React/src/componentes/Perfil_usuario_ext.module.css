@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  background-color: #f7f0e5;
+  height: 1400px;
+}
+
+.App-header {
+  background-color: #fcfbf9;
+  margin: auto;
+  display: flex;
+  height: 1800px;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+
+.pantalla {
+  display: flex;
+  margin-top: 3%;
+  width: 80%;
+  height: 1700px;
+  background-color: #eeeded;
+  border-radius: 25px;
+  box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  color: #4B0713;
+}
+
+
+.primeraInfo {
+  display: flex;
+  width: 83.1%;
+  height: 10%;
+  margin-top: 3%;
+  margin-left: 8.45%;
+  align-items: top;
+}
+
+
+.apariencia {
+  display: flex;
+  width: 80%;
+  height: 50%;
+}
+
+.imagen {
+  display: inline-block;
+  background-image: url(../../public/fotoPerfil.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 102px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+
+.interacciones {
+  display: flex;
+  width: 20%;
+  margin-left: 5%;
+  height: 50%;
+}
+
+#mensaje {
+  width: 45%;
+  height: 100%;
+  background-color: #f1e3cb;
+  background-image: url(../../public/mail.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#guardar {
+  margin-left: 15%;
+  width: 30%;
+  height: 100%;
+  background-color: #f1e3cb;
+  background-image: url(../../public/guardar.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+#infoAdicional {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 40%;
+  overflow: hidden;
+  margin-left: 10%;
+  margin-top: 3.5%;
+}
+
+#titulos {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  text-align: left;
+}
+
+#titulos>h3 {
+  font-size: 30px;
+}
+
+#titulos>p {
+  font-size: 22px;
+}
+
+
+#descripcion {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  margin-left: 2%;
+  flex-direction: column;
+  text-align: left;
+}
+
+#descripcion>h3 {
+  font-size: 30px;
+}
+
+#descripcion>p {
+  font-size: 22px;
+}
+
+
+
+h3 {
+  margin-top: 1.5%;
+  margin-bottom: 1%;
+  font-size: 40px;
+}
+
+#calendario {
+  display: flex;
+  background-color: #e2caa4;
+  width: 100%;
+  height: 61%;
+  border-radius: 0 0 25px 25px;
+}
+
+.horarios {
+  margin-top: 3%;
+  margin-left: 5%;
+  width: 90%;
+}
