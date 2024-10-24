@@ -57,7 +57,8 @@ export const TitulosInt = () => {
 
     const titulo = {
         display: 'inline',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        fontSize: '30px'
     };
 
     const cajaTitulo = {
@@ -65,6 +66,16 @@ export const TitulosInt = () => {
         justifyContent: 'space-between',
         alignItems: 'center'
     };
+
+    const estiloTexto = {
+        fontSize: '22px',
+        whiteSpace: 'pre-line',
+        width: '100%',
+        display: 'block',
+        wordWrap: 'break-word'
+    };
+
+    
 
     return (
         <div>
@@ -76,7 +87,7 @@ export const TitulosInt = () => {
             </div>
 
             <div style={{ width: '100%' }}>
-                <p style={{ whiteSpace: 'pre-line', width: '100%', display: 'block', wordWrap: 'break-word' }}>
+                <p style={estiloTexto}>
                     {texto}
                 </p>
             </div>

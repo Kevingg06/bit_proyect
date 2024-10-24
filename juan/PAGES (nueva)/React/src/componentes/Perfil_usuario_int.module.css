@@ -8,6 +8,7 @@
 }
 
 .App-header {
+  display: flex;
   background-color: #f7f0e5;
   margin: auto;
   display: flex;
@@ -20,6 +21,7 @@
 .pantalla{
   display: flex;
   margin-top: 3%;
+  margin-left: 10%;
   width: 80%;
   height: 1680px;
   background-color: #eeeded;
@@ -108,13 +110,6 @@
   text-align: left;
 }
 
-#titulos > h3{
-  font-size: 30px;
-}
-
-#titulos > p{
-  font-size: 22px;
-}
 
 
 #descripcion{
@@ -126,17 +121,10 @@
   text-align: left;
 }
 
-#descripcion > h3{
-  font-size: 30px;
-}
-
-#descripcion > p{
-  font-size: 22px;
-}
 
 
-
-h3{
+.tituloHorarios{
+  align-self: center;
   margin-top: 1.5%;
   margin-bottom: 1%;
   font-size: 40px;

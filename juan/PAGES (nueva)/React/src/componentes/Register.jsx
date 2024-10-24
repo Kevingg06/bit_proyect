@@ -1,42 +1,43 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import estilos from './Register.module.css';
 
 function Register() {
   useEffect(() => {
     console.log('DOMContentLoaded event fired');
 
-    const elecciones = document.querySelectorAll(`.${estilos.btn_eleccion}`);
-    const roots = document.querySelectorAll(`.${estilos.pantalla}`);
+    const elecciones = document.querySelectorAll(`.btn_eleccion`);
+    const roots = document.querySelectorAll(`.pantalla`);
     const opcion = document.querySelector(`#root_eleccion`);
-    const vueltas = document.querySelectorAll(`.${estilos.volver}`);
+    const vueltas = document.querySelectorAll(`.volver`);
     const btnEmpleado = document.querySelector(`#btn_empleado`);
     const btnEmpresa = document.querySelector(`#btn_empresa`);
 
+
     function desactivarTodos() {
-      elecciones.forEach((eleccion) => eleccion.classList.remove(estilos.active));
-      roots.forEach((content) => content.classList.remove(estilos.active));
-      opcion.classList.remove(estilos.active);
-      btnEmpleado.classList.remove(estilos.active);
-      btnEmpresa.classList.remove(estilos.active);
+      elecciones.forEach((eleccion) => eleccion.classList.remove('active'));
+      roots.forEach((content) => content.classList.remove('active'));
+      opcion.classList.remove('active');
+      btnEmpleado.classList.remove('active');
+      btnEmpresa.classList.remove('active');
     }
 
-    opcion.classList.add(estilos.active);
+    opcion.classList.add('active');
 
     elecciones.forEach((eleccion, index) => {
       eleccion.addEventListener('click', () => {
         desactivarTodos();
-        eleccion.classList.add(estilos.active);
+        eleccion.classList.add('active');
         if (index < roots.length) {
-          roots[index].classList.add(estilos.active);
+          roots[index].classList.add('active');
         }
-        opcion.classList.remove(estilos.active);
+        opcion.classList.remove('active');
       });
     });
 
     vueltas.forEach((volver) => {
       volver.addEventListener('click', () => {
         desactivarTodos();
-        opcion.classList.add(estilos.active);
+        opcion.classList.add('active');
       });
     });
 
@@ -242,8 +243,8 @@ function Register() {
 
       <div className={estilos.pantalla} id="root_eleccion">
         <h2>¿PARA QUÉ UTILIZARÁ SU CUENTA?</h2>
-        <button id="btn_empleado" className={estilos.btn_eleccion}>EMPLEADO</button>
-        <button id="btn_empresa" className={estilos.btn_eleccion}>EMPRESA</button>
+        <button id="btn_empleado" className={estilos['btn_eleccion']}>EMPLEADO</button>
+        <button id="btn_empresa" className={estilos['btn_eleccion']}>EMPRESA</button>
       </div>
     </div>
   );

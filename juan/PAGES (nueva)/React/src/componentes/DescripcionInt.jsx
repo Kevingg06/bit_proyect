@@ -59,13 +59,22 @@ export const DescripcionInt = () => {
 
     const titulo = {
         display: 'inline',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        fontSize: '30px'
     };
 
     const cajaTitulo = {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
+    };
+
+    const estiloTexto = {
+        fontSize: '22px',
+        whiteSpace: 'pre-line',
+        width: '85%',
+        display: 'block',
+        wordWrap: 'break-word'
     };
 
     return (
@@ -77,7 +86,7 @@ export const DescripcionInt = () => {
                 </Fab>
             </div>
 
-            <p style={{ whiteSpace: 'pre-line', width: '85%', display: 'block', wordWrap: 'break-word' }}>
+            <p style={estiloTexto}>
                 {texto}
             </p>
 
