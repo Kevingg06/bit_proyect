@@ -1,9 +1,9 @@
-import estilos from './Perfil_empresa_int.module.css';
-import Noticiero from './components/Noticiero';
-import { LineaHor } from './components/LineaHor';
-import { DescripcionInt } from './components/DescripcionInt';
-import { Nombre } from './components/Nombre';
-import CrearAnuncio from './components/CrearAnuncio';
+import styles from './Perfil_empresa_int.module.css';
+import Noticiero from './Noticiero';
+import { LineaHor } from './LineaHor';
+import { DescripcionInt } from './DescripcionInt';
+import { Nombre } from './Nombre';
+import CrearAnuncio from './CrearAnuncio';
 
 function Perfil_empresa_int() {
   // 🎯 Definir getCookie dentro del componente App
@@ -24,30 +24,30 @@ function Perfil_empresa_int() {
   };
 
   return (
-    <div className="perfil_empresa_int">
-      <div className='pantalla'>
-        <div className='primeraInfo'>
-          <div className='apariencia'>
-            <div className='imagen'></div>
+    <div className={styles.perfilEmpresaInt}>
+      <div className={styles.pantalla}>
+        <div className={styles.primeraInfo}>
+          <div className={styles.apariencia}>
+            <div className={styles.imagen}></div>
             {/* Pasar getCookie como prop al componente Nombre */}
             <Nombre getCookie={getCookie} />
           </div>
-          <div className='interacciones'>
-            <button id='mensaje'></button>
-            <button id='guardar'></button>
+          <div className={styles.interacciones}>
+            <button id={styles.mensaje}></button>
+            <button id={styles.guardar}></button>
           </div>
         </div>
         <LineaHor />
-        <div id='infoAdicional'>
-          <div id='fotoGrande'></div>
+        <div id={styles.infoAdicional}>
+          <div id={styles.fotoGrande}></div>
           <DescripcionInt />
         </div>
         <LineaHor />
-        <div id='introPosteos'>
+        <div id={styles.introPosteos}>
           <h3>Anuncios</h3>
           <CrearAnuncio />
         </div>
-        <div id='posteos'>
+        <div id={styles.posteos}>
 
         </div>
       </div>

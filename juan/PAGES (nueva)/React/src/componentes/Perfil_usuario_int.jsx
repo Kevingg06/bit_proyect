@@ -1,10 +1,10 @@
-import estilos from './Perfil_usuario_int.module.css';
+import styles from './Perfil_usuario_int.module.css';
 import DiaDisponible from './DiaDisponible';
 import { LineaHor } from './LineaHor';
 import { LineaVer } from './LineaVer';
 import { Nombre } from './Nombre'; 
 import { TitulosInt } from './TitulosInt';
-import TablaHorariosInt from './/TablaInt';
+import TablaHorariosInt from './TablaInt';
 import { DescripcionInt } from './DescripcionInt';
 
 function Perfil_usuario_int() { 
@@ -25,34 +25,35 @@ function Perfil_usuario_int() {
     return "";
   };
 
+
   return (
-    <div className={estilos.perfilUsuarioInt}>
-        <div className={estilos.pantalla}>
-          <div className={estilos.primeraInfo}>
-            <div className={estilos.apariencia}>
-              <div className={estilos.imagen}></div>
+    <div className={styles.perfilUsuarioInt}>
+        <div className={styles.pantalla}>
+          <div className={styles.primeraInfo}>
+            <div className={styles.apariencia}>
+              <div className={styles.imagen}></div>
               {/* Pasar getCookie como prop al componente Nombre */}
               <Nombre getCookie={getCookie} /> 
             </div>
-            <div className={estilos.interacciones}>
-              <button id={estilos.mensaje}></button>
-              <button id={estilos.guardar}></button>
+            <div className={styles.interacciones}>
+              <button id={styles.mensaje}></button>
+              <button id={styles.guardar}></button>
             </div>
           </div>
           <LineaHor />
-          <div id={estilos.infoAdicional}>
-            <div id={estilos.titulos}>
+          <div id={styles.infoAdicional}>
+            <div id={styles.titulos}>
               <TitulosInt />
             </div>
             <LineaVer />
-            <div id={estilos.descripcion}>
+            <div id={styles.descripcion}>
               <DescripcionInt />
             </div>
           </div>
           <LineaHor />
-          <h3 className={estilos.tituloHorarios}>Horarios disponibles</h3>
-          <div id={estilos.calendario}>
-            <div className={estilos.horarios}>
+          <h3 className={styles.tituloHorarios}>Horarios disponibles</h3>
+          <div id={styles.calendario}>
+            <div className={styles.horarios}>
               <TablaHorariosInt />
             </div>
           </div>

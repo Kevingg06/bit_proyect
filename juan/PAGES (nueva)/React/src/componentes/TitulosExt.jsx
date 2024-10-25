@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
-const textoStyle = {
-    color: 'black',
-    marginTop: '2%',
-    fontSize: '30px',
-    height: '50%',
-    color: '#4B0713'
+
+const titulo = {
+    display: 'inline',
+    justifyContent: 'space-between',
+    fontSize: '30px'
 };
+
+const estiloTexto = {
+    fontSize: '25px',
+    whiteSpace: 'pre-line',
+    width: '100%',
+    display: 'block',
+    wordWrap: 'break-word'
+};
+
+
 
 export const TitulosExt = () => {
     const [texto, setTexto] = useState('Todavía no se han añadido títulos');
@@ -27,8 +36,8 @@ export const TitulosExt = () => {
 
     return (
         <div>
-            <h4>Tìtulos</h4>
-            <p style={textoStyle}>{texto}</p>
+            <h4 style={titulo}>Tìtulos</h4>
+            <p style={estiloTexto}>{texto}</p>
         </div>
     );
 };

@@ -11,11 +11,17 @@
 .App-header {
   background-color: #f7f0e5;
   margin: auto;
-  justify-content: space-between;
   display: flex;
+  flex-direction: column;
   height: 1850px;
-  width: 90.625%;
+  width: 100%;
   font-size: calc(10px + 2vmin);
+}
+
+.perfilReclutadorExt{
+  display: flex;
+  flex-direction: row;
+  height: 1700px;
 }
 
 
@@ -25,8 +31,8 @@
 .pantalla{
   display: flex;
   margin-top: 3%;
+  margin-left: 3%;
   width: 65.517%;
-  height: 94.6%;
   background-color: #eeeded;
   border-radius: 25px;
   box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
@@ -38,6 +44,7 @@
   display: flex;
   width: 83.1%;
   height: 10%;
+  max-height: 500px;
   margin-top: 3%;
   margin-left: 8.45%;
   align-items: top;
@@ -52,11 +59,13 @@
 
 .imagen{
   display: inline-block;
-  background-image: url(./fotoPerfil.jpg);
+  background-image: url(../../public/fotoPerfil.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 102px;
   height: 100px;
+  min-width: 102px;
+  min-height: 100px;
   border-radius: 100%;
 }
 
@@ -73,7 +82,7 @@
   height: 100%;
   margin-top: 13.5%;
   background-color: #ffffff00;
-  background-image: url(/src/mail.png);
+  background-image: url(../../public/mail.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
@@ -83,10 +92,11 @@
 
 #guardar{
   margin-left: 15%;
+  margin-top: 13%;
   width: 30%;
   height: 100%;
   background-color: #ffffff00;
-  background-image: url(/src/guardar.png);
+  background-image: url(../../public/guardar.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -104,40 +114,23 @@
   margin-top: 3.5%;
 }
 
-#titulos{
-  display: flex;
-  width: 49%;
-  height: 100%;
-  flex-direction: column;
-  text-align: left;
-}
-
-#titulos > h3{
-  font-size: 30px;
-}
-
-#titulos > p{
-  font-size: 22px;
-}
-
-
-
-#descripcion > h3{
-  font-size: 30px;
-}
-
-#descripcion > p{
-  font-size: 22px;
-}
-
 
 
 #introPosteos {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el primer elemento */
+  position: relative; /* Necesario para posicionar el segundo elemento */
   width: 80%;
   margin-left: 10%;
   margin-top: 1.5%;
   margin-bottom: 1%;
 }
+
+#introPosteos h3 {
+  align-self: center;
+}
+
 
 
 h3{

@@ -68,7 +68,7 @@ export const TitulosInt = () => {
     };
 
     const estiloTexto = {
-        fontSize: '22px',
+        fontSize: '25px',
         whiteSpace: 'pre-line',
         width: '100%',
         display: 'block',

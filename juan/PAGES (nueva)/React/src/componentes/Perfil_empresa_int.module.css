@@ -18,6 +18,12 @@
   font-size: calc(10px + 2vmin);
 }
 
+.perfilEmpresaInt{
+  display: flex;
+  flex-direction: row;
+  height: 1700px;
+}
+
 
 
 
@@ -25,6 +31,7 @@
 .pantalla{
   display: flex;
   margin-top: 3%;
+  margin-left: 3%;
   width: 65.517%;
   height: 94.6%;
   background-color: #eeeded;
@@ -52,7 +59,7 @@
 
 .imagen{
   display: inline-block;
-  background-image: url(./fotoPerfil.jpg);
+  background-image: url(../../public/fotoPerfil.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 102px;
@@ -73,7 +80,7 @@
   height: 100%;
   margin-top: 13.5%;
   background-color: #ffffff00;
-  background-image: url(/src/mail.png);
+  background-image: url(../../public/mail.png);
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
@@ -83,10 +90,11 @@
 
 #guardar{
   margin-left: 15%;
+  margin-top: 13%;
   width: 30%;
   height: 100%;
   background-color: #ffffff00;
-  background-image: url(/src/guardar.png);
+  background-image: url(../../public/guardar.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -112,7 +120,8 @@
   flex-direction: row;
   height: 100%;
   width: 60%;
-  background-image: url(../public/empleados_fotoGrande.jpeg);
+  margin-right: 1%;
+  background-image: url(../../public/empleados_fotoGrande.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

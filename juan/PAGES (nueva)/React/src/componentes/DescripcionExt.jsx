@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-const textoStyle = {
-    color: 'black',
-    marginTop: '2%',
-    fontSize: '30px',
-    height: '50%',
-    color: '#4B0713'
+
+
+const titulo = {
+    display: 'inline',
+    justifyContent: 'space-between',
+    fontSize: '30px'
 };
+
+const estiloTexto = {
+    fontSize: '25px',
+    whiteSpace: 'pre-line',
+    width: '85%',
+    display: 'block',
+    wordWrap: 'break-word'
+};
+
+
 
 export const DescripcionExt = () => {
     const [texto, setTexto] = useState('Todavía no se ha añadido una descripción');
@@ -27,8 +37,8 @@ export const DescripcionExt = () => {
 
     return (
         <div>
-            <h4>Descripcion</h4>
-            <p style={textoStyle}>{texto}</p>
+            <h4 style={titulo}>Sobre mí</h4>
+            <p style={estiloTexto}>{texto}</p>
         </div>
     );
 };

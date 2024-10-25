@@ -57,7 +57,7 @@ export default function CrearAnuncio() {
 
     return (
         <div>
-            <Button variant='contained' color="secondary" onClick={handleOpen}>Open modal</Button>
+            <Button variant='contained' color="secondary" onClick={handleOpen}>Crear anuncio</Button>
             <Modal
                 open={open}
                 onClose={handleClose}

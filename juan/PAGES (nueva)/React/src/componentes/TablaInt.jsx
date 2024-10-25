@@ -12,17 +12,18 @@ const StyledTableContainer = styled(TableContainer)`
   border: 2px solid #4B0713;
   border-radius: 20px;
   overflow: hidden;
-  background-color: #f5e9c8;
+  background-color: #f7f0e5;
 `;
 
 const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
   width: 10%;
-  background-color: ${props => props.is_occupied === "true" ? '#f15353' : '#7bc565'};
-  color: ${props => '#000'};
-  cursor: ${props => 'pointer'};
+  background-color: ${props => props.isButton ? (props.isOccupied ? '#f15353' : '#7bc565') : '#f5e9c8'};
+  color: ${props => props.isButton ? '#000' : '#4B0713'};
+  cursor: ${props => props.isButton ? 'pointer' : 'default'};
   text-align: center;
+  transform-style: preserve-3d;
   transition: background-color 0.5s, transform 0.5s;
 `;
 
@@ -40,13 +41,19 @@ const StyledHeaderCell = styled(TableCell)`
 
 const TablaHorarios = () => {
   const [rotations, setRotations] = useState(Array(12 * 7).fill(0));
-  const [statuses, setStatuses] = useState(Array(12 * 7).fill("DISPONIBLE"));
+  const [statuses, setStatuses] = useState(
+    Array(12 * 7)
+      .fill("DISPONIBLE")
+      .map((status, i) => (i % 2 === 0 ? "OCUPADO" : "DISPONIBLE"))
+  );
 
   const handleButtonClick = (index) => {
-    setRotations(prevRotations =>
-      prevRotations.map((rotation, i) => i === index ? rotation + 360 : rotation)
+    setRotations((prevRotations) =>
+      prevRotations.map((rotation, i) =>
+        i === index ? rotation + 360 : rotation
+      )
     );
-    setStatuses(prevStatuses =>
+    setStatuses((prevStatuses) =>
       prevStatuses.map((status, i) =>
         i === index ? (status === "OCUPADO" ? "DISPONIBLE" : "OCUPADO") : status
       )
@@ -59,7 +66,7 @@ const TablaHorarios = () => {
     "16:00 - 18:00", "18:00 - 20:00", "20:00 - 22:00", "22:00 - 00:00"
   ];
 
-  
+
 
   const guardarHorarios = async () => {
     // Organizar horarios por día (7 listas de 12 elementos cada una)
@@ -113,14 +120,16 @@ const TablaHorarios = () => {
           <TableBody>
             {timeSlots.map((time, rowIndex) => (
               <TableRow key={rowIndex}>
-                <StyledHeaderCell>{time}</StyledHeaderCell>
+                <StyledTableCell isButton={false}>{time}</StyledTableCell>
                 {[...Array(7)].map((_, colIndex) => {
                   const index = rowIndex * 7 + colIndex;
                   return (
                     <StyledTableCell
                       key={colIndex}
-                      is_occupied={statuses[index] === "OCUPADO" ? "true" : "false"}
+                      isButton={true}
+                      isOccupied={statuses[index] === "OCUPADO"}
                       onClick={() => handleButtonClick(index)}
+                      style={{ transform: `rotateX(${rotations[index]}deg)` }}
                     >
                       {statuses[index]}
                     </StyledTableCell>

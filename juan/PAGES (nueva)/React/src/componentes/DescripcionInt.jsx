@@ -46,7 +46,7 @@ export const DescripcionInt = () => {
 
     
 
-    const style = {
+    const estiloModal = {
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -70,15 +70,17 @@ export const DescripcionInt = () => {
     };
 
     const estiloTexto = {
-        fontSize: '22px',
+        fontSize: '25px',
         whiteSpace: 'pre-line',
         width: '85%',
         display: 'block',
         wordWrap: 'break-word'
     };
 
+    
+
     return (
-        <div>
+        <div style={{width: '100%'}}>   {/* Si por alguna razón el ancho del componente se rompe es culpa de esto */}
             <div style={cajaTitulo}>
                 <h4 style={titulo}>Sobre mí</h4>
                 <Fab color="secondary" aria-label="edit" size="small" onClick={handleOpen}>
@@ -96,7 +98,7 @@ export const DescripcionInt = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
+                <Box sx={estiloModal}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         Cuéntale al mundo quién eres.
                     </Typography>

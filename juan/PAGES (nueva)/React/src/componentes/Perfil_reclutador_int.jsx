@@ -1,36 +1,55 @@
-import estilos from './Perfil_reclutador_int.module.css';
-import { LineaHor } from './components/LineaHor';
-import { LineaVer } from './components/LineaVer';
-import { Nombre } from './components/Nombre';
-import { DescripcionInt } from './components/DescripcionInt';
-import { Posteo } from './components/Posteo';
-import Noticiero from './components/Noticiero';
-import CrearPosteo from './components/CrearPosteo'
+import styles from './Perfil_reclutador_int.module.css';
+import { LineaHor } from './LineaHor';
+import { LineaVer } from './LineaVer';
+import { Nombre } from './Nombre';
+import { DescripcionInt } from './DescripcionInt';
+import { Posteo } from './Posteo';
+import Noticiero from './Noticiero';
+import CrearPosteo from './CrearPosteo'
 
 function Perfil_reclutador_int() {
+  // 🎯 Definir getCookie dentro del componente App
+  const getCookie = (cookieName) => {
+    const name = cookieName + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    for (let i = 0; i < cookieArray.length; i++) {
+      let cookie = cookieArray[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1);
+      }
+      if (cookie.indexOf(name) === 0) {
+        return JSON.parse(cookie.substring(name.length, cookie.length));
+      }
+    }
+    return "";
+  };
+
+
   return (
-    <div className="perfil_reclutador_int">
-      <div className='pantalla'>
-        <div className='primeraInfo'>
-          <div className='apariencia'>
-            <div className='imagen'></div>
-            {/* <Nombre /> */}
+    <div className={styles.perfilReclutadorInt}>
+      <div className={styles.pantalla}>
+        <div className={styles.primeraInfo}>
+          <div className={styles.apariencia}>
+            <div className={styles.imagen}></div>
+            {/* Pasar getCookie como prop al componente Nombre */}
+            <Nombre getCookie={getCookie} /> 
           </div>
-          <div className='interacciones'>
-            <button id='mensaje'></button>
-            <button id='guardar'></button>
+          <div className={styles.interacciones}>
+            <button id={styles.mensaje}></button>
+            <button id={styles.guardar}></button>
           </div>
         </div>
         <LineaHor />
-        <div id='infoAdicional'>
+        <div id={styles.infoAdicional}>
           <DescripcionInt />
         </div>
         <LineaHor />
-        <div id='introPosteos'>
+        <div id={styles.introPosteos}>
           <h3>Posteos</h3>
           <CrearPosteo />
         </div>
-        <div id='posteos'>
+        <div id={styles.posteos}>
           <Posteo />
         </div>
       </div>
