@@ -263,7 +263,7 @@ input {
 }
 
 /* Estilos para el texto de aclaración */
-#aclaracion{
+.aclaracion{
   font-size: 15px; /* Tamaño de fuente */
   margin-bottom: 4%; /* Margen inferior */
 }
@@ -281,7 +281,7 @@ button {
 }
 
 /* Estilos para los botones de elección */
-.btn_eleccion{
+.btnEleccion{
   display: flex; /* Mostrar como flexbox */
   justify-content: center; /* Justificar contenido centrado */
   width: 85%; /* Ancho del botón */
@@ -295,7 +295,7 @@ button {
 }
 
 /* Estilos específicos para el botón de empleado */
-#btn_empleado{
+#btnEmpleado{
   background-color: #1D6FAB; /* Color de fondo */
   color: white; /* Color del texto */
 }

@@ -10,26 +10,16 @@ import Perfil_reclutador_ext from './componentes/Perfil_reclutador_ext';
 import Perfil_empresa_int from './componentes/Perfil_empresa_int';
 import zIndex from '@mui/material/styles/zIndex';
 
-// Componentes de cada página
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function Contact() {
-  return <h2>Contact</h2>;
-}
-
-
 
 function App() {
 
 
   return (
     <Router>
-      <nav style={{zIndex:'50'}}>
+      <nav style={{zIndex:'50', justifyContent:'space-between'}}>
         {/* Enlaces de navegación */}
         <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+        {/* <Link to="/register">Register</Link> */}
 
         <Link to="/perfilUsuarioInt">Perfil Usuario int</Link>
         <Link to="/perfilUsuarioExt">Perfil Usuario ext</Link>

@@ -200,16 +200,16 @@ function Register() {
       <div className={estilos.pantalla} id="root_empleado">
         <h1>Empieza a expandir tus posibilidades</h1>
         <p>Primero necesitamos recopilar algunos datos</p>
-        <form className={estilos.formulario} id="form_empleado" action="/register" method="post">
-          <input id="nombre_empleado" type="text" placeholder="NOMBRE Y APELLIDO" autoComplete="name" />
-          <input id="email_empleado" type="email" placeholder="EMAIL" required />
-          <input id="edad_empleado" type="number" placeholder="EDAD" />
-          <input id="contraseña1_empleado" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
-          <input id="contraseña2_empleado" type="password" placeholder="CONFIRMAR CONTRASEÑA" />
-          <p id="aclaracion">
+        <form className={estilos.formulario} id={estilos.form_empleado} action="/register" method="post">
+          <input id={estilos.nombre_empleado} type="text" placeholder="NOMBRE Y APELLIDO" autoComplete="name" />
+          <input id={estilos.email_empleado} type="email" placeholder="EMAIL" required />
+          <input id={estilos.edad_empleado} type="number" placeholder="EDAD" />
+          <input id={estilos.contraseña1_empleado} type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
+          <input id={estilos.contraseña2_empleado} type="password" placeholder="CONFIRMAR CONTRASEÑA" />
+          <p className={estilos.aclaracion}>
             Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de Hire-Me.
           </p>
-          <button type="button" id="datos_empleado">ACEPTAR Y CONTINUAR</button>
+          <button type="button" id={estilos.datos_empleado}>ACEPTAR Y CONTINUAR</button>
         </form>
         <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
         <button className={estilos.google}>
@@ -219,19 +219,19 @@ function Register() {
         <button className={estilos.volver}>VOLVER</button>
       </div>
 
-      <div className={estilos.pantalla} id="root_empresa">
+      <div className={estilos.pantalla} id={estilos.root_empresa}>
         <h1>Empieza a expandir tus posibilidades</h1>
         <p>Primero necesitamos recopilar algunos datos</p>
-        <form className={estilos.formulario} id="form_empresa" action="/register" method="post">
-          <input id="nombre_empresa" type="text" placeholder="NOMBRE DE LA EMPRESA" autoComplete="organization" />
-          <input id="email_empresa" type="email" placeholder="EMAIL" required />
-          <input id="cuit_empresa" type="text" placeholder="CUIT" />
-          <input id="contraseña1_empresa" type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
-          <input id="contraseña2_empresa" type="password" placeholder="CONFIRMAR CONTRASEÑA" />
-          <p id="aclaracion">
+        <form className={estilos.formulario} id={estilos.form_empresa} action="/register" method="post">
+          <input id={estilos.nombre_empresa} type="text" placeholder="NOMBRE DE LA EMPRESA" autoComplete="organization" />
+          <input id={estilos.email_empresa} type="email" placeholder="EMAIL" required />
+          <input id={estilos.cuit_empresa} type="text" placeholder="CUIT" />
+          <input id={estilos.contraseña1_empresa} type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" />
+          <input id={estilos.contraseña2_empresa} type="password" placeholder="CONFIRMAR CONTRASEÑA" />
+          <p className="aclaracion">
             Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de Hire-Me.
           </p>
-          <button type="button" id="datos_empresa">ACEPTAR Y CONTINUAR</button>
+          <button type="button" id={estilos.datos_empresa}>ACEPTAR Y CONTINUAR</button>
         </form>
         <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
         <button className={estilos.google}>
@@ -243,8 +243,8 @@ function Register() {
 
       <div className={estilos.pantalla} id="root_eleccion">
         <h2>¿PARA QUÉ UTILIZARÁ SU CUENTA?</h2>
-        <button id="btn_empleado" className={estilos['btn_eleccion']}>EMPLEADO</button>
-        <button id="btn_empresa" className={estilos['btn_eleccion']}>EMPRESA</button>
+        <button id={estilos.btnEmpleado} className={estilos.btnEleccion}>EMPLEADO</button>
+        <button id={estilos.btnEmpresa} className={estilos.btnEleccion}>EMPRESA</button>
       </div>
     </div>
   );

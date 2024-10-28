@@ -31,8 +31,8 @@
 .pantalla{
   display: flex;
   margin-top: 3%;
-  margin-left: 3%;
-  width: 65.517%;
+  margin-left: 2%;
+  width: 68.517%;
   height: 94.6%;
   background-color: #eeeded;
   border-radius: 25px;
@@ -90,7 +90,7 @@
 
 #guardar{
   margin-left: 15%;
-  margin-top: 13%;
+  margin-top: 1%;
   width: 30%;
   height: 100%;
   background-color: #ffffff00;

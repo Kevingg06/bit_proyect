@@ -7,15 +7,15 @@ const Noticiero = () => {
     const estiloNoticiero = {
         display: 'flex',
         backgroundColor: '#eeeded',
-        marginLeft: '10%',
+        marginLeft: '5%',
         width: '90%',
-        maxHeight: '700px', // Cambiado a maxHeight para limitar la altura
+        maxHeight: '530px', // Cambiado a maxHeight para limitar la altura
         borderRadius: '25px',
         boxShadow: '4px 4px 10px 6px rgba(0, 0, 0, 0.2)',
         flexDirection: 'column',
         color: '#4B0713',
         position: 'sticky', // Mantiene el elemento en su lugar al hacer scroll
-        top: '8.4%', // Ajusta la posición sticky para tener en cuenta el margen superior
+        top: '13%', // Ajusta la posición sticky para tener en cuenta el margen superior
         zIndex: 1, // Asegura que el componente Noticiero esté por encima de otros contenidos
     };
 
