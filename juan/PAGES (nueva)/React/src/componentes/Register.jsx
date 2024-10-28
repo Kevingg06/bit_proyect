@@ -100,8 +100,8 @@ function Register() {
       <div id="fondo_1"></div>
       {activeScreen === 'empleado' && (
         <div className={estilos.pantalla} id={estilos.root_empleado}>
-          <h1>Empieza a expandir tus posibilidades</h1>
-          <p>Primero necesitamos recopilar algunos datos</p>
+          <h2>Empieza a expandir tus posibilidades</h2>
+          <p style={{fontSize:'20px'}}>Primero necesitamos recopilar algunos datos</p>
           <form className={estilos.formulario} id={estilos.form_empleado}>
             <input id={estilos.nombre_empleado} type="text" placeholder="NOMBRE Y APELLIDO" value={datos.nombre_empleado} onChange={handleInputChange} />
             <input id={estilos.email_empleado} type="email" placeholder="EMAIL" required value={datos.email_empleado} onChange={handleInputChange} />

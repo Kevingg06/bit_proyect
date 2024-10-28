@@ -120,13 +120,13 @@ body {
   top: 30%; /* Alineado al 25% desde la parte superior */
   left: 40%;
   width: 25%;
-  height: 30%; /* Altura fija */
+  height: 27%; /* Altura fija */
   animation: movingX1 .3s ease; /* Animación de entrada */
 }
 
 @media(max-height: 720px){
   .pantalla{
-    width: 35%;
+    width: 40%;
     height: 80%;
     left: 33.5%;
   }
@@ -212,8 +212,7 @@ h1 {
 
 /* Estilos para los subtítulos h2 */
 h2{
-  margin: 7%; /* Margen general */
-  margin-top: 7%; /* Margen superior */
+  margin-top: 3%; /* Margen general */
   text-align: center; /* Alineación centrada */
   color: #4B0713;
 }
