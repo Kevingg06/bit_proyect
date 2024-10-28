@@ -19,7 +19,7 @@ function App() {
       <nav style={{zIndex:'50', justifyContent:'space-between'}}>
         {/* Enlaces de navegación */}
         <Link to="/login">Login</Link>
-        {/* <Link to="/register">Register</Link> */}
+        <Link to="/register">Register</Link>
 
         <Link to="/perfilUsuarioInt">Perfil Usuario int</Link>
         <Link to="/perfilUsuarioExt">Perfil Usuario ext</Link>
