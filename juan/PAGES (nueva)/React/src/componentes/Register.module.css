@@ -6,6 +6,15 @@ body {
   background-color: #f7f0e5; /* Color de fondo para todo el cuerpo del documento */
 }
 
+#register{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+}
+
 /* Estilos para el fondo 1 */
 #fondo_1 {
   position: absolute; /* Posición absoluta */
@@ -28,12 +37,22 @@ body {
   z-index: 1; /* Capa z-index inferior al fondo 1 */
 }
 
+
+
+#titulos{
+  margin: 3%;
+  width: 30%;
+}
+
+#titulos > h2{
+  font-size: 30px
+}
+
 /* Estilos para las secciones pantalla (contenedores principales) */
+
 .pantalla {
   display: flex; /* Inicialmente oculto */
-  position: absolute; /* Posición absoluta */
-  top: 4%;
-  left: 34.5%; /* Alineado al 37.5% del ancho del documento */
+  text-align: center;
   flex-direction: column; /* Dirección de flexión para elementos secundarios */
   background-color: white; /* Color de fondo */
   width: 50%; /* Ancho del contenedor */
@@ -44,31 +63,12 @@ body {
   animation: movingX1 .3s ease; /* Animación de entrada */
 }
 
-@media(max-height: 720px){
-  .pantalla{
-    width: 35%;
-    height: 80%;
-    left: 33.5%;
-  }
-}
-
-
+/*
 @media(max-height: 1440px){
   .pantalla{
     width: 35%;
     height: 80%;
     left: 30%;
-  }
-}
-
-
-
-
-@media(max-width: 1200px){
-  .pantalla{
-    width: 35%;
-    height: 80%;
-    left: 33.5%;
   }
 }
 
@@ -111,28 +111,21 @@ body {
     left: 5.5%;
   }
 }
+*/
 
 
 
 /* Estilos específicos para el contenedor de elección */
 #root_eleccion{
-  display: flex; /* Inicialmente oculto */
-  top: 30%; /* Alineado al 25% desde la parte superior */
-  left: 40%;
-  width: 25%;
-  height: 27%; /* Altura fija */
-  animation: movingX1 .3s ease; /* Animación de entrada */
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 38%;
+  width: 40%;
 }
 
-@media(max-height: 720px){
-  .pantalla{
-    width: 40%;
-    height: 80%;
-    left: 33.5%;
-  }
-}
-
-
+/* 
 @media(max-height: 1440px){
   #root_eleccion{
     width: 35%;
@@ -142,17 +135,6 @@ body {
   }
 }
 
-
-
-
-
-@media(max-width: 1200px){
-  #root_eleccion{
-    width: 31%;
-    height: 30%;
-    left: 33.5%;
-  }
-}
 
 @media(max-width: 768px){
   #root_eleccion{
@@ -173,7 +155,7 @@ body {
     width: 80%;
     left: 10.5%;
   }
-}
+} */
 
 /* Animación de entrada general */
 @keyframes movingX1 {
@@ -213,15 +195,12 @@ h1 {
 /* Estilos para los subtítulos h2 */
 h2{
   margin-top: 3%; /* Margen general */
-  text-align: center; /* Alineación centrada */
   color: #4B0713;
 }
 
 /* Estilos para los párrafos */
 p{
-  margin: 8%; /* Margen general */
-  margin-bottom: 5%; /* Margen inferior */
-  margin-top: 3%; /* Margen superior */
+  margin: 3%; /* Margen superior */
   font-size: 20px; /* Tamaño de fuente */
 }
 
@@ -237,9 +216,9 @@ p{
 /* Estilos para los inputs dentro del formulario */
 input {
   width: 76.5%; /* Ancho del input */
-  height: 8%; /* Altura del input */
+  height: 50%; /* Altura del input */
   margin-left: 8%; /* Margen izquierdo */
-  margin-bottom: 3%; /* Margen inferior */
+  margin-bottom: 2%; /* Margen inferior */
   padding-left: 15px; /* Relleno izquierdo */
   background-color: white; /* Color de fondo */
   border: 1px solid #4B0713; /* Borde */
@@ -248,8 +227,9 @@ input {
 
 /* Estilos para el texto de aclaración */
 .aclaracion{
+  margin: 4%;
+  margin-top: 0;
   font-size: 15px; /* Tamaño de fuente */
-  margin-bottom: 4%; /* Margen inferior */
 }
 
 /* Estilos para los botones */

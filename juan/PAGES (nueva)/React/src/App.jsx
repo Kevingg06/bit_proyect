@@ -12,11 +12,9 @@ import zIndex from '@mui/material/styles/zIndex';
 
 
 function App() {
-
-
   return (
     <Router>
-      <nav style={{zIndex:'50', justifyContent:'space-between'}}>
+      <nav style={{ zIndex: '50', justifyContent: 'space-between' }}>
         {/* Enlaces de navegación */}
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
@@ -30,21 +28,20 @@ function App() {
         <Link to="/perfilEmpresaInt">Perfil Empresa int</Link>
       </nav>
 
+        <Routes>
+          {/* Definición de rutas */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/perfilUsuarioInt" element={<Perfil_usuario_int />} />
+          <Route path="/perfilUsuarioExt" element={<Perfil_usuario_ext />} />
 
-      <Routes>
-        {/* Definición de rutas */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/perfilUsuarioInt" element={<Perfil_usuario_int />} />
-        <Route path="/perfilUsuarioExt" element={<Perfil_usuario_ext />} />
-
-        <Route path="/perfilReclutadorInt" element={<Perfil_reclutador_int />} />
-        <Route path="/perfilReclutadorExt" element={<Perfil_reclutador_ext />} />
+          <Route path="/perfilReclutadorInt" element={<Perfil_reclutador_int />} />
+          <Route path="/perfilReclutadorExt" element={<Perfil_reclutador_ext />} />
 
 
-        <Route path="/perfilEmpresaInt" element={<Perfil_empresa_int />} />
-      </Routes>
-   </Router>
+          <Route path="/perfilEmpresaInt" element={<Perfil_empresa_int />} />
+        </Routes>
+    </Router>
   );
 }
 
