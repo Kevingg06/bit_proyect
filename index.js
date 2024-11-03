@@ -18,7 +18,11 @@ app.use(express.static('public'));
 
 // 🎯 Configuración de CORS usando el middleware 'cors'
 app.use(cors({
+<<<<<<< Updated upstream:index.js
   origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'], // Permitir ambos orígenes
+=======
+  origin: ['http://localhost:3000'], 
+>>>>>>> Stashed changes:juan/index.js
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   credentials: true
 }));
@@ -34,6 +38,28 @@ db.connect((err) => {
   }
   console.log('Conexión a la base de datos exitosa');
 });
+
+// Función para verificar la autenticación del usuario
+const authenticateToken = (req, res, next) => {
+  const authToken = req.cookies.authToken;
+  console.log("authToken recibido:", authToken); // Log para ver el valor de la cookie
+  if (!authToken) {
+    return res.status(401).json({ error: 'No autorizado' });
+  }
+  try {
+    const { token, userId } = JSON.parse(authToken);
+    const decoded = jwt.verify(token, 'SECRET_KEY'); // Asegúrate de que la clave secreta sea correcta
+
+    if (decoded.userId !== userId) {
+      return res.status(403).json({ error: 'Token inválido' });
+    }
+    req.userId = userId; 
+    next(); 
+  } catch (err) {
+    console.error('Error al verificar el token JWT:', err);
+    return res.status(403).json({ error: 'Token inválido' });
+  }
+};
 
 app.use('/register', registerRoutes);
 app.use('/login', loginRoutes);
