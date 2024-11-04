@@ -14,7 +14,7 @@ import zIndex from '@mui/material/styles/zIndex';
 function App() {
   return (
     <Router>
-      <nav style={{ zIndex: '50', justifyContent: 'space-between' }}>
+      <nav style={{ zIndex: '50', justifyContent: 'space-between', width: '100%' }}>
         {/* Enlaces de navegación */}
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>

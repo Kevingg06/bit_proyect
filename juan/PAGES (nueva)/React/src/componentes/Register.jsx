@@ -109,66 +109,67 @@ function Register() {
 
   return (
     <div id={estilos.register}>
-      <div id="fondo_2"></div>
-      <div id="fondo_1"></div>
+      <div id={estilos.fondo_2}></div>
+      <div id={estilos.fondo_1}></div>
 
-        <div id={estilos.titulos}>
-          <h2>Empieza a expandir tus posibilidades</h2>
-          <p>Primero necesitamos recopilar algunos datos</p>
-        </div>
-
-        {activeScreen === 'empleado' && (
-          <div className={estilos.pantalla} id={estilos.root_empleado}>
-            <form className={estilos.formulario} id={estilos.form_empleado}>
-              <input ref={nombreRef} type="text" placeholder="NOMBRE Y APELLIDO" required />
-              <input ref={emailRef} type="email" placeholder="EMAIL" required />
-              <input ref={edadRef} type="number" placeholder="EDAD" required />
-              <input ref={contraseña1Ref} type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" required />
-              <input ref={contraseña2Ref} type="password" placeholder="CONFIRMAR CONTRASEÑA" required />
-              <p className={estilos.aclaracion}>
-                Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de Hire-Me.
-              </p>
-              <button type="button" onClick={() => enviarDatos('empleado')}>ACEPTAR Y CONTINUAR</button>
-            </form>
-            <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
-            <button className={estilos.google}>
-              <img src="logo_google.jpg" alt="Google logo" />
-              <span>INGRESAR CON GOOGLE</span>
-            </button>
-            <button className={estilos.volver} onClick={handleBackClick}>VOLVER</button>
-          </div>
-        )}
-
-        {activeScreen === 'empresa' && (
-          <div className={estilos.pantalla} id={estilos.root_empresa}>
-            <form className={estilos.formulario} id={estilos.form_empresa}>
-              <input type="text" placeholder="NOMBRE DE LA EMPRESA" required />
-              <input type="email" placeholder="EMAIL" required />
-              <input type="text" placeholder="CUIT" required />
-              <input type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" required />
-              <input type="password" placeholder="CONFIRMAR CONTRASEÑA" required />
-              <p className="aclaracion">
-                Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de Hire-Me.
-              </p>
-              <button type="button" onClick={() => enviarDatos('empresa')}>ACEPTAR Y CONTINUAR</button>
-            </form>
-            <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
-            <button className={estilos.google}>
-              <img src="logo_google.jpg" alt="Google logo" />
-              <span>INGRESAR CON GOOGLE</span>
-            </button>
-            <button className={estilos.volver} onClick={handleBackClick}>VOLVER</button>
-          </div>
-        )}
-
-        {activeScreen === 'eleccion' && (
-          <div className={estilos.pantalla} id={estilos.root_eleccion}>
-            <h2>¿PARA QUÉ UTILIZARÁ SU CUENTA?</h2>
-            <button className={estilos.btnEleccion} onClick={() => handleButtonClick('empleado')}>EMPLEADO</button>
-            <button className={estilos.btnEleccion} onClick={() => handleButtonClick('empresa')}>EMPRESA</button>
-          </div>
-        )}
+      <div id={estilos.titulos}>
+        <h2>Empieza a expandir tus posibilidades</h2>
+        <p>Primero necesitamos recopilar algunos datos</p>
+        <p className={estilos.aclaracion}>
+          Al hacer clic en «ACEPTAR Y CONTINUAR», aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de Hire-Me.
+        </p>
       </div>
+
+      {activeScreen === 'empleado' && (
+        <div className={estilos.pantalla} id={estilos.root_empleado}>
+          <form className={estilos.formulario} id={estilos.form_empleado}>
+            <input ref={nombreRef} type="text" placeholder="NOMBRE Y APELLIDO" required />
+            <input ref={emailRef} type="email" placeholder="EMAIL" required />
+            <input ref={edadRef} type="number" placeholder="EDAD" required />
+            <input ref={contraseña1Ref} type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" required />
+            <input ref={contraseña2Ref} type="password" placeholder="CONFIRMAR CONTRASEÑA" required />
+            <button className={estilos.ingresar} type="button" onClick={() => enviarDatos('empleado')}>ACEPTAR Y CONTINUAR</button>
+          </form>
+          <button className={estilos.google}>
+            <img src="logo_google.jpg" alt="Google logo" />
+            <span>INGRESAR CON GOOGLE</span>
+          </button>
+          <div className={estilos.links}>
+            <button className={estilos.volver} onClick={handleBackClick}>VOLVER</button>
+            <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
+          </div>
+        </div>
+      )}
+
+      {activeScreen === 'empresa' && (
+        <div className={estilos.pantalla} id={estilos.root_empresa}>
+          <form className={estilos.formulario} id={estilos.form_empresa}>
+            <input type="text" placeholder="NOMBRE DE LA EMPRESA" required />
+            <input type="email" placeholder="EMAIL" required />
+            <input type="text" placeholder="CUIT" required />
+            <input type="password" placeholder="CONTRASEÑA (mínimo 8 caracteres)" required />
+            <input type="password" placeholder="CONFIRMAR CONTRASEÑA" required />
+            <button className={estilos.ingresar} type="button" onClick={() => enviarDatos('empresa')}>ACEPTAR Y CONTINUAR</button>
+          </form>
+          <button className={estilos.google}>
+            <img src="logo_google.jpg" alt="Google logo" />
+            <span>INGRESAR CON GOOGLE</span>
+          </button>
+          <div className={estilos.links}>
+            <button className={estilos.volver} onClick={handleBackClick}>VOLVER</button>
+            <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
+          </div>
+        </div>
+      )}
+
+      {activeScreen === 'eleccion' && (
+        <div className={estilos.pantalla} id={estilos.root_eleccion}>
+          <h2>¿PARA QUÉ UTILIZARÁ SU CUENTA?</h2>
+          <button className={estilos.btnEleccion} onClick={() => handleButtonClick('empleado')}>EMPLEADO</button>
+          <button className={estilos.btnEleccion} onClick={() => handleButtonClick('empresa')}>EMPRESA</button>
+        </div>
+      )}
+    </div>
   );
 }
 
