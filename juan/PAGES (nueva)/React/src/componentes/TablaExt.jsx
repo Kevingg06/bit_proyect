@@ -18,13 +18,14 @@ const StyledTableContainer = styled(TableContainer)`
 const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
-  width: 10%;
+  min-width: 85.5px;
+  max-width: 85.5px;
   background-color: ${props => props.isButton ? (props.isOccupied ? '#f15353' : '#7bc565') : '#f5e9c8'};
-  color: ${props => props.isButton ? '#000' : '#4B0713'};
-  cursor: ${props => props.isButton ? 'pointer' : 'default'};
+  color: '#4B0713';
   text-align: center;
-  transform-style: preserve-3d;
-  transition: background-color 0.5s, transform 0.5s;
+  &:last-child {
+    border-right: none;
+  }
 `;
 
 const StyledHeaderCell = styled(TableCell)`
@@ -38,6 +39,8 @@ const StyledHeaderCell = styled(TableCell)`
     border-right: none;
   }
 `;
+
+
 
 const TablaHorarios = () => {
   const [rotations, setRotations] = useState(Array(12 * 7).fill(0));

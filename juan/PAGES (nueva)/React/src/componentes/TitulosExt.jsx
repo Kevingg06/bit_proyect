@@ -8,7 +8,7 @@ const titulo = {
 };
 
 const estiloTexto = {
-    fontSize: '25px',
+    fontSize: '20px',
     whiteSpace: 'pre-line',
     width: '100%',
     display: 'block',

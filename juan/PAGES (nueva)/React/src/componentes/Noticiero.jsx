@@ -9,13 +9,13 @@ const Noticiero = () => {
         backgroundColor: '#eeeded',
         marginLeft: '5%',
         width: '90%',
-        maxHeight: '530px', // Cambiado a maxHeight para limitar la altura
+        maxHeight: '87vh', // Cambiado a maxHeight para limitar la altura
         borderRadius: '25px',
         boxShadow: '4px 4px 10px 6px rgba(0, 0, 0, 0.2)',
         flexDirection: 'column',
         color: '#4B0713',
         position: 'sticky', // Mantiene el elemento en su lugar al hacer scroll
-        top: '13%', // Ajusta la posición sticky para tener en cuenta el margen superior
+        top: '7vh', // Ajusta la posición sticky para tener en cuenta el margen superior
         zIndex: 1, // Asegura que el componente Noticiero esté por encima de otros contenidos
     };
 
@@ -34,7 +34,7 @@ const Noticiero = () => {
     };
 
     return (
-        <Box sx={{ width: '30.172%', marginTop: '3%' }}>
+        <Box sx={{ width: '30.172%'}}>
             <Box sx={estiloNoticiero}>
                 <Box sx={miniTitulo}>
                     <h4 style={{fontSize:'25px'}}>Puede ser de tu interés</h4>

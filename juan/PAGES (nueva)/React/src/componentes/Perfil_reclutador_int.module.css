@@ -2,37 +2,19 @@
   margin: 0;
 }
 
-.App {
-  text-align: center;
-  background-color: #f7f0e5;
-  height: 1850px;
-}
-
-.App-header {
-  background-color: #f7f0e5;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  height: 1850px;
-  width: 100%;
-  font-size: calc(10px + 2vmin);
-}
-
 .perfilReclutadorInt{
   display: flex;
   flex-direction: row;
-  height: 1700px;
 }
-
-
-
 
 
 .pantalla{
   display: flex;
-  margin-top: 3%;
+  margin-top: 4vh;
   margin-left: 2%;
+  margin-bottom: 2.7%;
   width: 68.517%;
+  height: 260vh;
   background-color: #eeeded;
   border-radius: 25px;
   box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
