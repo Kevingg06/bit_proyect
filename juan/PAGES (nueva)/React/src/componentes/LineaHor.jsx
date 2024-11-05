@@ -4,7 +4,6 @@ const styleLineaHor = {
   width: '90%',
   height: '0.1%',
   marginTop: '3.5%',
-  marginLeft: '5%',
   backgroundColor: 'black',
 };
 

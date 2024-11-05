@@ -129,8 +129,8 @@ function Login() {
 
         {/* Formulario de inicio de sesión */}
         <form id={styles.formulario} ref={formularioRef}> {/* Usar ref en el formulario */}
-          <input type="email" id={styles.email} ref={emailRef} placeholder="INGRESA TU EMAIL" /> {/* Campo para ingresar el email */}
-          <input type="password" id={styles.contraseña} ref={passwordInputRef} placeholder="INGRESA TU CONTRASEÑA" /> {/* Campo para ingresar la contraseña */}
+          <input type="email"  id={styles.email}  ref={emailRef}  placeholder="INGRESA TU EMAIL" /> {/* Campo para ingresar el email */}
+          <input type="password"  id={styles.contraseña}  ref={passwordInputRef}  placeholder="INGRESA TU CONTRASEÑA" /> {/* Campo para ingresar la contraseña */}
           <button type="button" id={styles.mostrarContra} ref={mostrarContraRef}>Mostrar</button> {/* Botón para mostrar la contraseña */}
           <a id={styles.olvido} href="#">¿Olvidaste tu contraseña?</a> {/* Enlace para la página de recuperación de contraseña */}
           <a id={styles.register} href="#">¿No tenés cuenta? Registrate</a> {/* Enlace para la página de registro */}

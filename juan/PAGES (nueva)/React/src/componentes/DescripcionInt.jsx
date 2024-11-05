@@ -70,7 +70,7 @@ export const DescripcionInt = () => {
     };
 
     const estiloTexto = {
-        fontSize: '25px',
+        fontSize: '20px',
         whiteSpace: 'pre-line',
         width: '85%',
         display: 'block',

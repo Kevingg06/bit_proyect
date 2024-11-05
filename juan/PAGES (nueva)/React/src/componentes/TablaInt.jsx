@@ -8,6 +8,20 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import styled from '@emotion/styled';
 
+
+
+
+const guardar = {
+  fontSize: '20px',
+  whiteSpace: 'pre-line',
+  width: '20%',
+  height: '4%',
+  marginTop: '1.5%',
+  display: 'block',
+  wordWrap: 'break-word'
+};
+
+
 const StyledTableContainer = styled(TableContainer)`
   border: 2px solid #4B0713;
   border-radius: 20px;
@@ -18,19 +32,23 @@ const StyledTableContainer = styled(TableContainer)`
 const StyledTableCell = styled(TableCell)`
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
-  width: 10%;
+  min-width: 85.5px;
+  max-width: 85.5px;
   background-color: ${props => props.isButton ? (props.isOccupied ? '#f15353' : '#7bc565') : '#f5e9c8'};
   color: ${props => props.isButton ? '#000' : '#4B0713'};
   cursor: ${props => props.isButton ? 'pointer' : 'default'};
   text-align: center;
   transform-style: preserve-3d;
   transition: background-color 0.5s, transform 0.5s;
+  &:last-child {
+    border-right: none;
+  }
 `;
 
 const StyledHeaderCell = styled(TableCell)`
-  width: 10%;
   background-color: #f5e9c8;
   font-weight: bold;
+  max-width: 1px;
   color: #4B0713;
   border-right: 2px solid #4B0713;
   border-bottom: 1px solid #4B0713;
@@ -140,7 +158,7 @@ const TablaHorarios = () => {
           </TableBody>
         </Table>
       </StyledTableContainer>
-      <button onClick={guardarHorarios}>Guardar Horarios</button> {/* Botón para enviar datos */}
+      <button style={guardar} onClick={guardarHorarios}>Guardar Horarios</button> {/* Botón para enviar datos */}
     </>
   );
 };

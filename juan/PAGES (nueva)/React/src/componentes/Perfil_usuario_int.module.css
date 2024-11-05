@@ -2,28 +2,15 @@
   margin: 0;
 }
 
-.App {
-  text-align: center;
-  height: 1400px;
-}
-
-.App-header {
-  display: flex;
-  background-color: #f7f0e5;
-  margin: auto;
-  display: flex;
-  height: 1800px;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
 
 .pantalla{
   display: flex;
+  align-items: center;
   margin-top: 3%;
   margin-left: 10%;
+  margin-bottom: 4%;
   width: 80%;
-  height: 1700px;
+  height: 260vh;
   background-color: #eeeded;
   border-radius: 25px;
   box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
@@ -37,7 +24,6 @@
   width: 83.1%;
   height: 10%;
   margin-top: 3%;
-  margin-left: 8.45%;
   align-items: top;
 }
 
@@ -64,8 +50,9 @@
 .interacciones{
   display: flex;
   width: 20%;
+  margin-top: 3%;
   margin-left: 5%;
-  height: 50%;
+  height: 30%;
 }
 
 #mensaje{
@@ -97,9 +84,8 @@
   display: flex;
   flex-direction: row;
   width: 80%;
-  height: 45%;
+  height: 34%;
   overflow: hidden;
-  margin-left: 10%;
   margin-top: 3.5%;
 }
 
@@ -134,14 +120,15 @@
 
 #calendario{
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #c0c0c0;
   width: 100%;
-  height: 61%;
+  height: 55%;
   border-radius: 0 0 25px 25px;
 }
 
 .horarios{
-  margin-top: 2%;
-  margin-left: 5%;
   width: 90%;
+  height: 95%;
 }
