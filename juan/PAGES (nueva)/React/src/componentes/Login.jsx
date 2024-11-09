@@ -136,7 +136,7 @@ function Login() {
           <a id={styles.register} href="#">¿No tenés cuenta? Registrate</a> {/* Enlace para la página de registro */}
           <button type="button" id={styles.ingresar} ref={ingresarRef}>Entrar</button> {/* Botón para iniciar sesión */}
           <button type="button" id={styles.google}>
-            <img src="/logo_google.jpg" alt='makako' />
+            <img src="/logo_google.jpg" alt='logo de google' />
             INGRESAR CON GOOGLE
           </button>
         </form>

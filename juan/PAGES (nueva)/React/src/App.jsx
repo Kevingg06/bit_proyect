@@ -9,6 +9,7 @@ import Perfil_reclutador_int from './componentes/Perfil_reclutador_int';
 import Perfil_reclutador_ext from './componentes/Perfil_reclutador_ext';
 import Perfil_empresa_int from './componentes/Perfil_empresa_int';
 import zIndex from '@mui/material/styles/zIndex';
+import LandingPage from './componentes/LandingPage';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
     <Router>
       <nav style={{ zIndex: '50', justifyContent: 'space-between', width: '100%' }}>
         {/* Enlaces de navegación */}
+        <Link to="/landingPage">Landing Page</Link>
+
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
 
@@ -30,8 +33,11 @@ function App() {
 
         <Routes>
           {/* Definición de rutas */}
+          <Route path="/LandingPage" element={<LandingPage />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route path="/perfilUsuarioInt" element={<Perfil_usuario_int />} />
           <Route path="/perfilUsuarioExt" element={<Perfil_usuario_ext />} />
 
