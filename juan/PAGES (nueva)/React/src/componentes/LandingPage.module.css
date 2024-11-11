@@ -19,7 +19,7 @@
 }
 
 /* Transición suave para todos los elementos */
-* {
+.app {
     transition: all ease-in-out 350ms;
 }
 
@@ -38,7 +38,7 @@
     align-items: center;
     position: sticky;
     background: var(--fondo);
-    height: 5rem;
+    height: 10vh;
     box-shadow: 0 0 5px 2px var(--accent);
 }
 
@@ -56,7 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 89.3vh;
+    height: 85vh;
     animation: moveUp 50s linear infinite;
 }
 

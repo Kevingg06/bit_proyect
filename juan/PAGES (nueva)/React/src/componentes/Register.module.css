@@ -23,7 +23,7 @@ body {
   background-color: #e9d7ba; /* Color de fondo */
   width: 51%; /* Ancho del fondo */
   height: 100%; /* Altura del fondo que cubre toda la página */
-  z-index: 2; /* Capa z-index para superponer sobre otros elementos */
+  z-index: -2; /* Capa z-index para superponer sobre otros elementos */
 }
 
 /* Estilos para el fondo 2 */
@@ -34,7 +34,7 @@ body {
   background-color: #f1e3cb; /* Color de fondo */
   width: 10%; /* Ancho del fondo */
   height: 100%; /* Altura del fondo que cubre toda la página */
-  z-index: 1; /* Capa z-index inferior al fondo 1 */
+  z-index: -1; /* Capa z-index inferior al fondo 1 */
 }
 
 

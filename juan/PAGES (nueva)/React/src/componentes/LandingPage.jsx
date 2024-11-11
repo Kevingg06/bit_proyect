@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './LandingPage.module.css'; // Importa el archivo .module.css
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -24,19 +25,16 @@ const LandingPage = () => {
           <h1 className={`${styles.h1} ${isDarkMode ? styles.active : ''}`}>Bienvenido</h1>
 
           <div className={styles.buttons}>
-            <a
-              className={`${styles.button} ${isDarkMode ? styles.active : ''}`}
-              href="../REGISTRARSE/registrarse.html"
-            >
-              Crear Cuenta
-            </a>
+
+            <Link to="/register" className={`${styles.button} ${isDarkMode ? styles.active : ''}`}>
+              Crear cuenta
+            </Link>
+
+
             <span className={isDarkMode ? styles.active : ''}>or</span>
-            <a
-              className={`${styles.button} ${isDarkMode ? styles.active : ''}`}
-              href="../INICIO_SESION/inicio_sesion.html"
-            >
-              Iniciar Sesión
-            </a>
+            <Link to="/login" className={`${styles.button} ${isDarkMode ? styles.active : ''}`}>
+              Iniciar sesion
+            </Link>
           </div>
 
           <p className={isDarkMode ? styles.active : ''}>

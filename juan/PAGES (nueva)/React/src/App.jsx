@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+
 import Login from './componentes/Login';
 import Register from './componentes/Register.jsx';
 import Perfil_usuario_int from './componentes/Perfil_usuario_int';
@@ -15,7 +16,7 @@ import LandingPage from './componentes/LandingPage';
 function App() {
   return (
     <Router>
-      <nav style={{ zIndex: '50', justifyContent: 'space-between', width: '100%' }}>
+      <nav style={{display:'flex', zIndex: '50', justifyContent: 'space-between', width: '100%' }}>
         {/* Enlaces de navegación */}
         <Link to="/landingPage">Landing Page</Link>
 

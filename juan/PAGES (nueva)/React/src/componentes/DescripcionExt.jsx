@@ -36,7 +36,7 @@ export const DescripcionExt = () => {
     }, []);
 
     return (
-        <div>
+        <div style={{width: '100%'}}>
             <h4 style={titulo}>Sobre mí</h4>
             <p style={estiloTexto}>{texto}</p>
         </div>
