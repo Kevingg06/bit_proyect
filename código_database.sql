@@ -27,6 +27,7 @@ create table posts(
     title varchar(100),
     body text not null,
     createdAt date not null,
+    image text not null,
     primary key(postId),
     foreign key (userId) references users (userId)
 );
