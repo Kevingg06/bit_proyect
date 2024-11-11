@@ -11,17 +11,20 @@ import Perfil_reclutador_ext from './componentes/Perfil_reclutador_ext';
 import Perfil_empresa_int from './componentes/Perfil_empresa_int';
 import zIndex from '@mui/material/styles/zIndex';
 import LandingPage from './componentes/LandingPage';
+import RecuperarContra from './componentes/RecuperarContra';
 
 
 function App() {
   return (
     <Router>
-      <nav style={{display:'flex', zIndex: '50', justifyContent: 'space-between', width: '100%' }}>
+      <nav style={{display:'flex', zIndex: '50', justifyContent: 'space-between', width: '100%', height: '30px' }}>
         {/* Enlaces de navegación */}
         <Link to="/landingPage">Landing Page</Link>
 
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
+
+        <Link to="/recuperarContra">Recuperar Contraseña</Link>
 
         <Link to="/perfilUsuarioInt">Perfil Usuario int</Link>
         <Link to="/perfilUsuarioExt">Perfil Usuario ext</Link>
@@ -38,6 +41,7 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/recuperarContra" element={<RecuperarContra />} />
 
           <Route path="/perfilUsuarioInt" element={<Perfil_usuario_int />} />
           <Route path="/perfilUsuarioExt" element={<Perfil_usuario_ext />} />

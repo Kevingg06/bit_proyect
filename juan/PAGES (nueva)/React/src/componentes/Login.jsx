@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 
@@ -136,7 +137,7 @@ function Login() {
           <input type="email"  id={styles.email}  ref={emailRef}  placeholder="INGRESA TU EMAIL" /> {/* Campo para ingresar el email */}
           <input type="password"  id={styles.contraseña}  ref={passwordInputRef}  placeholder="INGRESA TU CONTRASEÑA" /> {/* Campo para ingresar la contraseña */}
           <button type="button" id={styles.mostrarContra} ref={mostrarContraRef}>Mostrar</button> {/* Botón para mostrar la contraseña */}
-          <a id={styles.olvido} href="../../../recuperar_contraseña/recuperacion.html">¿Olvidaste tu contraseña?</a> {/* Enlace para la página de recuperación de contraseña */}
+          <Link to="/RecuperarContra" id={styles.olvido}>¿Olvidaste tu contraseña?</Link> {/* Enlace para la página de recuperación de contraseña */}
           <Link to="/register" id={styles.register}>¿No tenés cuenta? Registrate</Link> {/* Enlace para la página de registro */}
           <button type="button" id={styles.ingresar} ref={ingresarRef}>Entrar</button> {/* Botón para iniciar sesión */}
           <button type="button" id={styles.google}>
