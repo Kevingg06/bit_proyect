@@ -9,9 +9,9 @@ import Perfil_usuario_ext from './componentes/Perfil_usuario_ext';
 import Perfil_reclutador_int from './componentes/Perfil_reclutador_int';
 import Perfil_reclutador_ext from './componentes/Perfil_reclutador_ext';
 import Perfil_empresa_int from './componentes/Perfil_empresa_int';
-import zIndex from '@mui/material/styles/zIndex';
 import LandingPage from './componentes/LandingPage';
 import RecuperarContra from './componentes/RecuperarContra';
+import Ayuda from './componentes/Ayuda';
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
         <Link to="/register">Register</Link>
 
         <Link to="/recuperarContra">Recuperar Contraseña</Link>
+        <Link to="/ayuda">AYUDA</Link>
 
         <Link to="/perfilUsuarioInt">Perfil Usuario int</Link>
         <Link to="/perfilUsuarioExt">Perfil Usuario ext</Link>
@@ -41,7 +42,9 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route path="/recuperarContra" element={<RecuperarContra />} />
+          <Route path="/ayuda" element={<Ayuda />} />
 
           <Route path="/perfilUsuarioInt" element={<Perfil_usuario_int />} />
           <Route path="/perfilUsuarioExt" element={<Perfil_usuario_ext />} />

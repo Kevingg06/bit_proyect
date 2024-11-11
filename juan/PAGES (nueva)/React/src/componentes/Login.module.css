@@ -146,7 +146,7 @@ h1 {
 }
 
 /* Estilo para los botones */
-button {
+.button {
   display: flex;
   background-color: #1D6FAB;
   color: white;

@@ -1,0 +1,233 @@
+/* Contenedor principal ajustado debajo del encabezado */
+#ayuda {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Estilo para el contenedor raíz */
+#root {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ccb288;
+    width: 70%;
+    height: 970px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el título principal */
+.titulo {
+    color: #4B0713;
+    font-size: 30px;
+    height: 8%;
+    text-align: center;
+}
+
+/* Contenedor general para el contenido */
+.container {
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+/* Estilo para la caja de pestañas */
+.tab_box {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilo para los botones de pestañas */
+.tab_box .tab_btn {
+    font-size: 20px;
+    width: 50%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de pestaña activo */
+.tab_box .tab_btn.active {
+    color: black;
+    background-color: #f1e3cb;
+}
+
+/* Estilo para la caja de contenido */
+.content_box {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: 88%;
+    background-color: #f1e3cb;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* Estilo para el contenido dentro de la caja de contenido */
+.content_box .content {
+    display: none;
+    height: 100%;
+    width: 85%;
+    animation: movingX .5s ease;
+    flex-direction: column;
+}
+
+/* Animación para el contenido */
+@keyframes movingX {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* Estilo para el contenido activo */
+.content_box .content.active {
+    display: flex;
+}
+
+/* Estilo para el campo de entrada */
+.input {
+    margin-top: 2%;
+    width: 83%;
+    height: 7%;
+    margin-left: 7.5%;
+    padding-left: 5%;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 40px;
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los subtítulos pequeños */
+.mini_titulos {
+    font-size: 30px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+/* Estilo para los botones de menú de preguntas */
+.flecha_menu {
+    display: block;
+    margin-left: 8%;
+    height: 3.5%;
+    background-color: #f1e3cb;
+    background-image: url(/public/flecha_menu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: left;
+    padding-left: 4%;
+    padding-top: 0;
+    margin-bottom: 4%;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para el botón de menú activo */
+.flecha_menu.active {
+    height: 3.5%;
+    background-image: url(/public/flecha_menu2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* Estilo para las respuestas */
+.respuesta {
+    display: none;
+    margin-left: 12%;
+    margin-top: -3%;
+    margin-bottom: 2%;
+    padding-right: 50px;
+    font-size: 18px;
+    animation: movingY .3s ease;
+}
+
+/* Animación para las respuestas */
+@keyframes movingY {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* Estilo para las respuestas activas */
+.respuesta.active {
+    display: block;
+}
+
+/* Estilo para los títulos de contacto */
+.segundoTitulo {
+    font-size: 40px;
+    text-align: center;
+    display: block;
+    margin-bottom: -3%;
+}
+
+/* Estilo para los párrafos */
+.texto {
+    margin-top: -2%;
+    margin-bottom: -2%;
+    margin-left: 12%;
+    font-size: 20px;
+    padding-right: 5%;
+}
+
+/* Estilo para la línea divisoria */
+.linea {
+    width: 100%;
+    height: 2px;
+    margin-top: 5%;
+    background-color: black;
+    display: block;
+}
+
+/* Contenedor para las imágenes de contacto */
+#imgContactos {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: 5%;
+}
+
+/* Estilo para las imágenes de contacto */
+.contacto {
+    margin-top: 3%;
+    width: 150px;
+    margin-bottom: 1%;
+}
+
+/* Contenedor para los textos de contacto */
+#txtContactos {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: 5%;
+}
+
+/* Estilo para los textos de contacto */
+h4 {
+    font-size: 30px;
+}

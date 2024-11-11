@@ -136,11 +136,11 @@ function Login() {
         <form id={styles.formulario} ref={formularioRef}> {/* Usar ref en el formulario */}
           <input type="email"  id={styles.email}  ref={emailRef}  placeholder="INGRESA TU EMAIL" /> {/* Campo para ingresar el email */}
           <input type="password"  id={styles.contraseña}  ref={passwordInputRef}  placeholder="INGRESA TU CONTRASEÑA" /> {/* Campo para ingresar la contraseña */}
-          <button type="button" id={styles.mostrarContra} ref={mostrarContraRef}>Mostrar</button> {/* Botón para mostrar la contraseña */}
+          <button className={styles.button} type="button" id={styles.mostrarContra} ref={mostrarContraRef}>Mostrar</button> {/* Botón para mostrar la contraseña */}
           <Link to="/RecuperarContra" id={styles.olvido}>¿Olvidaste tu contraseña?</Link> {/* Enlace para la página de recuperación de contraseña */}
           <Link to="/register" id={styles.register}>¿No tenés cuenta? Registrate</Link> {/* Enlace para la página de registro */}
-          <button type="button" id={styles.ingresar} ref={ingresarRef}>Entrar</button> {/* Botón para iniciar sesión */}
-          <button type="button" id={styles.google}>
+          <button className={styles.button} type="button" id={styles.ingresar} ref={ingresarRef}>Entrar</button> {/* Botón para iniciar sesión */}
+          <button className={styles.button} type="button" id={styles.google}>
             <img src="/logo_google.jpg" alt='logo de google' />
             INGRESAR CON GOOGLE
           </button>
