@@ -10,10 +10,12 @@ import Perfil_reclutador_ext from './componentes/Perfil_reclutador_ext';
 import Perfil_empresa_int from './componentes/Perfil_empresa_int';
 import zIndex from '@mui/material/styles/zIndex';
 import LandingPage from './componentes/LandingPage';
+import { PosteosProvider } from './componentes/PosteosContext'; // Importar PosteosProvider
 
 
 function App() {
   return (
+    <PosteosProvider> 
     <Router>
       <nav style={{ zIndex: '50', justifyContent: 'space-between', width: '100%' }}>
         {/* Enlaces de navegación */}
@@ -48,6 +50,7 @@ function App() {
           <Route path="/perfilEmpresaInt" element={<Perfil_empresa_int />} />
         </Routes>
     </Router>
+    </PosteosProvider> 
   );
 }
 

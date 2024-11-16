@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-export const Posteo = () => {
-  const [posteos, setPosteos] = useState([]); // Estado para almacenar los posteos
+export const Posteo = ({ posteos }) => {
+  
 
   // Estilos para los elementos
   const tarjeta = {
@@ -39,34 +39,21 @@ export const Posteo = () => {
     marginBottom: '3%',
   };
 
-  // Función para obtener los posteos desde la base de datos
-  const fetchPosteos = async () => {
-    try {
-      const response = await fetch('http://localhost:5500/posteo'); // Cambia la URL según tu API
-      if (!response.ok) {
-        throw new Error('Error al obtener los posteos');
-      }
-      const data = await response.json();
-      setPosteos(data); // Almacena los datos obtenidos en el estado
-    } catch (error) {
-      console.error('Error al cargar los posteos:', error);
-    }
-  };
-
-  // Llama a la función fetchPosteos cuando el componente se monta
-  useEffect(() => {
-    fetchPosteos();
-  }, []);
-
   return (
     <div>
-      {posteos.map((posteo) => (
-        <div key={posteo.id} style={tarjeta}> {/* Asegúrate de tener un ID único en cada posteo */}
-          <h4 style={estiloTitulo}>{posteo.titulo}</h4>
-          <p style={estiloDescripcion}>{posteo.texto}</p>
-          <img src={posteo.image} alt={posteo.titulo} style={estiloImagen} />
-        </div>
-      ))}
+      {posteos && posteos.length > 0 ? ( // Condición para verificar si posteos existe y tiene elementos
+        posteos.map((posteo) => (
+          <div key={posteo.id} style={tarjeta}>
+            <h4 style={estiloTitulo}>{posteo.titulo}</h4>
+            <p style={estiloDescripcion}>{posteo.texto}</p>
+            {posteo.image && ( // Condición para verificar si la imagen existe
+              <img src={posteo.image} alt={posteo.titulo} style={estiloImagen} />
+            )}
+          </div>
+        ))
+      ) : (
+        <p>No hay posteos aún.</p> //Mensaje si no hay posteos
+      )}
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { usePosteos } from './PosteosContext.jsx';
 import styles from './Perfil_reclutador_int.module.css';
 import { LineaHor } from './LineaHor';
 import { LineaVer } from './LineaVer';
@@ -5,7 +7,7 @@ import { Nombre } from './Nombre';
 import { DescripcionInt } from './DescripcionInt';
 import { Posteo } from './Posteo';
 import Noticiero from './Noticiero';
-import CrearPosteo from './CrearPosteo'
+import CrearPosteo from './CrearPosteo';
 
 function Perfil_reclutador_int() {
   // 🎯 Definir getCookie dentro del componente App
@@ -24,7 +26,7 @@ function Perfil_reclutador_int() {
     }
     return "";
   };
-
+  const { posteos, agregarPosteo } = usePosteos();
 
   return (
     <div className={styles.perfilReclutadorInt}>
@@ -47,10 +49,11 @@ function Perfil_reclutador_int() {
         <LineaHor />
         <div id={styles.introPosteos}>
           <h3>Posteos</h3>
-          <CrearPosteo />
+           {/* Pasar la función agregarPosteo como prop */}
+           <CrearPosteo agregarPosteo={agregarPosteo} />
         </div>
         <div id={styles.posteos}>
-          <Posteo />
+          <Posteo  posteos={posteos}/>
         </div>
       </div>
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './Perfil_reclutador_ext.module.css';
 import { LineaHor } from './LineaHor';
 import { LineaVer } from './LineaVer';
@@ -5,6 +7,7 @@ import { Nombre } from './Nombre';
 import { DescripcionExt } from './DescripcionExt';
 import { Posteo } from './Posteo';
 import Noticiero from './Noticiero';
+import { usePosteos } from './PosteosContext.jsx';
 
 function Perfil_reclutador_ext() {
   // 🎯 Definir getCookie dentro del componente App
@@ -23,7 +26,7 @@ function Perfil_reclutador_ext() {
     }
     return "";
   };
-
+  //const { posteos } = usePosteos();
 
   return (
     <div className={styles.perfilReclutadorExt}>
