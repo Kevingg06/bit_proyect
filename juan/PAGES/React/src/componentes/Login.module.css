@@ -17,7 +17,7 @@ body {
   background-color: #e9d7ba;
   width: 51%;
   height: 100%;
-  z-index: 2;
+  z-index: -2;
   /* Capa de superposición */
 }
 
@@ -29,7 +29,7 @@ body {
   background-color: #f1e3cb; /* Color de fondo */
   width: 10%; /* Ancho del fondo */
   height: 100%; /* Altura del fondo que cubre toda la página */
-  z-index: 1; /* Capa z-index inferior al fondo 1 */
+  z-index: -1; /* Capa z-index inferior al fondo 1 */
 }
 
 /* Estilo del contenedor principal */
@@ -146,7 +146,7 @@ h1 {
 }
 
 /* Estilo para los botones */
-button {
+.button {
   display: flex;
   background-color: #1D6FAB;
   color: white;

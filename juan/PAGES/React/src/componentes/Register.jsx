@@ -1,7 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+
 import estilos from './Register.module.css';
 
 function Register() {
+
+  const navigate = useNavigate(); // Llamar al hook dentro del componente
+
+
   const [activeScreen, setActiveScreen] = useState('eleccion');
   const [datos, setDatos] = useState({
     nombre_empleado: '',
@@ -68,6 +74,11 @@ function Register() {
         if (!response.ok) throw new Error('La solicitud no fue exitosa');
         const result = await response.json();
         console.log('Respuesta de la API:', result);
+        if (tipo === 'empleado') {
+          navigate("/perfilUsuarioInt")
+        } else {
+          navigate("/perfilEmpresaInt")
+        };
       } catch (error) {
         console.error('Error al enviar datos a la API:', error);
         alert("El envío de datos a la API falló.");
@@ -136,7 +147,7 @@ function Register() {
           </button>
           <div className={estilos.links}>
             <button className={estilos.volver} onClick={handleBackClick}>VOLVER</button>
-            <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
+            <Link to="/login">¿Ya tenés una cuenta? Iniciá sesión</Link>
           </div>
         </div>
       )}
@@ -157,7 +168,7 @@ function Register() {
           </button>
           <div className={estilos.links}>
             <button className={estilos.volver} onClick={handleBackClick}>VOLVER</button>
-            <a href="#">¿Ya tenés una cuenta? Iniciá sesión</a>
+            <Link to="/login">¿Ya tenés una cuenta? Iniciá sesión</Link>
           </div>
         </div>
       )}
