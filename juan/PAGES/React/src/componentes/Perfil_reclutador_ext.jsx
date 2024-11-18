@@ -7,7 +7,7 @@ import { Nombre } from './Nombre';
 import { DescripcionExt } from './DescripcionExt';
 import { Posteo } from './Posteo';
 import Noticiero from './Noticiero';
-import { usePosteos } from './PosteosContext.jsx';
+import { usePosteos } from './PosteosContext';
 
 function Perfil_reclutador_ext() {
   // 🎯 Definir getCookie dentro del componente App
@@ -26,7 +26,7 @@ function Perfil_reclutador_ext() {
     }
     return "";
   };
-  //const { posteos } = usePosteos();
+  const { posteos } = usePosteos();
 
   return (
     <div className={styles.perfilReclutadorExt}>
@@ -51,7 +51,7 @@ function Perfil_reclutador_ext() {
           <h3>Posteos</h3>
         </div>
         <div id={styles.posteos}>
-          <Posteo />
+          <Posteo posteos={posteos} />
         </div>
       </div>
 

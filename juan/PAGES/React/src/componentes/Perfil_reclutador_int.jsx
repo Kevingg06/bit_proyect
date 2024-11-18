@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { usePosteos } from './PosteosContext.jsx';
 import styles from './Perfil_reclutador_int.module.css';
 import { LineaHor } from './LineaHor';
